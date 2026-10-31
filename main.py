@@ -1,5 +1,7 @@
 """Запуск: веб-сервер для Telegram webhook (Render) или polling для локальных тестов (USE_POLLING=1)."""
 import asyncio
+import hashlib
+import hmac
 import logging
 import os
 
@@ -16,7 +18,9 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name
 log = logging.getLogger("main")
 
 TOKEN = os.environ["BOT_TOKEN"]
-SECRET = os.getenv("WEBHOOK_SECRET", "")                 # только A-Z a-z 0-9 _ -
+SECRET = os.getenv("WEBHOOK_SECRET", "")
+if SECRET:                                               # Telegram принимает только A-Z a-z 0-9 _ -, поэтому берём хэш
+    SECRET = hashlib.sha256(SECRET.encode()).hexdigest()
 CRON_KEY = os.getenv("CRON_KEY", "")
 BASE_URL = (os.getenv("BASE_URL") or os.getenv("RENDER_EXTERNAL_URL") or "").rstrip("/")
 ALLOWED = {int(x) for x in os.getenv("ALLOWED_IDS", "").replace(" ", "").split(",") if x.strip().lstrip("-").isdigit()}
@@ -65,7 +69,8 @@ def build_app() -> web.Application:
         return web.Response(text="ok")
 
     async def cron_tick(request: web.Request):
-        if not CRON_KEY or request.query.get("key") != CRON_KEY:
+        key = request.query.get("key", "").replace(" ", "+")   # '+' в ссылке превращается в пробел
+        if not CRON_KEY or not hmac.compare_digest(key.encode(), CRON_KEY.encode()):
             return web.Response(status=403, text="forbidden")
         return web.json_response(await handlers.tick(bot))
 
