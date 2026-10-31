@@ -1,0 +1,118 @@
+// формат: english|перевод|пример. Строки с # — названия тем.
+# 🍎 Еда и кафе
+apple|яблоко|I eat an apple every day.
+bread|хлеб|We need fresh bread for breakfast.
+cheese|сыр|Do you like cheese on your pizza?
+chicken|курица|I usually cook chicken with rice.
+vegetables|овощи|Eat more vegetables, they are healthy.
+breakfast|завтрак|I have breakfast at eight o'clock.
+menu|меню|Can I see the menu, please?
+bill|счёт (в кафе)|Could we have the bill, please?
+tasty|вкусный|This soup is very tasty.
+hungry|голодный|I'm hungry. Let's have lunch.
+to order|заказывать|Are you ready to order?
+sugar|сахар|Do you take sugar in your tea?
+# 🏠 Дом и быт
+kitchen|кухня|My mother is in the kitchen.
+bedroom|спальня|The bedroom is quiet and dark.
+bathroom|ванная|The bathroom is next to the kitchen.
+window|окно|Please open the window.
+floor|пол; этаж|I live on the second floor.
+furniture|мебель|We bought new furniture last month.
+neighbour|сосед|Our neighbour is very friendly.
+rent|аренда; снимать|They rent a small flat in the city.
+key|ключ|I can't find my keys.
+lamp|лампа|Turn on the lamp, it's dark.
+to clean|убирать|I clean the flat on Saturdays.
+laundry|стирка; бельё|I do the laundry on Sunday.
+# ✈️ Путешествия
+ticket|билет|I need two tickets to Berlin.
+passport|паспорт|Don't forget your passport.
+luggage|багаж|My luggage is very heavy.
+airport|аэропорт|The airport is far from the city.
+hotel|отель|We stayed in a small hotel.
+reservation|бронь|I have a reservation for two nights.
+map|карта|Can you show me on the map?
+journey|поездка, путь|It was a long journey.
+tourist|турист|There are many tourists in summer.
+platform|платформа (на вокзале)|The train leaves from platform five.
+delay|задержка|There is a delay of one hour.
+abroad|за границей|She often travels abroad.
+# 💼 Работа
+job|работа, должность|I'm looking for a new job.
+boss|начальник|My boss is very kind.
+colleague|коллега|My colleagues are friendly.
+meeting|встреча, совещание|We have a meeting at ten.
+salary|зарплата|The salary is good.
+office|офис|I go to the office by bus.
+interview|собеседование|I have a job interview tomorrow.
+deadline|крайний срок|The deadline is on Friday.
+experience|опыт|She has a lot of experience.
+skill|навык|Communication is an important skill.
+customer|клиент|The customer is always right.
+to apply|подавать заявку|I want to apply for this job.
+# 🛍 Покупки
+price|цена|What is the price of this bag?
+cheap|дешёвый|This shirt is cheap.
+expensive|дорогой|The hotel is too expensive.
+discount|скидка|There is a 20% discount today.
+receipt|чек|Keep the receipt, please.
+basket|корзина|Put the apples in the basket.
+size|размер|Do you have this in a bigger size?
+cash|наличные|Can I pay in cash?
+to pay|платить|I'll pay by card.
+change|сдача; менять|Here is your change.
+refund|возврат денег|I'd like a refund, please.
+to try on|примерять|Can I try on these shoes?
+# 🏃 Здоровье и спорт
+headache|головная боль|I have a terrible headache.
+medicine|лекарство|Take this medicine twice a day.
+doctor|врач|You should see a doctor.
+healthy|здоровый, полезный|Fruit is healthy.
+exercise|упражнение; заниматься|I exercise three times a week.
+gym|спортзал|He goes to the gym after work.
+tired|уставший|I'm very tired today.
+pain|боль|I have a pain in my back.
+cold|простуда|I think I have a cold.
+appointment|приём (у врача)|I have an appointment at three.
+fever|температура, жар|The child has a fever.
+to sleep|спать|I need to sleep more.
+# 🔁 Частые глаголы
+to wake up|просыпаться|I wake up at seven.
+to get up|вставать|I get up early on weekdays.
+to look for|искать|I'm looking for my phone.
+to give up|сдаваться, бросать|Don't give up!
+to find out|узнавать|I want to find out the truth.
+to turn on|включать|Please turn on the light.
+to turn off|выключать|Turn off the TV, please.
+to wait for|ждать|I'm waiting for the bus.
+to take care of|заботиться о|She takes care of her grandmother.
+to come back|возвращаться|When will you come back?
+to pick up|забирать|I pick up my son from school.
+to put on|надевать|Put on your jacket, it's cold.
+# 👥 Люди и чувства
+friend|друг|She is my best friend.
+happy|счастливый|I'm happy to see you.
+sad|грустный|He looks sad today.
+angry|злой, сердитый|My boss was angry.
+worried|обеспокоенный|I'm worried about the exam.
+excited|взволнованный (радостно)|We're excited about the trip.
+proud|гордый|I'm proud of you.
+lonely|одинокий|She feels lonely in a new city.
+polite|вежливый|The waiter was very polite.
+shy|застенчивый|He is shy with strangers.
+kind|добрый|My grandmother is very kind.
+honest|честный|Be honest with me.
+# 🌤 Погода и природа
+weather|погода|The weather is nice today.
+sunny|солнечный|It's a sunny day.
+cloudy|облачный|Tomorrow will be cloudy.
+rain|дождь|I don't like rain.
+wind|ветер|There is a strong wind.
+snow|снег|Children love snow.
+fog|туман|Be careful, there is fog.
+storm|гроза, буря|A storm is coming.
+forest|лес|We walked in the forest.
+river|река|The river is very wide.
+mountain|гора|They climb mountains every summer.
+temperature|температура|The temperature is minus five.

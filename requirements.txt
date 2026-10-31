@@ -1,0 +1,6 @@
+aiogram>=3.13,<4
+gspread>=6.0,<7
+google-auth>=2.30
+gTTS>=2.5
+deep-translator>=1.11
+tzdata

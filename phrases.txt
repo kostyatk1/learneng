@@ -1,0 +1,32 @@
+// формат: русская фраза|вариант1/вариант2/...  (проверка чуть прощает опечатки)
+Где находится ближайшая станция?|Where is the nearest station?
+Сколько это стоит?|How much is it?/How much does it cost?
+Я хочу заказать кофе.|I want to order a coffee./I would like to order a coffee./I'd like to order a coffee.
+Можно счёт, пожалуйста?|Can I have the bill, please?/Could I have the bill, please?/Can we have the bill, please?
+Я живу в маленькой квартире.|I live in a small flat./I live in a small apartment.
+Мне нужно купить хлеб и молоко.|I need to buy bread and milk./I have to buy bread and milk.
+Какая сегодня погода?|What is the weather like today?/What's the weather like today?/How is the weather today?
+Мой друг работает в банке.|My friend works in a bank./My friend works at a bank.
+Я не понимаю этот вопрос.|I don't understand this question./I do not understand this question.
+Поезд отправляется в девять часов.|The train leaves at nine o'clock./The train leaves at nine./The train leaves at 9 o'clock.
+У меня болит голова.|I have a headache./My head hurts./My head aches.
+Мы вчера ходили в магазин.|We went to the shop yesterday./We went to the store yesterday./Yesterday we went to the shop.
+Я люблю читать книги по вечерам.|I like reading books in the evening./I like to read books in the evening./I love reading books in the evening./I love to read books in the evening.
+Она каждый день ездит на работу на автобусе.|She goes to work by bus every day./She goes to work by bus./Every day she goes to work by bus.
+Сегодня холодно, надень куртку.|It's cold today, put on your jacket./It is cold today, put on your jacket.
+Ты можешь мне помочь?|Can you help me?/Could you help me?
+Я ищу свои ключи.|I'm looking for my keys./I am looking for my keys.
+Мы встретились в кафе.|We met in a cafe./We met in a café./We met at a cafe.
+Где здесь ближайшая аптека?|Where is the nearest pharmacy?/Where's the nearest pharmacy?/Where is the nearest chemist?
+Мне нравится эта музыка.|I like this music.
+У вас есть свободный номер?|Do you have a free room?/Do you have a room available?/Do you have any rooms available?
+Мы устали после работы.|We are tired after work./We're tired after work.
+В воскресенье мы не работаем.|We don't work on Sunday./We don't work on Sundays./We do not work on Sunday.
+Он обычно встаёт в семь часов.|He usually gets up at seven./He usually gets up at seven o'clock./He usually wakes up at seven.
+Извините, мы опоздали.|Sorry, we are late./Sorry, we're late./Sorry we are late./Excuse me, we are late.
+Что ты делаешь сегодня вечером?|What are you doing this evening?/What are you doing tonight?
+Мне нужен билет до Берлина.|I need a ticket to Berlin./I need a ticket for Berlin.
+Я хочу стакан воды.|I want a glass of water./I would like a glass of water./I'd like a glass of water.
+Дети играют в парке.|The children are playing in the park./Children are playing in the park./The kids are playing in the park.
+Это очень вкусный суп.|This soup is very tasty./This is very tasty soup./This is a very tasty soup./This soup is very delicious.
+Я не люблю ждать.|I don't like waiting./I don't like to wait./I do not like waiting./I do not like to wait.

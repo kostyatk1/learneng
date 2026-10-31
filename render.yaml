@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: english-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    healthCheckPath: /health
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: CRON_KEY
+        generateValue: true
+      - key: GOOGLE_CREDS_JSON
+        sync: false
+      - key: SHEET_ID
+        sync: false
+      - key: ALLOWED_IDS
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: DEFAULT_TZ
+        value: Europe/Berlin
