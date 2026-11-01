@@ -23,3 +23,9 @@ services:
         sync: false
       - key: DEFAULT_TZ
         value: Europe/Berlin
+      - key: MYMEMORY_EMAIL
+        sync: false
+      - key: GAS_URL
+        sync: false
+      - key: GAS_KEY
+        sync: false

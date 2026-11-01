@@ -112,6 +112,10 @@ def _build_index():
     for w in ALL_WORDS + ALL_SLANG:
         en2ru.setdefault(canon(w["en"]), w)
         ru2en.setdefault(w["ru"].lower().strip(), w)
+        for part in re.split(r"[;,/]|\s\(", re.sub(r"\)", "", w["ru"].lower())):   # «пол; этаж» → «пол», «этаж»
+            part = part.strip()
+            if part and not part.startswith("(") and len(part) > 2:
+                ru2en.setdefault(part, w)
     for p in PHRASES:
         for v in p["en"]:
             en2ru.setdefault(canon(v), {"en": v, "ru": p["ru"], "ex": "", "tr": "", "note": ""})

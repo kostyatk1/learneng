@@ -757,6 +757,16 @@ async def cmd_note(m: Message):
     await m.answer(f"💌 Записка добавлена (всего {len(store.notes)}).")
 
 
+@router.message(Command("diag"))
+async def cmd_diag(m: Message):
+    if m.from_user.id != ADMIN_ID:
+        return
+    await m.answer("🔧 Проверяю переводчики…")
+    lines = await translator.diagnose()
+    note = "" if translator.GAS_URL else "\n\n<i>GAS_URL не задан — свой переводчик на Google Apps Script не подключён.</i>"
+    await m.answer("🔧 <b>Диагностика перевода</b>\n\n" + "\n".join(esc(x) for x in lines) + note)
+
+
 @router.message(Command("msg"))
 async def cmd_msg(m: Message, bot: Bot):
     if m.from_user.id != ADMIN_ID:
@@ -798,9 +808,9 @@ async def on_text(m: Message, bot: Bot):
         r = await do_translate(text)
     except Exception as e:
         log.exception("translate failed: %s", e)
-        detail = f"\n<code>{esc(str(e)[:300])}</code>" if uid == ADMIN_ID else ""
-        await m.answer(f"Не получилось перевести 😕 Онлайн-переводчики сейчас недоступны ({type(e).__name__}). "
-                       f"Если слово есть в моих списках, я найду его и без интернета. Попробуй чуть позже.{detail}")
+        detail = f"\n\n<code>{esc(str(e)[:600])}</code>" if uid == ADMIN_ID else ""
+        await m.answer("Онлайн-переводчики сейчас перегружены 😕 Подожди минутку и отправь слово ещё раз. "
+                       f"Слова из моих списков я перевожу и без интернета.{detail}")
         return
     if "verb" in r:
         v = r["verb"]
