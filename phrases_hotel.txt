@@ -1,0 +1,59 @@
+// Фразы для отеля. Формат: русская фраза|вариант1/вариант2
+# 🏨 В отеле
+Я могу вам помочь?|Can I help you?
+У меня есть бронирование.|I have a reservation.
+Я забронировала номер.|I booked a room.
+Я хотела бы заселиться.|I would like to check in.
+Во сколько заселение?|What time is check-in?
+Во сколько выезд?|What time is check-out?
+Завтрак включён?|Is breakfast included?
+Где мой номер?|Where is my room?
+На каком это этаже?|What floor is it on?
+Где лифт?|Where is the elevator?
+Можно мне ещё одно полотенце?|Can I have another towel?
+Не могли бы вы убрать мой номер?|Could you clean my room?
+Номер грязный.|The room is dirty.
+В номере слишком шумно.|The room is too noisy.
+Кондиционер не работает.|The air conditioner doesn't work.
+Нет горячей воды.|There is no hot water.
+Wi-Fi не работает.|The Wi-Fi doesn't work.
+Мне нужна помощь.|I need help.
+Я потеряла ключ.|I lost my key.
+Можно поменять номер?|Can I change rooms?
+Я хотела бы выселиться.|I would like to check out.
+Можно оставить здесь багаж?|Can I leave my luggage here?
+Номер не чистый.|The room is not clean.
+Нет Wi-Fi.|There is no Wi-Fi.
+Нет полотенец.|There are no towels.
+Отопление не работает.|The heating doesn't work.
+Соседи шумные.|The neighbors are noisy.
+Можете, пожалуйста, проверить это ещё раз?|Can you check this again, please?
+Пожалуйста, пришлите кого-нибудь в мой номер.|Please send someone to my room.
+Я хотела бы более тихий номер.|I would like a quieter room.
+В номере есть проблема.|The room has a problem.
+Сколько это стоит за ночь?|How much is it per night?
+Есть более дешёвый номер?|Is there a cheaper room?
+Можно оплатить картой?|Can I pay by card?
+Можно оплатить наличными?|Can I pay in cash?
+Можно посмотреть номер?|Can I see the room?
+Я хотела бы забронировать номер.|I would like to book a room.
+Мне нужен номер на две ночи.|I need a room for two nights.
+Мы остаёмся на одну неделю.|We are staying for one week.
+Какой пароль от Wi-Fi?|What is the Wi-Fi password?
+Где я могу позавтракать?|Where can I get breakfast?
+Во сколько завтрак?|What time is breakfast?
+В отеле есть ресторан?|Is there a restaurant in the hotel?
+Можно дополнительную кровать?|Can I have an extra bed?
+Можно поздний выезд?|Can I have a late check-out?
+Где я могу оставить чемодан?|Where can I leave my suitcase?
+Ключ-карта не работает.|The key card doesn't work.
+Телевизор не работает.|The TV doesn't work.
+Душ не работает.|The shower doesn't work.
+В номере очень холодно.|The room is very cold.
+В номере очень жарко.|The room is very hot.
+Номер слишком маленький.|The room is too small.
+Я довольна номером.|I am happy with the room.
+Я недовольна обслуживанием.|I am not happy with the service.
+Спасибо за вашу помощь.|Thank you for your help.
+Хорошего пребывания.|Have a nice stay.
+Хорошего дня.|Have a nice day.

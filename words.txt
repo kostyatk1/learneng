@@ -1,4 +1,4 @@
-// формат: english|перевод|пример. Строки с # — названия тем.
+// Формат: english|перевод|пример|транскрипция (последнее поле необязательно). Строки с # — названия тем. Американский английский.
 # 🍎 Еда и кафе
 apple|яблоко|I eat an apple every day.
 bread|хлеб|We need fresh bread for breakfast.
@@ -7,41 +7,216 @@ chicken|курица|I usually cook chicken with rice.
 vegetables|овощи|Eat more vegetables, they are healthy.
 breakfast|завтрак|I have breakfast at eight o'clock.
 menu|меню|Can I see the menu, please?
-bill|счёт (в кафе)|Could we have the bill, please?
+check|счёт в ресторане|Can we get the check, please?
+bill|счёт; купюра|I paid the electric bill online.
 tasty|вкусный|This soup is very tasty.
 hungry|голодный|I'm hungry. Let's have lunch.
 to order|заказывать|Are you ready to order?
-sugar|сахар|Do you take sugar in your tea?
+sugar|сахар|Do you take sugar in your coffee?
+soup|суп|The soup is hot.
+salad|салат|I'd like a salad with chicken.
+sandwich|сэндвич|He made a sandwich for lunch.
+french fries|картофель фри|Can I have a burger and french fries?
+rice|рис|We had rice and beans for dinner.
+pasta|паста, макароны|I love pasta with tomato sauce.
+fish|рыба|My dad cooks fish on Fridays.
+meat|мясо|She doesn't eat meat.
+beef|говядина|The beef was very tender.
+eggs|яйца|I'd like two eggs and toast.
+butter|сливочное масло|Put some butter on the bread.
+milk|молоко|Do you want milk in your coffee?
+juice|сок|I drink orange juice in the morning.
+soda|газировка|Can I have a soda, please?
+cookie|печенье|These cookies are still warm.
+candy|конфеты|Kids love candy.
+dessert|десерт|What's for dessert?
+snack|перекус|I need a snack before the gym.
+dinner|ужин|We have dinner at seven.
+lunch|обед|Let's have lunch together.
+waiter|официант|The waiter brought our drinks.
+waitress|официантка|The waitress was very friendly.
+tip|чаевые|In the US, you leave a tip of about 20 percent.
+to go|с собой|Can I get this to go?
+refill|долив (напитка)|Can I get a refill, please?
+napkin|салфетка|Can I have a napkin, please?
+fork|вилка|I need a clean fork.
+spoon|ложка|Use a spoon for the soup.
+knife|нож|Be careful with that knife.
+plate|тарелка|She put the pizza on a plate.
+glass|стакан; стекло|I'd like a glass of water.
+cup|чашка|He drank a cup of tea.
+spicy|острый (о еде)|I don't like spicy food.
+sweet|сладкий|This cake is too sweet.
+salty|солёный|The soup is a little salty.
+fresh|свежий|The fruit is fresh.
+to cook|готовить|I cook dinner every night.
+to bake|печь (в духовке)|She bakes a cake every Sunday.
+delicious|очень вкусный|The pie was delicious.
 # 🏠 Дом и быт
+apartment|квартира|We live in a small apartment.
 kitchen|кухня|My mother is in the kitchen.
 bedroom|спальня|The bedroom is quiet and dark.
-bathroom|ванная|The bathroom is next to the kitchen.
+bathroom|ванная, туалет|The bathroom is next to the kitchen.
+living room|гостиная|We watch TV in the living room.
 window|окно|Please open the window.
 floor|пол; этаж|I live on the second floor.
 furniture|мебель|We bought new furniture last month.
-neighbour|сосед|Our neighbour is very friendly.
-rent|аренда; снимать|They rent a small flat in the city.
+neighbor|сосед|Our neighbor is very friendly.
+rent|аренда; снимать|They rent a small apartment downtown.
+landlord|арендодатель, хозяин жилья|The landlord fixed the heater.
 key|ключ|I can't find my keys.
 lamp|лампа|Turn on the lamp, it's dark.
-to clean|убирать|I clean the flat on Saturdays.
+to clean|убирать|I clean the apartment on Saturdays.
 laundry|стирка; бельё|I do the laundry on Sunday.
-# ✈️ Путешествия
-ticket|билет|I need two tickets to Berlin.
-passport|паспорт|Don't forget your passport.
-luggage|багаж|My luggage is very heavy.
+dishes|посуда|Who's going to wash the dishes?
+trash|мусор|Please take out the trash.
+vacuum cleaner|пылесос|Where is the vacuum cleaner?
+fridge|холодильник|There is milk in the fridge.
+stove|плита|Don't leave the stove on.
+oven|духовка|The oven is very hot.
+microwave|микроволновка|Heat it in the microwave.
+sink|раковина|The sink is full of dishes.
+bathtub|ванна|She relaxes in the bathtub.
+mirror|зеркало|There is a big mirror in the hall.
+blanket|одеяло, плед|I need another blanket.
+pillow|подушка|This pillow is very soft.
+towel|полотенце|Here is a clean towel.
+closet|шкаф, гардероб|My clothes are in the closet.
+shelf|полка|Put the books on the shelf.
+couch|диван|The cat is sleeping on the couch.
+yard|двор, участок|The kids play in the yard.
+garage|гараж|The car is in the garage.
+stairs|лестница|Take the stairs to the third floor.
+doorbell|дверной звонок|Someone rang the doorbell.
+heater|обогреватель|Turn on the heater, it's cold.
+curtain|штора|Close the curtains, please.
+# ✈️ Travel: аэропорт и перелёт
 airport|аэропорт|The airport is far from the city.
-hotel|отель|We stayed in a small hotel.
-reservation|бронь|I have a reservation for two nights.
-map|карта|Can you show me on the map?
-journey|поездка, путь|It was a long journey.
-tourist|турист|There are many tourists in summer.
-platform|платформа (на вокзале)|The train leaves from platform five.
+flight|рейс, перелёт|Our flight leaves at six.
+ticket|билет|I need two tickets to Berlin.
+boarding pass|посадочный талон|Please show your boarding pass.
+passport|паспорт|Don't forget your passport.
+visa|виза|Do I need a visa for Canada?
+luggage|багаж|My luggage is very heavy.
+baggage claim|получение багажа|Meet me at baggage claim.
+carry-on|ручная кладь|I only have a carry-on.
+suitcase|чемодан|Her suitcase is very big.
+to check in|регистрироваться на рейс|You can check in online.
+security|досмотр, охрана|We waited in the security line.
+customs|таможня|We went through customs quickly.
+gate|выход на посадку|Your gate is B12.
+terminal|терминал|Our flight leaves from Terminal 2.
+departure|вылет, отправление|The departure time is 8:30.
+arrival|прибытие|What is the arrival time?
 delay|задержка|There is a delay of one hour.
+canceled|отменён|My flight was canceled.
+layover|пересадка (остановка между рейсами)|We have a three-hour layover in Chicago.
+connecting flight|стыковочный рейс|I missed my connecting flight.
+direct flight|прямой рейс|Is there a direct flight to Miami?
+window seat|место у окна|I always ask for a window seat.
+aisle seat|место у прохода|He prefers an aisle seat.
+seat belt|ремень безопасности|Please fasten your seat belt.
+to board|садиться (в самолёт)|Passengers are now boarding.
+to land|приземляться|The plane will land in ten minutes.
+to take off|взлетать|The plane takes off at noon.
+pilot|пилот|The pilot welcomed us on board.
+flight attendant|бортпроводник|The flight attendant brought us water.
+round-trip|туда и обратно|I bought a round-trip ticket.
+one-way|в одну сторону|A one-way ticket is cheaper.
+passport control|паспортный контроль|The passport control line was long.
+overhead bin|багажная полка в салоне|Put your bag in the overhead bin.
+jet lag|смена часовых поясов, джетлаг|I have terrible jet lag.
+duty-free|беспошлинный (магазин)|We bought perfume at the duty-free shop.
+tourist|турист|There are many tourists in summer.
 abroad|за границей|She often travels abroad.
+currency exchange|обмен валюты|Where is the currency exchange?
+to book|бронировать|I want to book a flight.
+# 🚌 Travel: транспорт и дорога
+bus|автобус|The bus is late again.
+train|поезд|The train leaves at nine.
+subway|метро|I take the subway to work.
+taxi|такси|Let's take a taxi.
+rental car|арендованная машина|We got a rental car at the airport.
+driver's license|водительские права|Do you have a driver's license?
+gas station|заправка|Is there a gas station near here?
+gas|бензин|Gas is expensive here.
+highway|шоссе|We drove on the highway for hours.
+traffic|движение, пробки|There is a lot of traffic today.
+traffic jam|пробка|We were stuck in a traffic jam.
+parking lot|парковка|The parking lot is full.
+to park|парковаться|You can't park here.
+road|дорога|The road is closed.
+street|улица|Our hotel is on Main Street.
+corner|угол|The store is on the corner.
+intersection|перекрёсток|Turn left at the next intersection.
+traffic light|светофор|Stop at the traffic light.
+crosswalk|пешеходный переход|Use the crosswalk.
+bridge|мост|We crossed the bridge.
+sidewalk|тротуар|Walk on the sidewalk.
+bus stop|автобусная остановка|Where is the bus stop?
+platform|платформа (на вокзале)|The train leaves from platform five.
+station|станция, вокзал|How do I get to the station?
+schedule|расписание|Check the bus schedule.
+route|маршрут|What is the best route to the city?
+fare|стоимость проезда|The fare is two dollars.
+to get on|садиться (в транспорт)|Get on the bus at the next stop.
+to get off|выходить (из транспорта)|I'll get off at the next stop.
+to transfer|делать пересадку|You need to transfer at Central Station.
+GPS|навигатор|My GPS says turn left.
+turn left|поверните налево|Turn left at the light.
+turn right|поверните направо|Turn right after the bank.
+go straight|идти прямо|Go straight for two blocks.
+block|квартал (городской)|The museum is two blocks away.
+across from|напротив|The hotel is across from the park.
+next to|рядом с|The bank is next to the pharmacy.
+between|между|The cafe is between the bank and the bookstore.
+in front of|перед, напротив|Meet me in front of the station.
+behind|позади, за|The parking lot is behind the building.
+far|далеко|Is it far from here?
+nearby|поблизости|Is there a restaurant nearby?
+lost|потерявшийся, заблудившийся|Excuse me, I'm lost.
+# 🗺 Travel: город и туризм
+sightseeing|осмотр достопримечательностей|We went sightseeing all day.
+guide|гид; путеводитель|Our guide was very funny.
+tour|экскурсия, тур|We took a city tour.
+museum|музей|The museum opens at ten.
+castle|замок|We visited an old castle.
+park|парк|Let's have a picnic in the park.
+beach|пляж|The beach was crowded.
+island|остров|They live on a small island.
+lake|озеро|The lake is beautiful in the morning.
+souvenir|сувенир|I bought a souvenir for my mom.
+postcard|открытка|She sent me a postcard from Rome.
+camera|фотоаппарат|Don't forget your camera.
+photo|фотография|Can you take a photo of us?
+ticket office|касса|The ticket office is on the left.
+entrance|вход|The entrance is around the corner.
+exit|выход|Where is the exit?
+open|открыт|The museum is open until five.
+closed|закрыт|The restaurant is closed on Mondays.
+crowded|многолюдный|The square was very crowded.
+attraction|достопримечательность|The tower is the main attraction.
+landmark|знаковое место|The bridge is a famous landmark.
+neighborhood|район|It's a quiet neighborhood.
+city center|центр города|Our hotel is in the city center.
+itinerary|маршрут поездки, план|Here is our itinerary for the week.
+vacation|отпуск, каникулы|We're on vacation in Spain.
+trip|поездка|It was a great trip.
+backpack|рюкзак|He packed his backpack.
+sunscreen|солнцезащитный крем|Don't forget the sunscreen.
+sunglasses|солнцезащитные очки|I lost my sunglasses.
+swimsuit|купальник|She packed a swimsuit.
+adventure|приключение|The trip was a real adventure.
+view|вид|The view from the hotel is amazing.
+to explore|исследовать|I want to explore the old town.
+to rent|арендовать|We rented bikes for the day.
+to pack|упаковывать вещи|I need to pack tonight.
+to travel|путешествовать|They love to travel.
+local|местный|Let's try the local food.
 # 💼 Работа
 job|работа, должность|I'm looking for a new job.
 boss|начальник|My boss is very kind.
-colleague|коллега|My colleagues are friendly.
+coworker|коллега|My coworkers are friendly.
 meeting|встреча, совещание|We have a meeting at ten.
 salary|зарплата|The salary is good.
 office|офис|I go to the office by bus.
@@ -51,19 +226,59 @@ experience|опыт|She has a lot of experience.
 skill|навык|Communication is an important skill.
 customer|клиент|The customer is always right.
 to apply|подавать заявку|I want to apply for this job.
+resume|резюме|Please send me your resume.
+shift|смена|I work the night shift.
+full-time|полный рабочий день|He has a full-time job.
+part-time|неполный рабочий день|She works part-time.
+manager|менеджер|The manager is in a meeting.
+employee|сотрудник|The company has fifty employees.
+team|команда|Our team is great.
+project|проект|We finished the project on time.
+task|задача|My first task is to answer emails.
+report|отчёт|I have to write a report.
+email|электронное письмо|I'll send you an email.
+break|перерыв|Let's take a ten-minute break.
+overtime|сверхурочные|He worked overtime last night.
+raise|повышение зарплаты|I asked my boss for a raise.
+promotion|повышение в должности|She got a promotion.
+paycheck|зарплатный чек|I get my paycheck on Friday.
+business trip|командировка|He is on a business trip.
+contract|контракт|Read the contract carefully.
+to hire|нанимать|They want to hire a new designer.
+to fire|увольнять|The company fired ten people.
+to quit|уволиться, бросать|He quit his job last month.
+remote work|удалённая работа|I do remote work two days a week.
 # 🛍 Покупки
 price|цена|What is the price of this bag?
 cheap|дешёвый|This shirt is cheap.
 expensive|дорогой|The hotel is too expensive.
-discount|скидка|There is a 20% discount today.
+discount|скидка|There is a 20 percent discount today.
+sale|распродажа|Everything is on sale.
 receipt|чек|Keep the receipt, please.
-basket|корзина|Put the apples in the basket.
+cart|тележка, корзина|Put the apples in the cart.
 size|размер|Do you have this in a bigger size?
 cash|наличные|Can I pay in cash?
+credit card|кредитная карта|Do you take credit cards?
 to pay|платить|I'll pay by card.
 change|сдача; менять|Here is your change.
 refund|возврат денег|I'd like a refund, please.
 to try on|примерять|Can I try on these shoes?
+fitting room|примерочная|The fitting room is in the back.
+store|магазин|The store closes at nine.
+mall|торговый центр|We went to the mall on Saturday.
+checkout|касса|There is a long line at the checkout.
+cashier|кассир|The cashier was very nice.
+shopping bag|пакет с покупками|Do you need a shopping bag?
+customer service|служба поддержки клиентов|Call customer service.
+to return|возвращать (товар)|I want to return this sweater.
+to exchange|обменивать|Can I exchange it for a larger size?
+coupon|купон|I have a coupon for ten dollars.
+in stock|есть в наличии|Is this jacket in stock?
+out of stock|нет в наличии|That size is out of stock.
+gift|подарок|I'm looking for a gift for my sister.
+wallet|кошелёк|I left my wallet at home.
+brand|бренд|This is my favorite brand.
+grocery store|продуктовый магазин|I'm going to the grocery store.
 # 🏃 Здоровье и спорт
 headache|головная боль|I have a terrible headache.
 medicine|лекарство|Take this medicine twice a day.
@@ -77,6 +292,29 @@ cold|простуда|I think I have a cold.
 appointment|приём (у врача)|I have an appointment at three.
 fever|температура, жар|The child has a fever.
 to sleep|спать|I need to sleep more.
+cough|кашель; кашлять|I have a bad cough.
+sore throat|больное горло|I have a sore throat.
+runny nose|насморк|I have a runny nose.
+allergy|аллергия|He has an allergy to nuts.
+pharmacy|аптека|The pharmacy is open until ten.
+prescription|рецепт (на лекарство)|The doctor gave me a prescription.
+vitamin|витамин|I take a vitamin every morning.
+injury|травма|He has a knee injury.
+bandage|бинт, повязка|I need a bandage.
+dentist|стоматолог|I have a dentist appointment tomorrow.
+hospital|больница|She works at a hospital.
+emergency|экстренная ситуация|Call 911 in an emergency.
+ambulance|скорая помощь|Call an ambulance!
+health insurance|медицинская страховка|Do you have health insurance?
+to recover|выздоравливать|He is recovering after the surgery.
+dizzy|с головокружением|I feel dizzy.
+stomachache|боль в животе|I have a stomachache.
+rest|отдых; отдыхать|You need to rest.
+workout|тренировка|My workout was hard today.
+to run|бегать|I run every morning.
+to swim|плавать|We swim on Saturdays.
+to stretch|растягиваться|Stretch before you run.
+yoga|йога|She does yoga every day.
 # 🔁 Частые глаголы
 to wake up|просыпаться|I wake up at seven.
 to get up|вставать|I get up early on weekdays.
@@ -90,6 +328,29 @@ to take care of|заботиться о|She takes care of her grandmother.
 to come back|возвращаться|When will you come back?
 to pick up|забирать|I pick up my son from school.
 to put on|надевать|Put on your jacket, it's cold.
+to take off|снимать (одежду)|Take off your shoes, please.
+to look after|присматривать за|Can you look after my dog?
+to go out|выходить, гулять|Let's go out tonight.
+to sit down|садиться|Please sit down.
+to stand up|вставать|Everyone stood up.
+to hang out|проводить время, тусоваться|We hang out on weekends.
+to check out|проверять; выписываться|Check out this video!
+to figure out|разобраться, понять|I can't figure out this problem.
+to get along|ладить|I get along with my neighbors.
+to run out of|заканчиваться (о запасах)|We ran out of milk.
+to show up|появляться, приходить|He didn't show up.
+to set up|настраивать, организовывать|I set up my new phone.
+to call back|перезвонить|I'll call you back later.
+to fill out|заполнять (форму)|Please fill out this form.
+to drop off|подбросить, оставить|I'll drop you off at the station.
+to try out|пробовать|I want to try out the new cafe.
+to throw away|выбрасывать|Don't throw away the box.
+to work out|тренироваться; получаться|Everything worked out well.
+to hurry up|торопиться|Hurry up, we're late!
+to calm down|успокаиваться|Calm down, everything is fine.
+to slow down|замедляться|Please slow down.
+to mean|значить|What does this word mean?
+to remember|помнить|I remember her name.
 # 👥 Люди и чувства
 friend|друг|She is my best friend.
 happy|счастливый|I'm happy to see you.
@@ -103,16 +364,334 @@ polite|вежливый|The waiter was very polite.
 shy|застенчивый|He is shy with strangers.
 kind|добрый|My grandmother is very kind.
 honest|честный|Be honest with me.
+nervous|нервничающий|I'm nervous before the interview.
+bored|скучающий|I'm bored. Let's do something.
+surprised|удивлённый|I was surprised to see her.
+embarrassed|смущённый|He was embarrassed by his mistake.
+confused|растерянный|I'm confused. Can you explain?
+jealous|ревнивый, завистливый|She is jealous of her sister.
+grateful|благодарный|I'm grateful for your help.
+curious|любопытный|Kids are curious about everything.
+patient|терпеливый|Be patient, please.
+rude|грубый|That was rude.
+funny|смешной|He is a very funny guy.
+smart|умный|She is a smart girl.
+lazy|ленивый|I feel lazy today.
+generous|щедрый|He is very generous.
+brave|смелый|The firefighter was brave.
+friendly|дружелюбный|The people here are very friendly.
+creative|творческий|She has a creative job.
+stubborn|упрямый|My brother is so stubborn.
+upset|расстроенный|I'm upset about the news.
+relaxed|расслабленный|I feel relaxed on vacation.
+stressed|в стрессе|I'm stressed at work.
+scared|напуганный|I'm scared of spiders.
+disappointed|разочарованный|We were disappointed with the movie.
 # 🌤 Погода и природа
 weather|погода|The weather is nice today.
 sunny|солнечный|It's a sunny day.
 cloudy|облачный|Tomorrow will be cloudy.
 rain|дождь|I don't like rain.
 wind|ветер|There is a strong wind.
-snow|снег|Children love snow.
+snow|снег|Kids love snow.
 fog|туман|Be careful, there is fog.
 storm|гроза, буря|A storm is coming.
 forest|лес|We walked in the forest.
 river|река|The river is very wide.
 mountain|гора|They climb mountains every summer.
 temperature|температура|The temperature is minus five.
+hot|жаркий|It's really hot today.
+warm|тёплый|The water is warm.
+cool|прохладный|The evenings are cool.
+freezing|очень холодный, ледяной|It's freezing outside!
+windy|ветреный|It's windy today.
+rainy|дождливый|It was a rainy weekend.
+humid|влажный|Summers here are hot and humid.
+thunder|гром|I heard thunder.
+lightning|молния|The lightning was bright.
+rainbow|радуга|Look, a rainbow!
+umbrella|зонт|Take an umbrella with you.
+forecast|прогноз|What's the weather forecast?
+spring|весна|Flowers bloom in spring.
+summer|лето|We travel in the summer.
+fall|осень|The leaves change color in the fall.
+winter|зима|Winter is my favorite season.
+flower|цветок|She bought some flowers.
+tree|дерево|The tree is very old.
+grass|трава|The grass is wet.
+sky|небо|The sky is clear tonight.
+moon|луна|The moon is full tonight.
+star|звезда|We watched the stars.
+ocean|океан|The ocean is so big.
+desert|пустыня|The desert is hot and dry.
+hill|холм|We climbed the hill.
+# 👨‍👩‍👧 Семья и отношения
+mom|мама|My mom is a teacher.
+dad|папа|My dad cooks on weekends.
+parents|родители|My parents live in Ohio.
+brother|брат|My brother is older than me.
+sister|сестра|I have a younger sister.
+grandmother|бабушка|My grandmother makes great cookies.
+grandfather|дедушка|My grandfather tells funny stories.
+aunt|тётя|My aunt lives in Texas.
+uncle|дядя|My uncle is a pilot.
+cousin|двоюродный брат/сестра|I'm visiting my cousin this weekend.
+niece|племянница|My niece is five years old.
+nephew|племянник|My nephew loves dinosaurs.
+son|сын|Their son is in college.
+daughter|дочь|We have a daughter.
+husband|муж|My husband is at work.
+wife|жена|His wife is a doctor.
+boyfriend|парень, бойфренд|Her boyfriend is very nice.
+girlfriend|девушка, подруга (романтическая)|He called his girlfriend.
+in-laws|родственники мужа/жены|We're visiting my in-laws.
+baby|малыш|The baby is sleeping.
+kid|ребёнок|They have two kids.
+teenager|подросток|My neighbor's son is a teenager.
+relatives|родственники|All my relatives came to the wedding.
+wedding|свадьба|We went to a wedding on Saturday.
+couple|пара|They are a lovely couple.
+anniversary|годовщина|Today is our anniversary.
+roommate|сосед по комнате|My roommate is from Canada.
+to get married|пожениться|They got married last year.
+to date|встречаться (романтически)|They've been dating for two years.
+best friend|лучший друг|She is my best friend.
+# 👕 Одежда
+shirt|рубашка|He wore a white shirt.
+T-shirt|футболка|I bought a blue T-shirt.
+pants|брюки|These pants are too long.
+jeans|джинсы|I wear jeans every day.
+sweater|свитер|Put on a sweater, it's cold.
+hoodie|худи|He is wearing a gray hoodie.
+jacket|куртка, пиджак|Take your jacket with you.
+coat|пальто|She bought a new coat.
+dress|платье|She wore a red dress.
+skirt|юбка|I love this skirt.
+shorts|шорты|It's hot, so I'm wearing shorts.
+socks|носки|I need new socks.
+shoes|обувь|These shoes are very comfortable.
+sneakers|кроссовки|I wear sneakers to the gym.
+boots|ботинки, сапоги|Wear boots in the snow.
+sandals|сандалии|She wears sandals in summer.
+hat|шляпа, шапка|He wore a funny hat.
+cap|кепка|Nice cap!
+scarf|шарф|Wear a scarf, it's windy.
+gloves|перчатки|Don't forget your gloves.
+belt|ремень|I need a new belt.
+suit|костюм|He wore a suit to the interview.
+pajamas|пижама|I stay in my pajamas on Sunday.
+underwear|нижнее бельё|Pack extra underwear.
+purse|женская сумка|She put her phone in her purse.
+pocket|карман|My keys are in my pocket.
+button|пуговица|A button fell off my coat.
+zipper|молния (застёжка)|The zipper is broken.
+to wear|носить, быть одетым в|She wears glasses.
+to fit|подходить по размеру|These jeans don't fit me.
+# 🎬 Хобби и досуг
+hobby|хобби|My hobby is photography.
+movie|фильм|Let's watch a movie tonight.
+TV show|телешоу, сериал|What's your favorite TV show?
+music|музыка|I listen to music all day.
+song|песня|This is my favorite song.
+concert|концерт|We went to a concert.
+book|книга|I'm reading a good book.
+novel|роман|She wrote a novel.
+to draw|рисовать|He likes to draw.
+to paint|красить; писать красками|She paints landscapes.
+to dance|танцевать|They love to dance.
+to sing|петь|She sings in the shower.
+to play|играть|He plays the guitar.
+gardening|садоводство|Gardening is relaxing.
+board game|настольная игра|We played board games all night.
+video game|видеоигра|My son plays video games.
+party|вечеринка|We're having a party on Saturday.
+to go for a walk|идти гулять|Let's go for a walk.
+camping|поход с палаткой|We went camping last summer.
+fishing|рыбалка|My dad loves fishing.
+hiking|пеший поход|We went hiking in the mountains.
+biking|катание на велосипеде|Biking is fun.
+soccer|футбол|The kids play soccer.
+football|американский футбол|Football is very popular in the US.
+baseball|бейсбол|We watched a baseball game.
+basketball|баскетбол|He plays basketball every day.
+picnic|пикник|Let's have a picnic.
+to relax|расслабляться|I relax on the weekend.
+free time|свободное время|What do you do in your free time?
+weekend|выходные|What are you doing this weekend?
+to bake|печь|I like to bake cookies.
+# 📱 Технологии и интернет
+phone|телефон|Where's my phone?
+smartphone|смартфон|She has a new smartphone.
+laptop|ноутбук|I work on my laptop.
+tablet|планшет|He reads on his tablet.
+computer|компьютер|My computer is slow.
+screen|экран|The screen is broken.
+keyboard|клавиатура|I need a new keyboard.
+charger|зарядное устройство|Do you have a charger?
+battery|батарея|My battery is almost dead.
+password|пароль|I forgot my password.
+username|имя пользователя|Enter your username.
+text|сообщение (SMS); писать сообщение|Text me when you arrive.
+app|приложение|Download this app.
+website|веб-сайт|Visit our website.
+link|ссылка|Send me the link.
+to download|скачивать|I downloaded the file.
+to upload|загружать|Upload the photo here.
+Wi-Fi|вайфай|What's the Wi-Fi password?
+to log in|входить (в аккаунт)|I can't log in.
+to sign up|регистрироваться|Sign up for free.
+account|аккаунт, счёт|I created an account.
+to search|искать (в интернете)|Search for the address online.
+to click|нажимать, кликать|Click the link.
+to share|делиться|Share the photo with me.
+to delete|удалять|I deleted the message.
+to save|сохранять|Save the file.
+to stream|смотреть онлайн, стримить|We stream movies at home.
+notification|уведомление|I got a notification.
+settings|настройки|Open the settings.
+update|обновление; обновлять|You need to update the app.
+headphones|наушники|I forgot my headphones.
+social media|соцсети|She spends a lot of time on social media.
+video call|видеозвонок|We had a video call with grandma.
+screenshot|скриншот|I took a screenshot.
+# 🕒 Время, числа, даты
+today|сегодня|Today is Monday.
+tomorrow|завтра|See you tomorrow.
+yesterday|вчера|I saw her yesterday.
+tonight|сегодня вечером|What are you doing tonight?
+midnight|полночь|The party ended at midnight.
+noon|полдень|Let's meet at noon.
+weekday|будний день|I work on weekdays.
+week|неделя|I'll call you next week.
+month|месяц|My birthday is next month.
+year|год|This year was great.
+early|рано|I get up early.
+late|поздно, опоздавший|Sorry, I'm late.
+soon|скоро|See you soon!
+already|уже|I've already eaten.
+yet|ещё (в вопросах и отрицаниях)|I haven't finished yet.
+still|всё ещё|He is still sleeping.
+usually|обычно|I usually walk to work.
+always|всегда|She always smiles.
+never|никогда|I never drink coffee at night.
+sometimes|иногда|Sometimes we eat out.
+often|часто|We often go to the movies.
+rarely|редко|He rarely calls.
+every day|каждый день|I study English every day.
+once|один раз|I went there once.
+twice|дважды|He called twice.
+half|половина|Half of the pizza is gone.
+a quarter|четверть|It's a quarter to six.
+dozen|дюжина|I bought a dozen eggs.
+hundred|сто|There are a hundred people here.
+thousand|тысяча|It costs a thousand dollars.
+first|первый|This is my first trip.
+last|последний; длиться|This is the last bus.
+next|следующий|The next train is at six.
+a.m.|до полудня|The flight is at 7 a.m.
+p.m.|после полудня|The store closes at 9 p.m.
+all day|весь день|It rained all day.
+# 🧠 Полезные прилагательные и наречия
+big|большой|They have a big house.
+small|маленький|It's a small town.
+tall|высокий|My brother is tall.
+short|короткий; низкий|The movie is short.
+heavy|тяжёлый|This bag is heavy.
+easy|лёгкий, простой|The test was easy.
+difficult|трудный|The question is difficult.
+important|важный|This is an important meeting.
+dangerous|опасный|It's dangerous to swim here.
+safe|безопасный|The neighborhood is safe.
+clean|чистый|The room is clean.
+dirty|грязный|My shoes are dirty.
+quiet|тихий|It's a quiet street.
+loud|громкий|The music is too loud.
+busy|занятой|I'm busy right now.
+free|свободный; бесплатный|Is this seat free?
+ready|готовый|Are you ready?
+full|полный, сытый|I'm full.
+empty|пустой|The box is empty.
+wrong|неправильный|You have the wrong number.
+right|правильный; право|That's right!
+possible|возможный|Is it possible to change the date?
+strange|странный|That's strange.
+famous|известный|She is a famous singer.
+popular|популярный|This is a popular restaurant.
+new|новый|I bought a new phone.
+old|старый|It's an old building.
+modern|современный|The museum is very modern.
+beautiful|красивый|What a beautiful day!
+rich|богатый|He is a rich man.
+fast|быстрый; быстро|He drives fast.
+slow|медленный|The service is slow.
+quickly|быстро|Please come quickly.
+carefully|осторожно, внимательно|Read the instructions carefully.
+suddenly|вдруг|Suddenly, it started to rain.
+probably|вероятно|It will probably rain tomorrow.
+maybe|может быть|Maybe we can go tomorrow.
+almost|почти|We're almost there.
+enough|достаточно|I have enough money.
+too|слишком; тоже|It's too expensive.
+quite|довольно|The movie was quite good.
+really|действительно|I really like this place.
+especially|особенно|I love fruit, especially apples.
+exactly|точно|That's exactly what I mean.
+together|вместе|Let's go together.
+alone|один, в одиночестве|She lives alone.
+# 🏫 Учёба
+school|школа|My kids go to school.
+class|класс; занятие|My class starts at nine.
+lesson|урок|The lesson was interesting.
+teacher|учитель|My teacher is very good.
+student|студент, ученик|She is a college student.
+homework|домашнее задание|I have a lot of homework.
+test|тест, контрольная|We have a test tomorrow.
+exam|экзамен|The exam was hard.
+grade|оценка; класс|I got a good grade.
+notebook|тетрадь, блокнот|Write it in your notebook.
+textbook|учебник|Open your textbook.
+subject|предмет|My favorite subject is history.
+math|математика|Math is easy for me.
+history|история|I love history.
+science|наука, естествознание|He likes science.
+college|колледж, университет|She goes to college in Boston.
+university|университет|He studies at a big university.
+degree|степень, диплом|She has a degree in biology.
+to study|учиться, изучать|I study English every day.
+to learn|учиться, узнавать|I want to learn Spanish.
+to teach|преподавать|She teaches math.
+to graduate|заканчивать (учёбу)|He graduated last year.
+library|библиотека|I study at the library.
+to pass|сдать (экзамен)|She passed the exam.
+to fail|провалить|He failed the test.
+to practice|практиковаться|You need to practice every day.
+to review|повторять, пересматривать|Let's review the words.
+mistake|ошибка|Everyone makes mistakes.
+question|вопрос|I have a question.
+answer|ответ; отвечать|What's the answer?
+dictionary|словарь|Look it up in the dictionary.
+# 🏙 Город и услуги
+bank|банк|I need to go to the bank.
+ATM|банкомат|Is there an ATM nearby?
+post office|почта|The post office closes at five.
+mail|почта (письма); отправлять по почте|I'll mail the letter today.
+package|посылка|I'm waiting for a package.
+stamp|марка|I need a stamp.
+envelope|конверт|Put the letter in an envelope.
+supermarket|супермаркет|The supermarket is open late.
+bakery|пекарня|The bakery smells so good.
+bookstore|книжный магазин|I found it at the bookstore.
+police|полиция|Call the police.
+church|церковь|The church is very old.
+city hall|мэрия|The city hall is downtown.
+hair salon|парикмахерская, салон|I have a hair salon appointment.
+barbershop|мужская парикмахерская|He went to the barbershop.
+laundromat|прачечная самообслуживания|The laundromat is on Main Street.
+dry cleaner|химчистка|I took my coat to the dry cleaner.
+address|адрес|What's your address?
+line|очередь; линия|We waited in line.
+form|бланк, анкета|Please fill out this form.
+ID|удостоверение личности|Please show your ID.
+appointment|запись, встреча|I have an appointment at two.
+to wait in line|стоять в очереди|We waited in line for an hour.
+neighbor|сосед|Say hello to your neighbor.

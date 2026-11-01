@@ -1,4 +1,4 @@
-"""Вся логика бота: команды, квиз, фразы, настройки, ежедневная рассылка."""
+"""Основная логика бота: слова, квиз, фразы, сленг, настройки, мотивация, рассылка слов дня."""
 import asyncio
 import html
 import io
@@ -6,49 +6,58 @@ import logging
 import os
 import random
 import re
+import time
 from collections import defaultdict, deque
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from aiogram import Bot, F, Router
 from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
-from aiogram.filters import Command, CommandObject, CommandStart
+from aiogram.filters import Command, CommandStart
 from aiogram.types import (BufferedInputFile, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup,
                            KeyboardButton, Message, ReplyKeyboardMarkup)
 
 import content
-from storage import (DEFAULT_TZ, INTERVALS, LEARNED_BOX, Store, level_for, live_streak, mark_active, srs_review)
+import motivation as mot
+import translator
+from storage import DEFAULT_TZ, INTERVALS, LEARNED_BOX, Store, live_streak, srs_review
 
 log = logging.getLogger("bot")
 router = Router()
 
 store: Store = None            # выставляется в main.py
 ADMIN_ID = int(os.getenv("ADMIN_ID", "0") or 0)
-REMIND_HOUR = int(os.getenv("REMIND_HOUR", "20"))
+BRAND = "Special FOR Ksen4ik"
+SESSION_TTL = 600              # через 10 минут «ожидание ответа» сбрасывается
 
-# временное состояние (живёт в памяти; после перезапуска сервера упражнение просто «устаревает»)
+# ---------- временное состояние (в памяти; после перезапуска сервера упражнение просто «устаревает») ----------
 S: dict[int, dict] = {}                                   # текущее упражнение
 RECENT: dict[int, deque] = defaultdict(lambda: deque(maxlen=4))
-RECENT_PH: dict[int, deque] = defaultdict(lambda: deque(maxlen=6))
+RECENT_PH: dict[int, deque] = defaultdict(lambda: deque(maxlen=8))
 SPEECH: dict[int, str] = {}                               # что озвучивает кнопка 🔊
-PENDING: dict[int, tuple[str, str]] = {}                  # перевод, который можно добавить в словарь
+PENDING: dict[int, dict] = {}                             # перевод, который можно добавить в словарь
+COMBO: dict[int, int] = defaultdict(int)                  # ответов подряд без ошибок
+LASTKIND: dict[int, str] = {}                             # какой квиз был последним ("" или "slang")
+PH_CAT: dict[int, int | None] = {}                        # выбранная категория фраз
+TEXT_HANDLERS: dict = {}                                  # тип упражнения -> функция проверки ответа текстом
 
-MENU = {"quiz": "🧠 Квиз", "new": "🆕 Новые слова", "phrase": "✍️ Фразы",
-        "words": "📚 Мои слова", "stats": "📊 Прогресс", "settings": "⚙️ Настройки"}
-
-BRAND = "Special FOR Ksen4ik"
+MENU = {"quiz": "🧠 Квиз", "new": "🆕 Новые слова", "phrase": "✍️ Фразы", "verbs": "📘 Глаголы",
+        "slang": "😎 Сленг", "words": "📚 Мои слова", "badges": "🏅 Достижения", "stats": "📊 Прогресс",
+        "settings": "⚙️ Настройки"}
 
 WELCOME = (
     f"💖 <b>{BRAND}</b> 💖\n\n"
-    "Привет! 👋 Я помогу учить английский (уровень A2) маленькими порциями.\n\n"
+    "Привет! 👋 Я помогу учить <b>американский английский</b> (уровень A2) маленькими порциями.\n\n"
     "<b>Что я умею</b>\n"
-    "🆕 /new — новые слова с примерами и озвучкой\n"
-    "🧠 /quiz — повторение: умные интервалы, чтобы слова запоминались надолго\n"
-    "✍️ /phrase — переведи фразу на английский\n"
-    "📚 /words — твой словарь, /add — добавить своё слово\n"
+    "🆕 /new — новые слова с примерами и озвучкой (800+ слов, 20 тем)\n"
+    "🧠 /quiz — повторение с умными интервалами\n"
+    "✍️ /phrase — переведи фразу (160+ фраз по темам)\n"
+    "📘 /verbs — неправильные глаголы: группы, предложения, тренировка\n"
+    "😎 /slang — американский сленг\n"
+    "📚 /words — твой словарь, ➕ /add — добавить своё слово\n"
     "💬 Просто напиши слово или фразу (по-русски или по-английски) — переведу и озвучу\n"
-    "📊 /stats — серия дней и прогресс\n"
-    "⚙️ /settings — темы, время «слова дня», напоминания\n\n"
+    "📊 /stats — прогресс · 🏅 /badges — значки и уровни\n"
+    "⚙️ /settings — темы, цель дня, слово дня по утрам\n\n"
     "Начнём с выбора тем 👇"
 )
 
@@ -88,7 +97,8 @@ def kb(*rows) -> InlineKeyboardMarkup:
 
 
 def main_kb() -> ReplyKeyboardMarkup:
-    rows = [[MENU["quiz"], MENU["new"]], [MENU["phrase"], MENU["words"]], [MENU["stats"], MENU["settings"]]]
+    rows = [[MENU["quiz"], MENU["new"]], [MENU["phrase"], MENU["verbs"]], [MENU["slang"], MENU["words"]],
+            [MENU["badges"], MENU["stats"]], [MENU["settings"]]]
     return ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=t) for t in r] for r in rows], resize_keyboard=True)
 
 
@@ -100,83 +110,163 @@ async def safe_edit(cb: CallbackQuery, text: str, markup=None):
             log.warning("edit failed: %s", e)
 
 
+async def send_chunks(bot: Bot, uid: int, header: str, lines: list[str], markup=None, limit: int = 3500):
+    """Отправляет длинный список по частям (лимит Telegram — 4096 символов)."""
+    parts, cur = [], header
+    for ln in lines:
+        if len(cur) + len(ln) + 1 > limit:
+            parts.append(cur)
+            cur = ""
+        cur += ("\n" if cur else "") + ln
+    parts.append(cur)
+    for i, p in enumerate(parts):
+        await bot.send_message(uid, p, reply_markup=markup if i == len(parts) - 1 else None)
+
+
+# ---------- сессии упражнений ----------
+def set_session(uid: int, **data):
+    data["t"] = time.time()
+    S[uid] = data
+
+
+def get_session(uid: int, types=None):
+    s = S.get(uid)
+    if not s:
+        return None
+    if time.time() - s.get("t", 0) > SESSION_TTL:
+        S.pop(uid, None)
+        return None
+    if types and s["type"] not in types:
+        return None
+    return s
+
+
+# ---------- озвучка (американский акцент) ----------
 def _tts(text: str) -> bytes:
     from gtts import gTTS
-    buf = io.BytesIO()
-    gTTS(text=text, lang="en").write_to_fp(buf)
-    return buf.getvalue()
+    last = None
+    for tld in ("us", "com"):                              # сначала американский, потом запасной
+        try:
+            buf = io.BytesIO()
+            gTTS(text=text, lang="en", tld=tld).write_to_fp(buf)
+            return buf.getvalue()
+        except Exception as e:
+            last = e
+    raise last
 
 
 async def speak(bot: Bot, uid: int, text: str):
     try:
         data = await asyncio.to_thread(_tts, text)
         await bot.send_voice(uid, BufferedInputFile(data, "voice.mp3"))
-    except Exception:
+    except Exception as e:
         log.exception("TTS failed")
-        await bot.send_message(uid, "Не получилось озвучить 😕 Попробуй ещё раз чуть позже.")
+        await bot.send_message(uid, f"Не получилось озвучить 😕 ({type(e).__name__}). Попробуй чуть позже.")
 
 
-def _tr(text: str, src: str, tgt: str) -> str:
-    from deep_translator import GoogleTranslator
-    return GoogleTranslator(source=src, target=tgt).translate(text)
-
-
-async def translate(text: str) -> tuple[str, str]:
-    """Возвращает (english, русский) независимо от того, на каком языке ввели."""
+# ---------- перевод ----------
+async def do_translate(text: str) -> dict:
+    """Сначала ищем в своих базах (мгновенно), потом в онлайн-переводчиках с запасными вариантами."""
+    hit = content.lookup(text)
+    if hit:
+        return hit
     if content.has_cyrillic(text):
-        en = (await asyncio.to_thread(_tr, text, "ru", "en")).strip()
-        ru = text
+        en, ru = await translator.translate_text(text, "ru", "en"), text
     else:
-        ru = (await asyncio.to_thread(_tr, text, "en", "ru")).strip()
-        en = text
+        en, ru = text, await translator.translate_text(text, "en", "ru")
     if len(en.split()) == 1:
         en = en.lower()
-    return en, ru
+    return {"en": en, "ru": ru, "ex": "", "tr": "", "note": ""}
+
+
+def card_text(w: dict) -> str:
+    tr = f" <i>[{esc(w['tr'])}]</i>" if w.get("tr") else ""
+    out = f"<b>{esc(w['en'])}</b>{tr} — {esc(w['ru'])}"
+    if w.get("ex"):
+        out += f"\n   <i>{esc(w['ex'])}</i>"
+    if w.get("note"):
+        out += f"\n   💬 {esc(w['note'])}"
+    return out
+
+
+def verb_card(v: dict) -> str:
+    forms = f"{v['v1']} – {v['v2']} – {v['v3']}"
+    tr = f"[{v['t1']} – {v['t2']} – {v['t3']}]"
+    sent = "\n".join(f"<i>{esc(e)}</i> — {esc(r)}" for e, r in zip(v["en"], v["sru"]))
+    return f"📘 <b>{esc(forms)}</b>\n<i>{esc(tr)}</i>\n🇷🇺 {esc(v['ru'])}\n\n{sent}"
 
 
 # ============================ выдача слов ============================
-def pick_new(u: dict, n: int) -> list[dict]:
+def pick_new(u: dict, n: int, kind: str = "") -> list[dict]:
     have = {w["en"].lower() for w in store.words_of(u["uid"])}
-    idxs = topics_of(u) or range(len(content.TOPICS))
-    pool = [w for i in idxs for w in content.BANK[content.TOPICS[i]] if w["en"].lower() not in have]
-    if not pool:                                           # выбранные темы закончились — берём из остальных
-        pool = [w for w in content.ALL_WORDS if w["en"].lower() not in have]
+    if kind == "slang":
+        pool = [w for w in content.ALL_SLANG if w["en"].lower() not in have]
+    else:
+        idxs = topics_of(u) or range(len(content.TOPICS))
+        pool = [w for i in idxs for w in content.BANK[content.TOPICS[i]] if w["en"].lower() not in have]
+        if not pool:                                       # выбранные темы закончились — берём из остальных
+            pool = [w for w in content.ALL_WORDS if w["en"].lower() not in have]
     random.shuffle(pool)
     return pool[:n]
 
 
-async def deliver_words(bot: Bot, u: dict, n: int, header: str, note: str | None = None):
+async def deliver_words(bot: Bot, u: dict, n: int, header: str, note: str | None = None, kind: str = ""):
     uid = u["uid"]
-    words = pick_new(u, n)
+    words = pick_new(u, n, kind)
     if not words:
-        await bot.send_message(uid, "🎉 Все слова из моего банка уже в твоём словаре! "
+        what = "сленга" if kind == "slang" else "слов"
+        await bot.send_message(uid, f"🎉 Весь мой запас {what} уже в твоём словаре! "
                                     "Добавляй свои через /add или просто пиши мне любое слово.")
         return
     today = today_of(u)
     lines = []
     for w in words:
-        store.add_word(uid, w["en"], w["ru"], w["ex"], w["topic"], "daily", today)
-        lines.append(f"• <b>{esc(w['en'])}</b> — {esc(w['ru'])}\n   <i>{esc(w['ex'])}</i>")
-    SPEECH[uid] = " ... ".join(f"{w['en']}. {w['ex']}" for w in words)
+        store.add_word(uid, w["en"], w["ru"], w["ex"], w["topic"], "slang" if kind else "daily", today, kind)
+        lines.append("• " + card_text(w))
+    SPEECH[uid] = " ... ".join((w["ex"] and f"{w['en']}. {w['ex']}") or w["en"] for w in words)
     text = f"{header}\n\n" + "\n".join(lines)
     if note:
         text += f"\n\n💌 {esc(note)}"
-    await bot.send_message(uid, text, reply_markup=kb([("🔊 Послушать", "say")], [("🧠 Закрепить квизом", "goquiz")]))
+    quiz_cb = "sl_quiz" if kind == "slang" else "goquiz"
+    await bot.send_message(uid, text, reply_markup=kb([("🔊 Послушать", "say")], [("🧠 Закрепить квизом", quiz_cb)]))
+
+
+# ============================ мотивация ============================
+def build_ctx(u: dict) -> dict:
+    uid = u["uid"]
+    ws = store.words_of(uid)
+    return {"words": sum(w["box"] >= LEARNED_BOX for w in ws if w["kind"] != "slang"),
+            "slang": sum(w["box"] >= LEARNED_BOX for w in ws if w["kind"] == "slang"),
+            "verbs": sum(v["box"] >= LEARNED_BOX for v in store.verbs_of(uid)), "total": len(ws)}
+
+
+def register_answer(u: dict, ok: bool, base_xp: int, kind: str = "word"):
+    """Учитывает ответ в статистике и мотивации. Возвращает (строки для сообщения, полученный XP)."""
+    uid = u["uid"]
+    COMBO[uid] = COMBO[uid] + 1 if ok else 0
+    lines, gain = mot.record(u, build_ctx(u), ok, base_xp, today_of(u), COMBO[uid], kind)
+    store.mark("users")
+    return lines, gain
 
 
 # ============================ квиз ============================
-async def ask_question(bot: Bot, u: dict):
+async def ask_question(bot: Bot, u: dict, kind: str | None = None):
     uid = u["uid"]
+    kind = LASTKIND.get(uid, "") if kind is None else kind
+    LASTKIND[uid] = kind
     today = today_of(u).isoformat()
-    ws = store.words_of(uid)
+    allw = store.words_of(uid)
+    ws = [w for w in allw if w["kind"] == "slang"] if kind == "slang" else allw
     if not ws:
-        await bot.send_message(uid, "Словарь пока пуст. Жми «🆕 Новые слова» 🙂")
+        msg = "Пока нет слов сленга в словаре. Открой «😎 Сленг» и добавь слова." if kind == "slang" \
+            else "Словарь пока пуст. Жми «🆕 Новые слова» 🙂"
+        await bot.send_message(uid, msg)
         return
     due = [w for w in ws if w["next_review"] <= today]
     if not due:
         nxt = min(w["next_review"] for w in ws)
         await bot.send_message(uid, f"🎉 На сегодня всё повторено! Следующее повторение: <b>{nxt}</b>.\n"
-                                    "Хочешь ещё? Жми «🆕 Новые слова».")
+                                    "Хочешь ещё? Жми «🆕 Новые слова», «✍️ Фразы» или «📘 Глаголы».")
         return
     pool = [w for w in due if w["en"].lower() not in RECENT[uid]] or due
     low = min(w["box"] for w in pool)
@@ -185,14 +275,16 @@ async def ask_question(bot: Bot, u: dict):
     rev = random.random() < min(0.25 + 0.1 * w["box"], 0.8)          # чем лучше слово знаешь — тем чаще RU→EN
     correct = w["en"] if rev else w["ru"]
     prompt = w["ru"] if rev else w["en"]
-    cands = {(x["en"] if rev else x["ru"]) for x in ws + content.ALL_WORDS} - {correct}
+    cands = {(x["en"] if rev else x["ru"]) for x in ws + content.ALL_WORDS + content.ALL_SLANG} - {correct}
     opts = random.sample(sorted(cands), 3) + [correct]
     random.shuffle(opts)
 
-    S[uid] = {"type": "quiz", "en": w["en"].lower(), "opts": opts, "ans": opts.index(correct)}
+    set_session(uid, type="quiz", en=w["en"].lower(), opts=opts, ans=opts.index(correct))
     RECENT[uid].append(w["en"].lower())
     SPEECH[uid] = w["en"]
-    head = f"🇷🇺 <b>{esc(prompt)}</b>\nКак это по-английски? 👇" if rev else f"🇬🇧 <b>{esc(prompt)}</b>\nВыбери перевод 👇"
+    tr = f" <i>[{esc(w['tr'])}]</i>" if (w.get("tr") and not rev) else ""
+    head = (f"🇷🇺 <b>{esc(prompt)}</b>\nКак это по-английски? 👇" if rev
+            else f"🇬🇧 <b>{esc(prompt)}</b>{tr}\nВыбери перевод 👇")
     rows = [[(o, f"a:{i}")] for i, o in enumerate(opts)] + [[("🔊", "say")]]
     await bot.send_message(uid, head, reply_markup=kb(*rows))
 
@@ -201,8 +293,8 @@ async def ask_question(bot: Bot, u: dict):
 async def on_answer(cb: CallbackQuery):
     u = get_user(cb.from_user)
     uid = u["uid"]
-    s = S.get(uid)
-    if not s or s["type"] != "quiz":
+    s = get_session(uid, {"quiz"})
+    if not s:
         await cb.answer("Этот вопрос уже неактуален — жми «Квиз»")
         return
     S.pop(uid)
@@ -215,32 +307,37 @@ async def on_answer(cb: CallbackQuery):
         store.mark("words")
         if ok and INTERVALS[w["box"]] > 0:
             extra = f"\n⏭ Повторим через {INTERVALS[w['box']]} дн."
-    u["correct" if ok else "wrong"] += 1
-    u["xp"] += 10 if ok else 2
-    new_day = mark_active(u, today)
-    store.mark("users")
-
-    text = "✅ <b>Верно!</b>" if ok else f"❌ <b>Почти.</b> Правильный ответ: <b>{esc(s['opts'][s['ans']])}</b>"
+    lines, gain = register_answer(u, ok, 10, "slang" if (w and w["kind"] == "slang") else "word")
+    head = (f"✅ <b>{mot.praise(True)}</b> +{gain} XP" if ok
+            else f"❌ <b>{mot.praise(False)}</b> Правильный ответ: <b>{esc(s['opts'][s['ans']])}</b>")
+    text = head
     if w:
-        text += f"\n\n<b>{esc(w['en'])}</b> — {esc(w['ru'])}"
-        if w["ex"]:
-            text += f"\n<i>{esc(w['ex'])}</i>"
+        text += "\n\n" + card_text(w)
     text += extra
-    if new_day:
-        text += f"\n\n🔥 Серия: <b>{u['streak']}</b> дн."
+    if lines:
+        text += "\n\n" + "\n".join(lines)
     await safe_edit(cb, text, kb([("▶️ Дальше", "next"), ("🔊", "say")]))
     await cb.answer()
 
 
 # ============================ фразы ============================
+def phrases_cat_kb() -> InlineKeyboardMarkup:
+    rows = [[(f"{c}", f"pc:{i}")] for i, c in enumerate(content.PHRASE_CATS)]
+    rows.append([("🎲 Любая категория", "pc:all")])
+    return kb(*rows)
+
+
 async def ask_phrase(bot: Bot, u: dict):
     uid = u["uid"]
-    pool = [p for p in content.PHRASES if p["ru"] not in RECENT_PH[uid]] or content.PHRASES
+    cat = PH_CAT.get(uid)
+    base = [p for p in content.PHRASES if cat is None or p["cat"] == cat]
+    pool = [p for p in base if p["ru"] not in RECENT_PH[uid]] or base
     p = random.choice(pool)
     RECENT_PH[uid].append(p["ru"])
-    S[uid] = {"type": "phrase", "p": p}
-    await bot.send_message(uid, f"✍️ Переведи на английский:\n\n<b>{esc(p['ru'])}</b>\n\n<i>Напиши ответ сообщением.</i>",
-                           reply_markup=kb([("🤷 Не знаю", "pk")]))
+    set_session(uid, type="phrase", p=p)
+    await bot.send_message(uid, f"✍️ Переведи на английский:\n\n<b>{esc(p['ru'])}</b>\n\n"
+                                "<i>Напиши ответ сообщением (сокращения вроде don't тоже подойдут).</i>",
+                           reply_markup=kb([("🤷 Не знаю", "pk"), ("🚪 Выйти", "exit")], [("🗂 Другая категория", "pcats")]))
 
 
 async def check_phrase(m: Message, u: dict, s: dict, text: str):
@@ -248,38 +345,66 @@ async def check_phrase(m: Message, u: dict, s: dict, text: str):
     S.pop(uid, None)
     verdict = content.check_answer(text, p["en"])
     ok = verdict != "wrong"
-    today = today_of(u)
-    u["correct" if ok else "wrong"] += 1
-    u["xp"] += 15 if verdict == "exact" else (10 if ok else 2)
-    new_day = mark_active(u, today)
-    store.mark("users")
     SPEECH[uid] = p["en"][0]
+    lines, gain = register_answer(u, ok, 15 if verdict == "exact" else 10, "phrase")
     if verdict == "exact":
-        msg = "✅ <b>Отлично!</b>"
+        msg = f"✅ <b>{mot.praise(True)}</b> +{gain} XP"
     elif verdict == "close":
-        msg = f"✅ <b>Почти идеально!</b> Небольшая опечатка. Правильно: <b>{esc(p['en'][0])}</b>"
+        msg = f"✅ <b>Почти идеально!</b> Небольшая опечатка. Правильно: <b>{esc(p['en'][0])}</b> +{gain} XP"
     else:
-        msg = f"❌ <b>Не совсем.</b> Правильно: <b>{esc(p['en'][0])}</b>"
-    if len(p["en"]) > 1:
-        msg += "\n\nЕщё варианты:\n" + "\n".join(f"• {esc(v)}" for v in p["en"][1:] if v != p["en"][0])
-    if new_day:
-        msg += f"\n\n🔥 Серия: <b>{u['streak']}</b> дн."
+        msg = f"❌ <b>{mot.praise(False)}</b> Правильно: <b>{esc(p['en'][0])}</b>"
+    others = [v for v in p["en"][1:] if v != p["en"][0]]
+    if others:
+        msg += "\n\nЕщё варианты:\n" + "\n".join(f"• {esc(v)}" for v in others)
+    if lines:
+        msg += "\n\n" + "\n".join(lines)
     await m.answer(msg, reply_markup=kb([("▶️ Ещё фразу", "np"), ("🔊", "say")]))
+
+
+TEXT_HANDLERS["phrase"] = check_phrase
+
+
+@router.callback_query(F.data.startswith("pc:"))
+async def on_phrase_cat(cb: CallbackQuery, bot: Bot):
+    v = cb.data[3:]
+    PH_CAT[cb.from_user.id] = None if v == "all" else int(v)
+    await cb.answer()
+    try:
+        await cb.message.edit_reply_markup(reply_markup=None)
+    except TelegramBadRequest:
+        pass
+    await ask_phrase(bot, get_user(cb.from_user))
+
+
+@router.callback_query(F.data == "pcats")
+async def on_phrase_cats(cb: CallbackQuery):
+    S.pop(cb.from_user.id, None)
+    await cb.answer()
+    await cb.message.answer("🗂 Выбери категорию фраз:", reply_markup=phrases_cat_kb())
 
 
 @router.callback_query(F.data == "pk")
 async def on_phrase_skip(cb: CallbackQuery):
     u = get_user(cb.from_user)
-    s = S.pop(u["uid"], None)
-    if not s or s["type"] != "phrase":
+    s = get_session(u["uid"], {"phrase"})
+    if not s:
         await cb.answer("Это упражнение уже неактуально")
         return
+    S.pop(u["uid"], None)
     p = s["p"]
+    COMBO[u["uid"]] = 0
     u["wrong"] += 1
     store.mark("users")
     SPEECH[u["uid"]] = p["en"][0]
     await safe_edit(cb, f"Ничего страшного! Правильно:\n\n<b>{esc(p['en'][0])}</b>",
                     kb([("▶️ Ещё фразу", "np"), ("🔊", "say")]))
+    await cb.answer()
+
+
+@router.callback_query(F.data == "exit")
+async def on_exit(cb: CallbackQuery):
+    S.pop(cb.from_user.id, None)
+    await safe_edit(cb, "Хорошо, выходим из упражнения 👌 Теперь можешь писать мне слова для перевода.")
     await cb.answer()
 
 
@@ -295,7 +420,13 @@ async def on_say(cb: CallbackQuery, bot: Bot):
 @router.callback_query(F.data.in_({"next", "goquiz"}))
 async def on_next_q(cb: CallbackQuery, bot: Bot):
     await cb.answer()
-    await ask_question(bot, get_user(cb.from_user))
+    await ask_question(bot, get_user(cb.from_user), None if cb.data == "next" else "")
+
+
+@router.callback_query(F.data == "sl_quiz")
+async def on_sl_quiz(cb: CallbackQuery, bot: Bot):
+    await cb.answer()
+    await ask_question(bot, get_user(cb.from_user), "slang")
 
 
 @router.callback_query(F.data == "np")
@@ -307,13 +438,11 @@ async def on_next_phrase(cb: CallbackQuery, bot: Bot):
 @router.callback_query(F.data == "addp")
 async def on_add_pending(cb: CallbackQuery):
     u = get_user(cb.from_user)
-    pair = PENDING.pop(u["uid"], None)
-    if not pair:
+    w = PENDING.pop(u["uid"], None)
+    if not w:
         await cb.answer("Не нашёл, что добавлять. Отправь слово ещё раз")
         return
-    en, ru = pair
-    ex = content.BY_EN.get(en.lower(), {}).get("ex", "")
-    store.add_word(u["uid"], en, ru, ex, "", "user", today_of(u))
+    store.add_word(u["uid"], w["en"], w["ru"], w.get("ex", ""), "", "user", today_of(u), "slang" if w.get("note") else "")
     await cb.answer("Добавлено в словарь ✅")
     try:
         await cb.message.edit_reply_markup(reply_markup=kb([("🔊 Озвучить", "say")]))
@@ -326,7 +455,7 @@ async def on_add_pending(cb: CallbackQuery):
 async def cmd_start(m: Message):
     u = get_user(m.from_user)
     await m.answer(WELCOME, reply_markup=main_kb())
-    await m.answer("🗂 Выбери темы (можно несколько) и нажми «Готово»:", reply_markup=topics_kb(u))
+    await m.answer("🗂 Выбери темы слов (можно несколько) и нажми «Готово»:", reply_markup=topics_kb(u))
 
 
 @router.message(Command("help"))
@@ -344,18 +473,20 @@ async def cmd_new(m: Message, bot: Bot):
 @router.message(Command("quiz"))
 @router.message(F.text == MENU["quiz"])
 async def cmd_quiz(m: Message, bot: Bot):
-    await ask_question(bot, get_user(m.from_user))
+    await ask_question(bot, get_user(m.from_user), "")
 
 
 @router.message(Command("phrase"))
 @router.message(F.text == MENU["phrase"])
-async def cmd_phrase(m: Message, bot: Bot):
-    await ask_phrase(bot, get_user(m.from_user))
+async def cmd_phrase(m: Message):
+    get_user(m.from_user)
+    S.pop(m.from_user.id, None)
+    await m.answer("✍️ <b>Фразы</b>: выбери категорию 👇", reply_markup=phrases_cat_kb())
 
 
 @router.message(Command("words"))
 @router.message(F.text == MENU["words"])
-async def cmd_words(m: Message):
+async def cmd_words(m: Message, bot: Bot):
     u = get_user(m.from_user)
     ws = sorted(store.words_of(u["uid"]), key=lambda w: (w["added"], w["en"]), reverse=True)
     if not ws:
@@ -364,10 +495,11 @@ async def cmd_words(m: Message):
     today = today_of(u).isoformat()
     learned = sum(w["box"] >= LEARNED_BOX for w in ws)
     due = sum(w["next_review"] <= today for w in ws)
-    lines = [f"{'✅' if w['box'] >= LEARNED_BOX else '🔁'} {esc(w['en'])} — {esc(w['ru'])}" for w in ws[:40]]
-    more = f"\n… и ещё {len(ws) - 40}" if len(ws) > 40 else ""
-    await m.answer(f"📚 <b>Мой словарь</b>: {len(ws)} (✅ выучено {learned}, 🔁 на повторе сегодня {due})\n\n"
-                   + "\n".join(lines) + more + "\n\n<i>Удалить слово: /del слово</i>")
+    lines = [f"{'✅' if w['box'] >= LEARNED_BOX else '🔁'} {esc(w['en'])} — {esc(w['ru'])}" for w in ws[:60]]
+    if len(ws) > 60:
+        lines.append(f"… и ещё {len(ws) - 60}")
+    lines.append("\n<i>Удалить слово: /del слово</i>")
+    await send_chunks(bot, u["uid"], f"📚 <b>Мой словарь</b>: {len(ws)} (✅ выучено {learned}, 🔁 на повторе сегодня {due})\n", lines)
 
 
 @router.message(Command("add"))
@@ -382,14 +514,16 @@ async def cmd_add(m: Message):
         if len(parts) == 2:
             a, b = parts[0].strip(), parts[1].strip()
             en, ru = (b, a) if content.has_cyrillic(a) else (a, b)
+            ex = content.BY_EN.get(en.lower(), {}).get("ex", "")
         else:
-            en, ru = await translate(arg)
-    except Exception:
+            r = await do_translate(arg)
+            en, ru, ex = r["en"], r["ru"], r.get("ex", "")
+    except Exception as e:
         log.exception("translate failed")
-        await m.answer("Не получилось перевести 😕 Попробуй так: <code>/add apple - яблоко</code>")
+        await m.answer(f"Не получилось перевести 😕 ({type(e).__name__}). Укажи перевод сам: <code>/add apple - яблоко</code>")
         return
-    ex = content.BY_EN.get(en.lower(), {}).get("ex", "")
-    if store.add_word(u["uid"], en, ru, ex, "", "user", today_of(u)):
+    kind = "slang" if content.BY_EN.get(en.lower(), {}).get("kind") == "slang" else ""
+    if store.add_word(u["uid"], en, ru, ex, "", "user", today_of(u), kind):
         SPEECH[u["uid"]] = en
         await m.answer(f"➕ Добавлено: <b>{esc(en)}</b> — {esc(ru)}", reply_markup=kb([("🔊 Озвучить", "say")]))
     else:
@@ -404,26 +538,6 @@ async def cmd_del(m: Message):
         await m.answer("Напиши так: <code>/del apple</code>")
         return
     await m.answer("🗑 Удалено." if store.del_word(u["uid"], arg) else "Не нашёл такого слова в словаре.")
-
-
-@router.message(Command("stats"))
-@router.message(F.text == MENU["stats"])
-async def cmd_stats(m: Message):
-    u = get_user(m.from_user)
-    today = today_of(u)
-    ws = store.words_of(u["uid"])
-    learned = sum(w["box"] >= LEARNED_BOX for w in ws)
-    due = sum(w["next_review"] <= today.isoformat() for w in ws)
-    total = u["correct"] + u["wrong"]
-    acc = f"{round(100 * u['correct'] / total)}% ({u['correct']} из {total})" if total else "пока нет ответов"
-    practiced = "✅ сегодня уже занимались" if u["last_active"] == today.isoformat() else "⏳ сегодня ещё не занимались"
-    await m.answer(
-        "📊 <b>Прогресс</b>\n\n"
-        f"🔥 Серия: <b>{live_streak(u, today)}</b> дн. (рекорд {u['best_streak']})\n"
-        f"⭐ Уровень: <b>{level_for(u['xp'])}</b> · {u['xp']} XP\n"
-        f"📚 В словаре: <b>{len(ws)}</b> (выучено ✅ {learned} · в процессе {len(ws) - learned})\n"
-        f"🔁 На повторе сегодня: <b>{due}</b>\n"
-        f"🎯 Точность: {acc}\n\n{practiced}\n\n💖 <i>{BRAND}</i>")
 
 
 @router.message(Command("tz"))
@@ -441,6 +555,99 @@ async def cmd_tz(m: Message):
     u["tz"] = tz
     store.mark("users")
     await m.answer(f"🌍 Часовой пояс: <b>{esc(tz)}</b>. Сейчас у тебя {now_of(u):%H:%M}.")
+
+
+# ============================ прогресс и значки ============================
+@router.message(Command("stats"))
+@router.message(F.text == MENU["stats"])
+async def cmd_stats(m: Message):
+    u = get_user(m.from_user)
+    today = today_of(u)
+    ws = store.words_of(u["uid"])
+    ctx = build_ctx(u)
+    due = sum(w["next_review"] <= today.isoformat() for w in ws)
+    total = u["correct"] + u["wrong"]
+    acc = f"{round(100 * u['correct'] / total)}% ({u['correct']} из {total})" if total else "пока нет ответов"
+    goal = u["goal"] or 10
+    n_today = u["today_n"] if u["today_date"] == today.isoformat() else 0
+    goal_line = (f"🎯 Цель дня: {mot.bar(n_today, goal)} {min(n_today, goal)}/{goal}"
+                 + (" ✅" if n_today >= goal else ""))
+    await m.answer(
+        f"📊 <b>Прогресс</b> · <i>{BRAND}</i>\n\n"
+        f"🔥 Серия: <b>{live_streak(u, today)}</b> дн. (рекорд {u['best_streak']}) · 🧊 заморозок: {u['freezes']}\n"
+        f"⭐ Уровень: <b>{mot.level_name(u['xp'])}</b> · {u['xp']} XP\n   {mot.level_progress(u['xp'])}\n"
+        f"{goal_line}\n\n"
+        f"📚 Слов в словаре: <b>{ctx['total']}</b> (выучено ✅ {ctx['words']}) · 😎 сленг выучен: {ctx['slang']}\n"
+        f"📘 Неправильных глаголов выучено: <b>{ctx['verbs']}</b> из {len(content.VERBS)}\n"
+        f"🔁 На повторе сегодня: <b>{due}</b>\n"
+        f"🎯 Точность: {acc}\n"
+        f"⚡ Лучший комбо: {u['best_combo']} подряд\n\n"
+        f"📅 {mot.week_chart(u, today)}\n"
+        f"🏅 Значков: {len(mot.owned(u))} из {len(mot.BADGES)} (/badges)")
+
+
+@router.message(Command("badges"))
+@router.message(F.text == MENU["badges"])
+async def cmd_badges(m: Message, bot: Bot):
+    u = get_user(m.from_user)
+    have = mot.owned(u)
+    got = [f"✅ {b[1]}" for b in mot.BADGES if b[0] in have]
+    todo = [f"🔒 {b[1]} — <i>{b[2]}</i>" for b in mot.BADGES if b[0] not in have]
+    lvl = "\n".join(f"{'➡️' if i == mot.level_index(u['xp']) else '▫️'} {n} — от {x} XP" for i, (x, n) in enumerate(mot.LEVELS))
+    await send_chunks(bot, u["uid"], f"🏅 <b>Достижения</b> ({len(have)} из {len(mot.BADGES)})\n",
+                      got + [""] + todo + ["", "<b>Уровни</b>", lvl,
+                                           "\n🧊 <i>Заморозка серии: если пропустишь один день, серия не сгорит. "
+                                           "Новая заморозка — за каждые 7 дней серии (максимум 2).</i>"])
+
+
+# ============================ сленг ============================
+def slang_menu_kb() -> InlineKeyboardMarkup:
+    rows = [[(t, f"slt:{i}")] for i, t in enumerate(content.SLANG_TOPICS)]
+    rows += [[("🆕 5 новых сленговых слов", "sl_new")], [("🧠 Сленг-квиз", "sl_quiz")]]
+    return kb(*rows)
+
+
+@router.message(Command("slang"))
+@router.message(F.text == MENU["slang"])
+async def cmd_slang(m: Message):
+    get_user(m.from_user)
+    await m.answer(f"😎 <b>Американский сленг</b>: {len(content.ALL_SLANG)} выражений.\n"
+                   "Выбери тему, чтобы посмотреть все слова, или учи по 5 новых 👇\n\n"
+                   "<i>Сленг — для неформального общения с друзьями. На собеседовании и в письмах лучше обычный язык.</i>",
+                   reply_markup=slang_menu_kb())
+
+
+@router.callback_query(F.data == "sl_menu")
+async def on_sl_menu(cb: CallbackQuery):
+    await cb.answer()
+    await cb.message.answer("😎 <b>Американский сленг</b>: выбери тему 👇", reply_markup=slang_menu_kb())
+
+
+@router.callback_query(F.data == "sl_new")
+async def on_sl_new(cb: CallbackQuery, bot: Bot):
+    await cb.answer()
+    await deliver_words(bot, get_user(cb.from_user), 5, "😎 <b>Новый сленг</b>", kind="slang")
+
+
+@router.callback_query(F.data.startswith("slt:"))
+async def on_sl_topic(cb: CallbackQuery, bot: Bot):
+    i = int(cb.data[4:])
+    words = content.SLANG_BANK[content.SLANG_TOPICS[i]]
+    await cb.answer()
+    SPEECH[cb.from_user.id] = ". ".join(w["en"] for w in words[:12])
+    await send_chunks(bot, cb.from_user.id, f"{esc(content.SLANG_TOPICS[i])} ({len(words)})\n",
+                      ["• " + card_text(w) for w in words],
+                      kb([("➕ Добавить все в квиз", f"slall:{i}")], [("🔊 Озвучить первые 12", "say")],
+                         [("⬅️ К разделу сленга", "sl_menu")]))
+
+
+@router.callback_query(F.data.startswith("slall:"))
+async def on_sl_all(cb: CallbackQuery):
+    u = get_user(cb.from_user)
+    i = int(cb.data[6:])
+    added = sum(store.add_word(u["uid"], w["en"], w["ru"], w["ex"], w["topic"], "slang", today_of(u), "slang")
+                for w in content.SLANG_BANK[content.SLANG_TOPICS[i]])
+    await cb.answer(f"Добавлено слов: {added}" if added else "Всё это уже в словаре 👌", show_alert=True)
 
 
 # ============================ темы и настройки ============================
@@ -477,19 +684,23 @@ async def on_topics_done(cb: CallbackQuery, bot: Bot):
 
 def settings_text(u: dict) -> str:
     names = ", ".join(content.TOPICS[i] for i in topics_of(u)) or "все"
+    daily = f"вкл, с {u['hour']:02d}:00" if u["daily"] else "выкл"
     return ("⚙️ <b>Настройки</b>\n\n"
-            f"📖 Слов в день: <b>{u['per_day']}</b>\n"
-            f"⏰ «Слово дня» приходит с: <b>{u['hour']:02d}:00</b>\n"
-            f"🔔 Вечернее напоминание ({REMIND_HOUR}:00): <b>{'вкл' if u['remind'] else 'выкл'}</b>\n"
+            f"📖 Слов за один раз (кнопка «Новые слова»): <b>{u['per_day']}</b>\n"
+            f"☀️ «Слово дня» по утрам: <b>{daily}</b>\n"
+            f"🎯 Цель дня: <b>{u['goal'] or 10}</b> ответов\n"
             f"🌍 Часовой пояс: <b>{esc(u['tz'])}</b> (сменить: <code>/tz Europe/Moscow</code>)\n"
-            f"🗂 Темы: {esc(names)}")
+            f"🗂 Темы: {esc(names)}\n\n"
+            "<i>Бот сам ничего не присылает, пока ты не включишь «Слово дня».</i>")
 
 
 def settings_kb(u: dict) -> InlineKeyboardMarkup:
     mark = lambda cur, v: ("• " if cur == v else "") + str(v)
-    return kb([("Слов в день:", "noop")] + [(mark(u["per_day"], n), f"pd:{n}") for n in (3, 5, 8, 10)],
+    goal = u["goal"] or 10
+    return kb([("Слов:", "noop")] + [(mark(u["per_day"], n), f"pd:{n}") for n in (3, 5, 8, 10)],
+              [("Цель:", "noop")] + [(mark(goal, n), f"gl:{n}") for n in (5, 10, 20, 30)],
+              [(f"☀️ Слово дня: {'вкл' if u['daily'] else 'выкл'}", "dl")],
               [("Время:", "noop")] + [(mark(u["hour"], h), f"hr:{h}") for h in (8, 9, 12, 18)],
-              [(f"🔔 Напоминания: {'вкл' if u['remind'] else 'выкл'}", "rm")],
               [("🗂 Изменить темы", "tp")])
 
 
@@ -505,20 +716,20 @@ async def on_noop(cb: CallbackQuery):
     await cb.answer()
 
 
-@router.callback_query(F.data.regexp(r"^(pd|hr):\d+$"))
+@router.callback_query(F.data.regexp(r"^(pd|hr|gl):\d+$"))
 async def on_setting(cb: CallbackQuery):
     u = get_user(cb.from_user)
     key, val = cb.data.split(":")
-    u["per_day" if key == "pd" else "hour"] = int(val)
+    u[{"pd": "per_day", "hr": "hour", "gl": "goal"}[key]] = int(val)
     store.mark("users")
     await safe_edit(cb, settings_text(u), settings_kb(u))
     await cb.answer("Сохранено ✅")
 
 
-@router.callback_query(F.data == "rm")
-async def on_remind(cb: CallbackQuery):
+@router.callback_query(F.data == "dl")
+async def on_daily_toggle(cb: CallbackQuery):
     u = get_user(cb.from_user)
-    u["remind"] = 0 if u["remind"] else 1
+    u["daily"] = 0 if u["daily"] else 1
     store.mark("users")
     await safe_edit(cb, settings_text(u), settings_kb(u))
     await cb.answer("Сохранено ✅")
@@ -539,7 +750,7 @@ async def cmd_note(m: Message):
     text = (m.text or "").partition(" ")[2].strip()
     if not text:
         await m.answer("Напиши так: <code>/note Ты у меня самая умная ❤️</code>\n"
-                       f"Записок в копилке: {len(store.notes)}. Бот будет иногда добавлять их к «слову дня».")
+                       f"Записок в копилке: {len(store.notes)}. Бот иногда добавляет их к «слову дня».")
         return
     store.notes.append(text)
     store.mark("notes")
@@ -566,40 +777,62 @@ async def cmd_msg(m: Message, bot: Bot):
     await m.answer(f"Отправлено: {sent}")
 
 
-# ============================ обычный текст: перевод / ответ на фразу ============================
+# ============================ обычный текст: перевод / ответ на упражнение ============================
 @router.message(F.text & ~F.text.startswith("/"))
 async def on_text(m: Message, bot: Bot):
     u = get_user(m.from_user)
     uid = u["uid"]
     text = m.text.strip()
-    s = S.get(uid)
-    if s and s["type"] == "phrase":
-        await check_phrase(m, u, s, text)
-        return
+    s = get_session(uid)
+    active = None
+    if s and s["type"] in TEXT_HANDLERS:
+        if not content.has_cyrillic(text):                # ответы на упражнения — только по-английски
+            await TEXT_HANDLERS[s["type"]](m, u, s, text)
+            return
+        active = s
     if len(text) > 200:
         await m.answer("Слишком длинный текст 🙈 Пришли слово или короткую фразу.")
         return
     await bot.send_chat_action(uid, "typing")
     try:
-        en, ru = await translate(text)
-    except Exception:
-        log.exception("translate failed")
-        await m.answer("Не получилось перевести 😕 Попробуй ещё раз чуть позже.")
+        r = await do_translate(text)
+    except Exception as e:
+        log.exception("translate failed: %s", e)
+        detail = f"\n<code>{esc(str(e)[:300])}</code>" if uid == ADMIN_ID else ""
+        await m.answer(f"Не получилось перевести 😕 Онлайн-переводчики сейчас недоступны ({type(e).__name__}). "
+                       f"Если слово есть в моих списках, я найду его и без интернета. Попробуй чуть позже.{detail}")
         return
-    SPEECH[uid] = en
+    if "verb" in r:
+        v = r["verb"]
+        SPEECH[uid] = f"{v['v1']}, {v['v2']}, {v['v3']}. " + " ".join(v["en"])
+        await m.answer(verb_card(v), reply_markup=kb([("🔊 Озвучить", "say"), ("📘 К группе", f"vg:{v['g']}")]))
+        return
+    SPEECH[uid] = r["en"]
     buttons = [("🔊 Озвучить", "say")]
-    if len(en.split()) <= 3:
-        PENDING[uid] = (en, ru)
+    if len(r["en"].split()) <= 3:
+        PENDING[uid] = r
         buttons.append(("➕ В словарь", "addp"))
-    await m.answer(f"🇬🇧 <b>{esc(en)}</b>\n🇷🇺 {esc(ru)}", reply_markup=kb(buttons))
+    out = f"🇬🇧 <b>{esc(r['en'])}</b>"
+    if r.get("tr"):
+        out += f" <i>[{esc(r['tr'])}]</i>"
+    out += f"\n🇷🇺 {esc(r['ru'])}"
+    if r.get("ex"):
+        out += f"\n<i>{esc(r['ex'])}</i>"
+    if r.get("note"):
+        out += f"\n💬 {esc(r['note'])}"
+    if active:
+        out += "\n\n<i>Упражнение ещё активно: ответь по-английски или нажми «🚪 Выйти».</i>"
+    await m.answer(out, reply_markup=kb(buttons))
 
 
-# ============================ рассылка по расписанию ============================
+# ============================ рассылка «слова дня» по расписанию ============================
 async def tick(bot: Bot) -> dict:
-    """Вызывается внешним cron-ом (cron-job.org). Идемпотентна: повторный вызов ничего не продублирует."""
-    res = {"daily": 0, "remind": 0, "errors": 0}
+    """Вызывается внешним cron-ом (cron-job.org). Работает только для тех, кто включил «Слово дня»."""
+    res = {"daily": 0, "errors": 0}
     for u in list(store.users.values()):
         try:
+            if not u["daily"]:
+                continue
             now = now_of(u)
             today = now.date().isoformat()
             if now.hour >= u["hour"] and u["last_daily"] != today:
@@ -608,15 +841,6 @@ async def tick(bot: Bot) -> dict:
                 note = random.choice(store.notes) if store.notes and random.random() < 0.5 else None
                 await deliver_words(bot, u, u["per_day"], f"☀️ <b>Слова дня</b> · <i>{BRAND}</i> 💖", note)
                 res["daily"] += 1
-            elif (u["remind"] and REMIND_HOUR <= now.hour < 23
-                  and u["last_remind"] != today and u["last_active"] != today):
-                u["last_remind"] = today
-                store.mark("users")
-                streak = live_streak(u, now.date())
-                text = (f"⏰ Сегодня ещё не было практики. 5 минут — и серия 🔥 <b>{streak}</b> дн. продолжится!"
-                        if streak else "⏰ Пара минут английского на сегодня? Квиз ждёт 👇")
-                await bot.send_message(u["uid"], text, reply_markup=kb([("🧠 Начать квиз", "goquiz")]))
-                res["remind"] += 1
         except TelegramForbiddenError:
             log.info("user %s заблокировал бота", u["uid"])
         except Exception:

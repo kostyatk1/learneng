@@ -11,15 +11,20 @@ log = logging.getLogger("storage")
 DEFAULT_TZ = os.getenv("DEFAULT_TZ", "Europe/Berlin")
 
 USER_COLS = ["uid", "name", "topics", "per_day", "hour", "tz", "remind", "streak", "best_streak",
-             "last_active", "xp", "correct", "wrong", "last_daily", "last_remind", "joined"]
-WORD_COLS = ["uid", "en", "ru", "ex", "topic", "source", "box", "next_review", "added", "correct", "wrong"]
+             "last_active", "xp", "correct", "wrong", "last_daily", "last_remind", "joined",
+             # --- добавлено позже (старые таблицы подхватываются автоматически) ---
+             "goal", "today_n", "today_date", "badges", "freezes", "daily", "hist", "goal_days",
+             "best_combo", "v_ok", "s_ok"]
+WORD_COLS = ["uid", "en", "ru", "ex", "topic", "source", "box", "next_review", "added", "correct", "wrong", "kind"]
+VERB_COLS = ["uid", "v1", "box", "next_review", "correct", "wrong"]
 NOTE_COLS = ["text"]
-USER_INT = {"uid", "per_day", "hour", "remind", "streak", "best_streak", "xp", "correct", "wrong"}
+USER_INT = {"uid", "per_day", "hour", "remind", "streak", "best_streak", "xp", "correct", "wrong", "goal",
+            "today_n", "freezes", "daily", "goal_days", "best_combo", "v_ok", "s_ok"}
 WORD_INT = {"uid", "box", "correct", "wrong"}
+VERB_INT = {"uid", "box", "correct", "wrong"}
 
 INTERVALS = [0, 1, 2, 4, 8, 16, 32]          # дни до повтора для коробок 0..6 (метод Лейтнера)
-LEARNED_BOX = 4                              # с этой коробки слово считается выученным
-LEVELS = [(0, "🌱 Starter"), (100, "🌿 Explorer"), (300, "🌳 Speaker"), (700, "⭐ Pro"), (1500, "🏆 Master")]
+LEARNED_BOX = 3                              # с этой коробки слово считается выученным
 
 
 def _conv(row: dict, cols: list[str], ints: set[str]) -> dict:
@@ -89,6 +94,8 @@ class SheetsBackend:
         values = [cols] + [[r.get(c, "") for c in cols] for r in rows]
         if ws.row_count < len(values):
             ws.add_rows(len(values) - ws.row_count + 100)
+        if ws.col_count < len(cols):                              # добавились новые столбцы
+            ws.add_cols(len(cols) - ws.col_count)
         ws.update(range_name="A1", values=values)
         prev = self._sizes.get(tab, 0)
         if prev > len(values):                                    # если строк стало меньше — чистим хвост
@@ -101,6 +108,7 @@ class Store:
         self.b = backend
         self.users: dict[int, dict] = {}
         self.words: dict[tuple[int, str], dict] = {}
+        self.verbs: dict[tuple[int, str], dict] = {}
         self.notes: list[str] = []
         self._dirty: set[str] = set()
         self._task: asyncio.Task | None = None
@@ -116,15 +124,26 @@ class Store:
             w = _conv(r, WORD_COLS, WORD_INT)
             if w["uid"] and w["en"]:
                 self.words[(w["uid"], w["en"].lower())] = w
+        for r in await asyncio.to_thread(self.b.load, "verbs", VERB_COLS):
+            v = _conv(r, VERB_COLS, VERB_INT)
+            if v["uid"] and v["v1"]:
+                self.verbs[(v["uid"], v["v1"].lower())] = v
+        for u in self.users.values():                              # миграция пользователей из старой версии бота
+            if not u["goal"]:
+                u["goal"], u["freezes"] = 10, max(u["freezes"], 1)
+                self.mark("users")
         self.notes = [t for t in (str(r.get("text", "")).strip()
                                   for r in await asyncio.to_thread(self.b.load, "notes", NOTE_COLS)) if t]
-        log.info("Загружено: %d польз., %d слов, %d записок", len(self.users), len(self.words), len(self.notes))
+        log.info("Загружено: %d польз., %d слов, %d глаголов, %d записок",
+                 len(self.users), len(self.words), len(self.verbs), len(self.notes))
 
     def _snapshot(self, tab):
         if tab == "users":
             return USER_COLS, [dict(u) for u in self.users.values()]
         if tab == "words":
             return WORD_COLS, [dict(w) for w in self.words.values()]
+        if tab == "verbs":
+            return VERB_COLS, [dict(v) for v in self.verbs.values()]
         return NOTE_COLS, [{"text": t} for t in self.notes]
 
     def mark(self, tab: str):
@@ -160,9 +179,9 @@ class Store:
     def ensure_user(self, uid: int, name: str = "") -> dict:
         u = self.users.get(uid)
         if u is None:
-            u = {"uid": uid, "name": name, "topics": "", "per_day": 5, "hour": 9, "tz": DEFAULT_TZ,
-                 "remind": 1, "streak": 0, "best_streak": 0, "last_active": "", "xp": 0, "correct": 0,
-                 "wrong": 0, "last_daily": "", "last_remind": "", "joined": date.today().isoformat()}
+            u = {c: 0 if c in USER_INT else "" for c in USER_COLS}
+            u.update({"uid": uid, "name": name, "per_day": 5, "hour": 9, "tz": DEFAULT_TZ, "remind": 0,
+                      "goal": 10, "freezes": 1, "daily": 0, "joined": date.today().isoformat()})
             self.users[uid] = u
             self.mark("users")
         return u
@@ -171,13 +190,13 @@ class Store:
     def words_of(self, uid: int) -> list[dict]:
         return [w for (u, _), w in self.words.items() if u == uid]
 
-    def add_word(self, uid, en, ru, ex="", topic="", source="daily", today: date | None = None) -> bool:
+    def add_word(self, uid, en, ru, ex="", topic="", source="daily", today: date | None = None, kind="") -> bool:
         key = (uid, en.lower())
         if key in self.words:
             return False
         d = (today or date.today()).isoformat()
         self.words[key] = {"uid": uid, "en": en, "ru": ru, "ex": ex, "topic": topic, "source": source,
-                           "box": 0, "next_review": d, "added": d, "correct": 0, "wrong": 0}
+                           "box": 0, "next_review": d, "added": d, "correct": 0, "wrong": 0, "kind": kind}
         self.mark("words")
         return True
 
@@ -186,6 +205,17 @@ class Store:
             return False
         self.mark("words")
         return True
+
+    # ---------- глаголы ----------
+    def verbs_of(self, uid: int) -> list[dict]:
+        return [v for (u, _), v in self.verbs.items() if u == uid]
+
+    def verb_rec(self, uid: int, v1: str, today: date) -> dict:
+        key = (uid, v1.lower())
+        if key not in self.verbs:
+            self.verbs[key] = {"uid": uid, "v1": v1, "box": 0, "next_review": today.isoformat(),
+                               "correct": 0, "wrong": 0}
+        return self.verbs[key]
 
 
 # ---------- логика прогресса ----------
@@ -199,25 +229,41 @@ def srs_review(w: dict, ok: bool, today: date):
     w["next_review"] = (today + timedelta(days=INTERVALS[w["box"]])).isoformat()
 
 
-def mark_active(u: dict, today: date) -> bool:
-    """Отмечает занятие. True — если это первое занятие за сегодня (серия обновилась)."""
-    t = today.isoformat()
-    if u["last_active"] == t:
-        return False
-    u["streak"] = u["streak"] + 1 if u["last_active"] == (today - timedelta(days=1)).isoformat() else 1
+def _gap(u: dict, today: date):
+    if not u["last_active"]:
+        return None
+    try:
+        return (today - date.fromisoformat(u["last_active"])).days
+    except ValueError:
+        return None
+
+
+def mark_active(u: dict, today: date) -> tuple[bool, str]:
+    """Отмечает занятие. Возвращает (первое занятие за сегодня?, пояснение про заморозку серии)."""
+    if u["last_active"] == today.isoformat():
+        return False, ""
+    note = ""
+    gap = _gap(u, today)
+    if gap == 1:
+        u["streak"] += 1
+    elif gap == 2 and u["freezes"] > 0:
+        u["freezes"] -= 1
+        u["streak"] += 1
+        note = "🧊 Заморозка серии спасла твою серию!"
+    else:
+        u["streak"] = 1
     u["best_streak"] = max(u["best_streak"], u["streak"])
-    u["last_active"] = t
-    return True
+    u["last_active"] = today.isoformat()
+    if u["streak"] % 7 == 0 and u["freezes"] < 2:
+        u["freezes"] += 1
+        note = (note + "\n" if note else "") + "🧊 +1 заморозка серии за неделю занятий!"
+    return True, note
 
 
 def live_streak(u: dict, today: date) -> int:
-    ok = {today.isoformat(), (today - timedelta(days=1)).isoformat()}
-    return u["streak"] if u["last_active"] in ok else 0
-
-
-def level_for(xp: int) -> str:
-    name = LEVELS[0][1]
-    for need, n in LEVELS:
-        if xp >= need:
-            name = n
-    return name
+    gap = _gap(u, today)
+    if gap is None:
+        return 0
+    if gap <= 1 or (gap == 2 and u["freezes"] > 0):
+        return u["streak"]
+    return 0

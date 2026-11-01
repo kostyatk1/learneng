@@ -1,32 +1,117 @@
-// формат: русская фраза|вариант1/вариант2/...  (проверка чуть прощает опечатки)
-Где находится ближайшая станция?|Where is the nearest station?
-Сколько это стоит?|How much is it?/How much does it cost?
+// Формат: русская фраза|вариант1/вариант2/...  Строки с # — категории. Сокращения (don't = do not) проверка понимает сама.
+# 🍽 Кафе и еда
 Я хочу заказать кофе.|I want to order a coffee./I would like to order a coffee./I'd like to order a coffee.
-Можно счёт, пожалуйста?|Can I have the bill, please?/Could I have the bill, please?/Can we have the bill, please?
-Я живу в маленькой квартире.|I live in a small flat./I live in a small apartment.
-Мне нужно купить хлеб и молоко.|I need to buy bread and milk./I have to buy bread and milk.
-Какая сегодня погода?|What is the weather like today?/What's the weather like today?/How is the weather today?
-Мой друг работает в банке.|My friend works in a bank./My friend works at a bank.
-Я не понимаю этот вопрос.|I don't understand this question./I do not understand this question.
-Поезд отправляется в девять часов.|The train leaves at nine o'clock./The train leaves at nine./The train leaves at 9 o'clock.
-У меня болит голова.|I have a headache./My head hurts./My head aches.
-Мы вчера ходили в магазин.|We went to the shop yesterday./We went to the store yesterday./Yesterday we went to the shop.
-Я люблю читать книги по вечерам.|I like reading books in the evening./I like to read books in the evening./I love reading books in the evening./I love to read books in the evening.
-Она каждый день ездит на работу на автобусе.|She goes to work by bus every day./She goes to work by bus./Every day she goes to work by bus.
-Сегодня холодно, надень куртку.|It's cold today, put on your jacket./It is cold today, put on your jacket.
-Ты можешь мне помочь?|Can you help me?/Could you help me?
-Я ищу свои ключи.|I'm looking for my keys./I am looking for my keys.
-Мы встретились в кафе.|We met in a cafe./We met in a café./We met at a cafe.
-Где здесь ближайшая аптека?|Where is the nearest pharmacy?/Where's the nearest pharmacy?/Where is the nearest chemist?
-Мне нравится эта музыка.|I like this music.
-У вас есть свободный номер?|Do you have a free room?/Do you have a room available?/Do you have any rooms available?
-Мы устали после работы.|We are tired after work./We're tired after work.
-В воскресенье мы не работаем.|We don't work on Sunday./We don't work on Sundays./We do not work on Sunday.
-Он обычно встаёт в семь часов.|He usually gets up at seven./He usually gets up at seven o'clock./He usually wakes up at seven.
-Извините, мы опоздали.|Sorry, we are late./Sorry, we're late./Sorry we are late./Excuse me, we are late.
-Что ты делаешь сегодня вечером?|What are you doing this evening?/What are you doing tonight?
-Мне нужен билет до Берлина.|I need a ticket to Berlin./I need a ticket for Berlin.
+Можно меню, пожалуйста?|Can I see the menu, please?/Can I have the menu, please?/Could I see the menu, please?
+Можно счёт, пожалуйста?|Can I get the check, please?/Can we get the check, please?/Could I have the check, please?
 Я хочу стакан воды.|I want a glass of water./I would like a glass of water./I'd like a glass of water.
-Дети играют в парке.|The children are playing in the park./Children are playing in the park./The kids are playing in the park.
-Это очень вкусный суп.|This soup is very tasty./This is very tasty soup./This is a very tasty soup./This soup is very delicious.
+Это очень вкусный суп.|This soup is very tasty./This is very tasty soup./This soup is delicious./This soup is very delicious.
+Можно это с собой?|Can I get this to go?/Can I have this to go?/Could I get this to go?
+У меня аллергия на орехи.|I'm allergic to nuts./I am allergic to nuts./I have a nut allergy.
+Что вы порекомендуете?|What do you recommend?/What would you recommend?
+Я буду пиццу и салат.|I'll have a pizza and a salad./I will have a pizza and a salad./I'll have pizza and a salad.
+Можно ещё воды?|Can I have some more water?/Can I get more water?/Could I have more water?
+Нам нужен столик на двоих.|We need a table for two./We would like a table for two./We'd like a table for two.
+Счёт, пожалуйста, мы поделим его.|Check, please. We'll split it./Can we split the check, please?
+# 🛍 Магазины
+Сколько это стоит?|How much is it?/How much does it cost?/How much is this?
+Можно примерить это?|Can I try this on?/Can I try it on?/May I try this on?
+У вас есть этот размер?|Do you have this in my size?/Do you have this size?/Do you have this in this size?
+Это слишком дорого.|It's too expensive./It is too expensive./This is too expensive.
+Я только смотрю, спасибо.|I'm just looking, thanks./I am just looking, thank you./I'm just looking, thank you.
+Можно оплатить картой?|Can I pay by card?/Can I pay with a card?/Can I pay with a credit card?
+Мне нужен пакет.|I need a bag./Can I get a bag?/I'd like a bag.
+Я хочу вернуть это.|I want to return this./I'd like to return this./I would like to return this.
+Есть скидка?|Is there a discount?/Do you have a discount?/Is there any discount?
+Где находится примерочная?|Where is the fitting room?/Where's the fitting room?
+Мне нужно купить хлеб и молоко.|I need to buy bread and milk./I have to buy bread and milk.
+Сохраните, пожалуйста, чек.|Please keep the receipt./Keep the receipt, please.
+# 🚌 Транспорт и направления
+Где находится ближайшая станция?|Where is the nearest station?/Where's the nearest station?
+Как добраться до аэропорта?|How do I get to the airport?/How can I get to the airport?
+Поверните налево на светофоре.|Turn left at the traffic light./Turn left at the light.
+Идите прямо два квартала.|Go straight for two blocks./Go straight two blocks.
+Остановка находится напротив банка.|The bus stop is across from the bank./The stop is across from the bank.
+Когда следующий автобус?|When is the next bus?/What time is the next bus?/When does the next bus come?
+Сколько стоит проезд?|How much is the fare?/How much is a ticket?/How much does a ticket cost?
+Мне нужна пересадка?|Do I need to transfer?/Do I have to transfer?/Do I need to change?
+Поезд отправляется в девять часов.|The train leaves at nine o'clock./The train leaves at nine./The train leaves at 9 o'clock.
+Я потерялся.|I'm lost./I am lost.
+Здесь можно припарковаться?|Can I park here?/Can we park here?/Is parking allowed here?
+Мне нужна заправка.|I need a gas station./I need to find a gas station./I need to get gas.
+# ✈️ Аэропорт и перелёт
+Где стойка регистрации?|Where is the check-in counter?/Where's the check-in counter?/Where is check-in?
+Мой рейс задерживается.|My flight is delayed.
+Мне нужно место у окна.|I need a window seat./I'd like a window seat./I would like a window seat.
+Это моя ручная кладь.|This is my carry-on./That's my carry-on.
+Где выход на посадку?|Where is the gate?/Where's the gate?
+Мой багаж потерялся.|My luggage is lost./My luggage got lost./They lost my luggage.
+Я не успел на стыковочный рейс.|I missed my connecting flight./I missed my connection.
+Сколько стоит билет туда и обратно?|How much is a round-trip ticket?/How much is a round trip ticket?
+Мне нужна виза?|Do I need a visa?
+Куда вы летите?|Where are you flying?/Where are you flying to?/Where are you going?
+Цель вашей поездки?|What is the purpose of your trip?/What's the purpose of your trip?
+Я здесь на отдыхе.|I'm here on vacation./I am here on vacation./I'm on vacation.
+# 💬 Знакомство и разговор
+Как тебя зовут?|What's your name?/What is your name?
+Приятно познакомиться.|Nice to meet you./It's nice to meet you./Pleased to meet you.
+Откуда ты?|Where are you from?
+Я живу в маленькой квартире.|I live in a small apartment.
+Я работаю в банке.|I work at a bank./I work in a bank.
+Ты можешь мне помочь?|Can you help me?/Could you help me?
+Повторите, пожалуйста.|Could you repeat that, please?/Can you repeat that, please?/Please repeat that.
+Говорите медленнее, пожалуйста.|Please speak more slowly./Could you speak more slowly, please?/Can you speak slower, please?
+Я не понимаю этот вопрос.|I don't understand this question./I do not understand this question.
+Как это сказать по-английски?|How do you say this in English?/How do I say this in English?
+Извините, мы опоздали.|Sorry, we're late./Sorry, we are late./Sorry we are late.
+Мне нравится эта музыка.|I like this music.
+Что ты делаешь сегодня вечером?|What are you doing tonight?/What are you doing this evening?
+Давай встретимся в кафе.|Let's meet at a cafe./Let's meet at the cafe./Let's meet in a cafe.
+# 🏥 Здоровье
+У меня болит голова.|I have a headache./My head hurts./My head aches.
+Мне нужен врач.|I need a doctor.
+Я плохо себя чувствую.|I don't feel well./I do not feel well./I feel sick.
+Где ближайшая аптека?|Where is the nearest pharmacy?/Where's the nearest pharmacy?
+У меня температура.|I have a fever.
+У меня болит горло.|I have a sore throat./My throat hurts.
+Вызовите скорую!|Call an ambulance!/Call 911!
+Я записан на приём на три часа.|I have an appointment at three./I have an appointment at 3.
+# 🏠 Дом и быт
+Мы живём на втором этаже.|We live on the second floor.
+Выключи свет, пожалуйста.|Turn off the light, please./Please turn off the light.
+Вынеси, пожалуйста, мусор.|Please take out the trash./Take out the trash, please.
+Я ищу свои ключи.|I'm looking for my keys./I am looking for my keys.
+Сегодня холодно, надень куртку.|It's cold today, put on your jacket./It is cold today, put on your jacket.
+Я убираю квартиру по субботам.|I clean the apartment on Saturdays./I clean my apartment on Saturdays.
+Дети играют в парке.|The kids are playing in the park./The children are playing in the park./Children are playing in the park.
+Мы вчера ходили в магазин.|We went to the store yesterday./Yesterday we went to the store.
+# 💼 Работа и учёба
+У меня завтра собеседование.|I have a job interview tomorrow./I have an interview tomorrow.
+Совещание начинается в десять.|The meeting starts at ten./The meeting begins at ten.
+Срок сдачи в пятницу.|The deadline is on Friday./The deadline is Friday.
+Я работаю с девяти до пяти.|I work from nine to five./I work from 9 to 5.
+Мне нужно отправить электронное письмо.|I need to send an email./I have to send an email.
+У меня много домашней работы.|I have a lot of homework.
+Завтра у нас контрольная.|We have a test tomorrow.
+Она каждый день ездит на работу на автобусе.|She goes to work by bus every day./She takes the bus to work every day./She goes to work by bus.
+Он обычно встаёт в семь часов.|He usually gets up at seven./He usually gets up at seven o'clock./He usually wakes up at seven.
+В воскресенье мы не работаем.|We don't work on Sunday./We don't work on Sundays./We do not work on Sunday.
+# 📱 Телефон и интернет
+Какой у вас пароль от Wi-Fi?|What's the Wi-Fi password?/What is the Wi-Fi password?
+Мой телефон разрядился.|My phone is dead./My phone died./My battery is dead.
+Напиши мне, когда приедешь.|Text me when you get here./Text me when you arrive./Text me when you get there.
+Я перезвоню тебе позже.|I'll call you back later./I will call you back later./I'll call you later.
+Отправь мне ссылку, пожалуйста.|Send me the link, please./Please send me the link.
+Я забыл пароль.|I forgot my password.
+Давай созвонимся по видео.|Let's do a video call./Let's have a video call./Let's video call.
+Мой друг работает в банке.|My friend works at a bank./My friend works in a bank.
+# 📅 Планы и погода
+Какая сегодня погода?|What's the weather like today?/What is the weather like today?/How's the weather today?
+Завтра будет дождь.|It will rain tomorrow./It's going to rain tomorrow./It is going to rain tomorrow.
+Что ты делаешь на выходных?|What are you doing this weekend?/What are you doing on the weekend?/What are you doing on weekends?
+Мы поедем в отпуск летом.|We're going on vacation in the summer./We are going on vacation in the summer./We will go on vacation in the summer./We're going on vacation in summer.
+Увидимся завтра.|See you tomorrow.
 Я не люблю ждать.|I don't like waiting./I don't like to wait./I do not like waiting./I do not like to wait.
+Я люблю читать книги по вечерам.|I like reading books in the evening./I like to read books in the evening./I love reading books in the evening./I love to read books in the evening.
+Мы встретились в кафе.|We met at a cafe./We met in a cafe./We met at a café.
+Мне нужен билет до Берлина.|I need a ticket to Berlin./I need a ticket for Berlin.
+У вас есть свободный номер?|Do you have a room available?/Do you have a free room?/Do you have any rooms available?

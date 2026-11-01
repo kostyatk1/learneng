@@ -12,6 +12,7 @@ from aiogram.enums import ParseMode
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler
 
 import handlers
+import verbs_h
 from storage import LocalBackend, SheetsBackend, Store
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -55,6 +56,7 @@ async def init_store():
 def make_dp() -> Dispatcher:
     dp = Dispatcher()
     dp.update.outer_middleware(Access())
+    dp.include_router(verbs_h.router)        # раньше основного: иначе кнопка «📘 Глаголы» уйдёт в переводчик
     dp.include_router(handlers.router)
     return dp
 
