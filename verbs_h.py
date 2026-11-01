@@ -4,6 +4,7 @@
 """
 import random
 import re
+from difflib import SequenceMatcher
 from collections import defaultdict, deque
 
 from aiogram import Bot, F, Router
@@ -22,6 +23,7 @@ PAGE = 6                                                  # глаголов н�
 
 RECENT_V: dict[int, deque] = defaultdict(lambda: deque(maxlen=5))
 VGROUP: dict[int, int | None] = {}                        # какую группу сейчас тренирует пользователь
+VMODE: dict[int, str | None] = {}                         # None — вперемешку, "forms" — только «русский → 3 формы»
 
 
 # ============================ вспомогательное ============================
@@ -67,7 +69,8 @@ def menu_text() -> str:
 
 def menu_kb():
     rows = [[(f"{G[i]} · {group_size(i)}", f"vg:{i}")] for i in range(len(G))]
-    rows += [[("🎯 Тренировка: все глаголы", "vt:all")], [("📊 Мой прогресс по глаголам", "vp")]]
+    rows += [[("🧩 Русский → 3 формы (V1–V2–V3)", "vf:all")], [("🎯 Тренировка вперемешку", "vt:all")],
+             [("📊 Мой прогресс по глаголам", "vp")]]
     return h.kb(*rows)
 
 
@@ -93,7 +96,8 @@ async def on_group(cb: CallbackQuery):
     text = (f"<b>{h.esc(G[g])}</b> · {len(vs)} глаголов\n"
             "<i>V1 – <b>V2</b> – V3 [транскрипция V2] · перевод</i>\n\n" + "\n".join(verb_line(v) for v in vs))
     await h.safe_edit(cb, text, h.kb([("📖 Предложения с V2 (EN ↔ RU)", f"vs:{g}:0")],
-                                     [("🧠 Тренировка группы", f"vt:{g}")],
+                                     [("🧩 Русский → 3 формы", f"vf:{g}")],
+                                     [("🧠 Тренировка вперемешку", f"vt:{g}")],
                                      [("🔊 Озвучить формы", f"vsay:{g}")],
                                      [("⬅️ Все группы", "vm")]))
     await cb.answer()
@@ -175,8 +179,17 @@ async def ask_verb(bot: Bot, u: dict):
     h.SPEECH[uid] = speech_of(v)
     si = random.randrange(len(v["en"]))
     en, ru = v["en"][si], v["sru"][si]
-    qtype = random.choices(["ven", "vru", "vform", "vgap"], weights=[30, 30, 20, 20])[0]
+    qtype = "vforms" if VMODE.get(uid) == "forms" else \
+        random.choices(["ven", "vru", "vform", "vgap", "vforms"], weights=[25, 25, 15, 15, 20])[0]
     head = f"📘 <i>{h.esc(G[group]) if group is not None else 'Все глаголы'}</i>\n\n"
+
+    if qtype == "vforms":                                  # русский глагол → назвать V1, V2, V3 по-английски
+        h.set_session(uid, type="vforms", v1=v["v1"])
+        await bot.send_message(
+            uid, f"{head}🧩 Назови <b>все три формы</b> этого глагола по-английски (V1 – V2 – V3):\n\n"
+                 f"🇷🇺 <b>{h.esc(v['ru'])}</b>\n\n<i>Напиши через пробел или дефис, например: go went gone</i>",
+            reply_markup=h.kb([("💡 Подсказка", "vh"), ("🤷 Не знаю", "vkk")], [("🚪 Выйти", "exit")]))
+        return
 
     if qtype == "vgap":
         mt = v2_regex(v).search(en)
@@ -193,10 +206,10 @@ async def ask_verb(bot: Bot, u: dict):
 
     if qtype == "ven":
         correct, opts = ru, _other_sentences(v, 3, False)
-        text = f"{head}🇬🇧➡️🇷🇺 Выбери верный перевод:\n\n{bold_v2(en, v)}"
+        text = f"{head}🇺🇸➡️🇷🇺 Выбери верный перевод:\n\n{bold_v2(en, v)}"
     elif qtype == "vru":
         correct, opts = en, _other_sentences(v, 3, True)
-        text = f"{head}🇷🇺➡️🇬🇧 Выбери верный перевод:\n\n<b>{h.esc(ru)}</b>"
+        text = f"{head}🇷🇺➡️🇺🇸 Выбери верный перевод:\n\n<b>{h.esc(ru)}</b>"
     else:                                                  # vform: выбрать V2
         correct = v["v2"]
         pool = {v["v1"], v["v3"]} - {correct}              # ловушки: другие формы этого же глагола
@@ -279,9 +292,78 @@ async def on_gap_skip(cb: CallbackQuery):
     await cb.answer()
 
 
+def _eq(a: str, b: str) -> bool:
+    return a == b or (len(b) >= 5 and SequenceMatcher(None, a, b).ratio() >= 0.88)
+
+
+def _score_forms(c: dict, toks: list[str]):
+    """Сколько форм угадано у кандидата c: (V1, V2, V3). Для be допускаем «be was were been»."""
+    if len(toks) == 4 and toks[2] in ("was", "were"):
+        toks = [toks[0], toks[1], toks[3]]
+    t1, t2, t3 = toks[0], toks[1], toks[-1]
+    return (_eq(t1, c["v1"].lower()), any(_eq(t2, f.lower()) for f in v2_forms(c)), _eq(t3, c["v3"].lower()))
+
+
+async def check_forms(m: Message, u: dict, s: dict, text: str):
+    toks = re.findall(r"[a-z']+", text.lower())
+    if len(toks) < 3:
+        await m.answer("Нужно написать <b>три формы</b> через пробел или дефис, например: <code>go went gone</code>. "
+                       "Если не знаешь — нажми «🤷 Не знаю».")
+        return
+    v = next(x for x in V if x["v1"] == s["v1"])
+    cands = [x for x in V if x["ru"] == v["ru"]]          # «делать» — это и make, и do: принимаем любой подходящий
+    best = max(cands, key=lambda c: sum(_score_forms(c, toks)))
+    res = _score_forms(best, toks)
+    ok = all(res)
+    h.S.pop(u["uid"], None)
+    shown = best if ok else v
+    mark = lambda r: "✅" if r else "❌"
+    extra = (f"\nV1 {mark(res[0])}  V2 {mark(res[1])}  V3 {mark(res[2])}" +
+             (f"\n<i>Тоже верно: {h.esc(best['v1'])} – {h.esc(best['v2'])} – {h.esc(best['v3'])}</i>" if ok and best is not v else "") +
+             ("" if ok else f"\nПравильно: <b>{h.esc(v['v1'])} – {h.esc(v['v2'])} – {h.esc(v['v3'])}</b>"))
+    v_done, lines, gain = _finish(u, s["v1"], ok)
+    await m.answer(_feedback(v_done, ok, gain, lines, extra), reply_markup=NEXT_KB())
+
+
+h.TEXT_HANDLERS["vforms"] = check_forms
+
+
+@router.callback_query(F.data == "vh")
+async def on_forms_hint(cb: CallbackQuery):
+    s = h.get_session(cb.from_user.id, {"vforms"})
+    if not s:
+        await cb.answer("Это упражнение уже неактуально")
+        return
+    v = next(x for x in V if x["v1"] == s["v1"])
+    await cb.answer(f"Подсказка: {v['v1'][0]}…  {v2_forms(v)[0][0]}…  {v['v3'][0]}…", show_alert=True)
+
+
+@router.callback_query(F.data == "vkk")
+async def on_forms_skip(cb: CallbackQuery):
+    u = h.get_user(cb.from_user)
+    s = h.get_session(u["uid"], {"vforms"})
+    if not s:
+        await cb.answer("Это упражнение уже неактуально")
+        return
+    h.S.pop(u["uid"], None)
+    v, lines, gain = _finish(u, s["v1"], False)
+    await h.safe_edit(cb, _feedback(v, False, gain, lines, f"\nПравильно: <b>{h.esc(v['v1'])} – {h.esc(v['v2'])} – {h.esc(v['v3'])}</b>"), NEXT_KB())
+    await cb.answer()
+
+
+@router.callback_query(F.data.startswith("vf:"))
+async def on_forms_train(cb: CallbackQuery, bot: Bot):
+    arg = cb.data[3:]
+    VGROUP[cb.from_user.id] = None if arg == "all" else int(arg)
+    VMODE[cb.from_user.id] = "forms"
+    await cb.answer()
+    await ask_verb(bot, h.get_user(cb.from_user))
+
+
 @router.callback_query(F.data.startswith("vt:"))
 async def on_train(cb: CallbackQuery, bot: Bot):
     arg = cb.data[3:]
+    VMODE[cb.from_user.id] = None
     VGROUP[cb.from_user.id] = None if arg == "all" else int(arg)
     await cb.answer()
     await ask_verb(bot, h.get_user(cb.from_user))

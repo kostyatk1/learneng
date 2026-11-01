@@ -12,6 +12,7 @@ from aiogram.enums import ParseMode
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler
 
 import handlers
+import extras_h
 import verbs_h
 from storage import LocalBackend, SheetsBackend, Store
 
@@ -26,6 +27,9 @@ CRON_KEY = os.getenv("CRON_KEY", "")
 BASE_URL = (os.getenv("BASE_URL") or os.getenv("RENDER_EXTERNAL_URL") or "").rstrip("/")
 ALLOWED = {int(x) for x in os.getenv("ALLOWED_IDS", "").replace(" ", "").split(",") if x.strip().lstrip("-").isdigit()}
 PORT = int(os.getenv("PORT", "10000"))
+_ADMIN = int(os.getenv("ADMIN_ID", "0") or 0)
+if ALLOWED and _ADMIN:
+    ALLOWED.add(_ADMIN)                                   # админ всегда допущен (иначе не сработают /diag, /note)
 
 
 class Access(BaseMiddleware):
@@ -56,6 +60,7 @@ async def init_store():
 def make_dp() -> Dispatcher:
     dp = Dispatcher()
     dp.update.outer_middleware(Access())
+    dp.include_router(extras_h.router)
     dp.include_router(verbs_h.router)        # раньше основного: иначе кнопка «📘 Глаголы» уйдёт в переводчик
     dp.include_router(handlers.router)
     return dp

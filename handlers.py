@@ -42,7 +42,7 @@ PH_CAT: dict[int, int | None] = {}                        # выбранная �
 TEXT_HANDLERS: dict = {}                                  # тип упражнения -> функция проверки ответа текстом
 
 MENU = {"quiz": "🧠 Квиз", "new": "🆕 Новые слова", "phrase": "✍️ Фразы", "verbs": "📘 Глаголы",
-        "slang": "😎 Сленг", "words": "📚 Мои слова", "badges": "🏅 Достижения", "stats": "📊 Прогресс",
+        "slang": "😎 Сленг", "dialogs": "🎭 Диалоги", "listen": "🎧 Аудирование", "grammar": "📐 Грамматика", "words": "📚 Мои слова", "badges": "🏅 Достижения", "stats": "📊 Прогресс",
         "settings": "⚙️ Настройки"}
 
 WELCOME = (
@@ -54,6 +54,10 @@ WELCOME = (
     "✍️ /phrase — переведи фразу (160+ фраз по темам)\n"
     "📘 /verbs — неправильные глаголы: группы, предложения, тренировка\n"
     "😎 /slang — американский сленг\n"
+    "🎭 /dialogs — диалоги (отель, кафе, аэропорт, ветеринар с нашими питомцами…)\n"
+    "🎧 /listen — аудирование · 📐 /grammar — мини-грамматика\n"
+    "⚠️ /hard — сложные слова (где чаще ошибаешься)\n"
+    "🏠 /menu — вернуться в главное меню\n"
     "📚 /words — твой словарь, ➕ /add — добавить своё слово\n"
     "💬 Просто напиши слово или фразу (по-русски или по-английски) — переведу и озвучу\n"
     "📊 /stats — прогресс · 🏅 /badges — значки и уровни\n"
@@ -90,15 +94,18 @@ def topics_of(u: dict) -> list[int]:
     return [int(x) for x in u["topics"].split(",") if x.strip().isdigit() and int(x) < len(content.TOPICS)]
 
 
-def kb(*rows) -> InlineKeyboardMarkup:
-    """kb([("текст", "callback")], [("текст2", "cb2"), ...])"""
+def kb(*rows, home: bool = True) -> InlineKeyboardMarkup:
+    """kb([("текст", "callback")], [("текст2", "cb2"), ...]) — внизу автоматически добавляется «🏠 Главное меню»."""
+    rows = [list(r) for r in rows]
+    if home and not any(d == "home" for r in rows for _, d in r):
+        rows.append([("🏠 Главное меню", "home")])
     return InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text=t, callback_data=d) for t, d in row]
                                                  for row in rows])
 
 
 def main_kb() -> ReplyKeyboardMarkup:
-    rows = [[MENU["quiz"], MENU["new"]], [MENU["phrase"], MENU["verbs"]], [MENU["slang"], MENU["words"]],
-            [MENU["badges"], MENU["stats"]], [MENU["settings"]]]
+    rows = [[MENU["quiz"], MENU["new"]], [MENU["phrase"], MENU["verbs"]], [MENU["dialogs"], MENU["listen"]],
+            [MENU["grammar"], MENU["slang"]], [MENU["words"], MENU["badges"]], [MENU["stats"], MENU["settings"]]]
     return ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=t) for t in r] for r in rows], resize_keyboard=True)
 
 
@@ -284,7 +291,7 @@ async def ask_question(bot: Bot, u: dict, kind: str | None = None):
     SPEECH[uid] = w["en"]
     tr = f" <i>[{esc(w['tr'])}]</i>" if (w.get("tr") and not rev) else ""
     head = (f"🇷🇺 <b>{esc(prompt)}</b>\nКак это по-английски? 👇" if rev
-            else f"🇬🇧 <b>{esc(prompt)}</b>{tr}\nВыбери перевод 👇")
+            else f"🇺🇸 <b>{esc(prompt)}</b>{tr}\nВыбери перевод 👇")
     rows = [[(o, f"a:{i}")] for i, o in enumerate(opts)] + [[("🔊", "say")]]
     await bot.send_message(uid, head, reply_markup=kb(*rows))
 
@@ -450,6 +457,27 @@ async def on_add_pending(cb: CallbackQuery):
         pass
 
 
+# ============================ главное меню ============================
+HOME_TEXT = (f"🏠 <b>Главное меню</b> · <i>{BRAND}</i> 💖\n\n"
+             "🧠 Квиз · 🆕 Новые слова · ✍️ Фразы · 📘 Глаголы\n🎭 Диалоги · 🎧 Аудирование · 📐 Грамматика · 😎 Сленг\n"
+             "📚 Мои слова · 🏅 Достижения · 📊 Прогресс · ⚙️ Настройки\n\n"
+             "Или просто напиши слово — я его переведу.")
+
+
+@router.callback_query(F.data == "home")
+async def on_home(cb: CallbackQuery):
+    S.pop(cb.from_user.id, None)
+    await cb.answer()
+    await cb.message.answer(HOME_TEXT, reply_markup=main_kb())
+
+
+@router.message(Command("menu"))
+async def cmd_menu(m: Message):
+    S.pop(m.from_user.id, None)
+    get_user(m.from_user)
+    await m.answer(HOME_TEXT, reply_markup=main_kb())
+
+
 # ============================ команды ============================
 @router.message(CommandStart())
 async def cmd_start(m: Message):
@@ -600,6 +628,36 @@ async def cmd_badges(m: Message, bot: Bot):
                                            "Новая заморозка — за каждые 7 дней серии (максимум 2).</i>"])
 
 
+# ============================ сложные слова ============================
+def _hard_words(uid: int) -> list[dict]:
+    ws = [w for w in store.words_of(uid) if w["wrong"] > 0]
+    return sorted(ws, key=lambda w: (w["wrong"] - 0.5 * w["correct"], w["wrong"]), reverse=True)[:15]
+
+
+@router.message(Command("hard"))
+async def cmd_hard(m: Message):
+    u = get_user(m.from_user)
+    ws = _hard_words(u["uid"])
+    if not ws:
+        await m.answer("Пока нет слов с ошибками — отлично! 🎉 Они появятся здесь, когда начнёшь ошибаться в квизе.")
+        return
+    lines = [f"❌ {w['wrong']} · ✅ {w['correct']} — <b>{esc(w['en'])}</b> — {esc(w['ru'])}" for w in ws]
+    await m.answer("⚠️ <b>Сложные слова</b> (чаще всего ошибки):\n\n" + "\n".join(lines),
+                   reply_markup=kb([("🔁 Повторить их сейчас", "hardq")]))
+
+
+@router.callback_query(F.data == "hardq")
+async def on_hard_quiz(cb: CallbackQuery, bot: Bot):
+    u = get_user(cb.from_user)
+    today = today_of(u).isoformat()
+    for w in _hard_words(u["uid"]):
+        w["next_review"] = today                       # делаем их «просроченными», чтобы квиз взял их первыми
+        w["box"] = min(w["box"], 1)
+    store.mark("words")
+    await cb.answer()
+    await ask_question(bot, u, "")
+
+
 # ============================ сленг ============================
 def slang_menu_kb() -> InlineKeyboardMarkup:
     rows = [[(t, f"slt:{i}")] for i, t in enumerate(content.SLANG_TOPICS)]
@@ -679,7 +737,7 @@ async def on_topics_done(cb: CallbackQuery, bot: Bot):
     await safe_edit(cb, f"🗂 Темы сохранены: {esc(names)}")
     await cb.answer()
     if not store.words_of(u["uid"]):                      # самый первый урок
-        await deliver_words(bot, u, u["per_day"], f"🎁 <b>Твой первый урок!</b> · <i>{BRAND}</i> 💖")
+        await deliver_words(bot, u, u["per_day"], f"🎁 <b>Твой первый урок!</b> · <i>{BRAND}</i> 💖\n<i>🌍 Часовой пояс сейчас {u['tz']}. Если ты в другом — напиши, например, /tz Europe/Moscow</i>")
 
 
 def settings_text(u: dict) -> str:
@@ -822,7 +880,7 @@ async def on_text(m: Message, bot: Bot):
     if len(r["en"].split()) <= 3:
         PENDING[uid] = r
         buttons.append(("➕ В словарь", "addp"))
-    out = f"🇬🇧 <b>{esc(r['en'])}</b>"
+    out = f"🇺🇸 <b>{esc(r['en'])}</b>"
     if r.get("tr"):
         out += f" <i>[{esc(r['tr'])}]</i>"
     out += f"\n🇷🇺 {esc(r['ru'])}"
@@ -833,6 +891,12 @@ async def on_text(m: Message, bot: Bot):
     if active:
         out += "\n\n<i>Упражнение ещё активно: ответь по-английски или нажми «🚪 Выйти».</i>"
     await m.answer(out, reply_markup=kb(buttons))
+
+
+@router.message(F.text.startswith("/"))
+async def unknown_command(m: Message):
+    await m.answer("Не знаю такой команды 🙈 Вот что есть: /menu — главное меню, /help — список возможностей.",
+                   reply_markup=main_kb())
 
 
 # ============================ рассылка «слова дня» по расписанию ============================

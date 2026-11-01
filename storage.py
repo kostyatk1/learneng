@@ -155,7 +155,7 @@ class Store:
         if self._task is None or self._task.done():
             self._task = loop.create_task(self._flush_later())
 
-    async def _flush_later(self, delay: float = 3):
+    async def _flush_later(self, delay: float = 8):
         await asyncio.sleep(delay)
         for _ in range(5):
             await self.flush()

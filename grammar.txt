@@ -1,0 +1,56 @@
+// Мини-грамматика. T|строка теории (HTML)   Q|предложение с ___|верно|неверно 1|неверно 2|пояснение
+# 📐 Past Simple — прошедшее
+T|<b>Past Simple</b> — действие, которое закончилось в прошлом: <i>yesterday, last week, two days ago</i>.
+T|Правильные глаголы: <b>+ed</b> (walk → walked). Неправильные — свои формы (go → went), см. раздел «📘 Глаголы».
+T|Вопрос: <b>Did</b> + подлежащее + V1: <i>Did you see Mira?</i> Отрицание: <b>didn't</b> + V1: <i>We didn't go out.</i>
+T|Примеры: <i>Yesterday we walked in the park.</i> — Вчера мы гуляли в парке. <i>I bought a ticket.</i> — Я купил(а) билет.
+Q|Yesterday we ___ to the park.|went|go|goed|go — неправильный глагол, V2 = went.
+Q|I ___ eat breakfast this morning.|didn't|doesn't|not|Отрицание в прошедшем: didn't + V1.
+Q|___ you see the movie last night?|Did|Do|Were|Вопрос в Past Simple начинается с Did.
+Q|I ___ a letter yesterday.|wrote|writed|write|write → wrote (неправильный глагол).
+Q|She ___ the dishes after dinner.|washed|washing|wash|Правильный глагол: wash + ed.
+# 📐 Present Simple и Continuous
+T|<b>Present Simple</b> — привычки и факты: <i>I drink coffee every day.</i> Для he/she/it добавляем <b>-s</b>: <i>She works</i>.
+T|<b>Present Continuous</b> — действие прямо сейчас: <b>am/is/are + V-ing</b>: <i>They are watching TV now.</i>
+T|Подсказки: every day, usually, always → Simple. now, right now, at the moment, Look! → Continuous.
+Q|My neighbor ___ to work by bus every day.|goes|is going|go|every day — привычка → Present Simple, he/she → goes.
+Q|Look! It ___ outside.|is snowing|snows|snow|Look! — прямо сейчас → Present Continuous.
+Q|I ___ coffee every morning.|drink|am drinking|drinks|Привычка, I → без -s.
+Q|We ___ a movie right now.|are watching|watch|watches|right now → Continuous.
+Q|He usually ___ at seven.|gets up|is getting up|get up|usually → Simple; he → gets.
+# 📐 Артикли a / an / the
+T|<b>a / an</b> — один из многих, первое упоминание: <i>a cat, an apple</i> (<b>an</b> — перед гласным звуком).
+T|<b>the</b> — конкретный, известный предмет: <i>The cat is on the couch.</i> (мы знаем, о какой кошке речь).
+T|Без артикля: общие понятия во мн. числе и города: <i>I love dogs. I live in Berlin.</i>
+Q|I have ___ dog.|a|an|the|Первое упоминание, согласный звук → a.
+Q|She eats ___ apple every day.|an|a|the|apple начинается с гласного звука → an.
+Q|Close ___ window, please. It's cold.|the|a|an|Окно конкретное, известное обоим → the.
+Q|I love ___ cats.|(без артикля)|the|a|«Кошки вообще» — без артикля.
+Q|He is ___ doctor.|a|an|the|Профессия: a doctor.
+# 📐 There is / There are, some / any
+T|<b>There is</b> + один предмет, <b>there are</b> + несколько: <i>There is a bowl. There are two bowls.</i>
+T|Вопрос: <i>Is there…? Are there…?</i> Отрицание: <i>There isn't… / There aren't…</i>
+T|<b>some</b> — в утверждениях, <b>any</b> — в вопросах и отрицаниях: <i>There is some milk. Is there any milk?</i>
+Q|___ a dog in the yard.|There is|There are|It are|Одна собака → there is.
+Q|___ three bags in the car.|There are|There is|They is|Три → there are.
+Q|Is there ___ milk in the fridge?|any|some|a|Вопрос → any.
+Q|There aren't ___ eggs.|any|some|an|Отрицание → any.
+Q|There is ___ bread on the table.|some|any|an|Утверждение → some.
+# 📐 Can / can't / could
+T|<b>can</b> — уметь, мочь: <i>He can swim.</i> Отрицание: <b>can't</b>. Вопрос: <i>Can you help me?</i>
+T|После can глагол без to и без -s: <i>She can run</i> (не <i>cans</i>, не <i>can to run</i>).
+T|<b>could</b> — вежливая просьба и «мог» в прошлом: <i>Could you open the window, please?</i>
+Q|My friend ___ speak three languages.|can|cans|can to|can не принимает -s.
+Q|I ___ swim. I'm afraid of water.|can't|don't can|can|«Не умею» → can't.
+Q|___ you open the window, please?|Could|Do|Are|Вежливая просьба → Could you…?
+Q|She can ___ English very well.|speak|speaks|to speak|После can — V1 без to.
+Q|___ you play the guitar?|Can|Does|Is|Вопрос: Can + подлежащее.
+# 📐 Сравнение прилагательных
+T|Короткие прилагательные: <b>+er + than</b>: <i>This bag is cheaper than that one.</i> (big → bigger, happy → happier)
+T|Длинные: <b>more + прилагательное</b>: <i>This sofa is more comfortable than that one.</i>
+T|Особые: good → <b>better</b>, bad → <b>worse</b>.
+Q|A dog is usually ___ than a cat.|bigger|more big|biger|big → bigger (удвоение g).
+Q|This hotel is ___ than that one.|more expensive|expensiver|more expensiver|Длинное слово → more + прилагательное.
+Q|Today is ___ than yesterday.|better|gooder|more good|good → better.
+Q|My brother is ___ than me.|older|more old|oldest|Короткое слово → older than.
+Q|Tea is ___ than soda.|healthier|more healthy|healthyer|healthy → healthier (y → ier).
