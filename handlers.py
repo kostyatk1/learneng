@@ -43,7 +43,7 @@ TEXT_HANDLERS: dict = {}                                  # тип упражн�
 
 MENU = {"quiz": "🧠 Квиз", "new": "🆕 Новые слова", "phrase": "✍️ Фразы", "verbs": "📘 Глаголы",
         "slang": "😎 Сленг", "dialogs": "🎭 Диалоги", "listen": "🎧 Аудирование", "grammar": "📐 Грамматика", "words": "📚 Мои слова", "badges": "🏅 Достижения", "stats": "📊 Прогресс",
-        "settings": "⚙️ Настройки"}
+        "settings": "⚙️ Настройки", "admin": "🛠 Админ"}
 
 WELCOME = (
     f"💖 <b>{BRAND}</b> 💖\n\n"
@@ -103,9 +103,11 @@ def kb(*rows, home: bool = True) -> InlineKeyboardMarkup:
                                                  for row in rows])
 
 
-def main_kb() -> ReplyKeyboardMarkup:
+def main_kb(uid: int = 0) -> ReplyKeyboardMarkup:
     rows = [[MENU["quiz"], MENU["new"]], [MENU["phrase"], MENU["verbs"]], [MENU["dialogs"], MENU["listen"]],
             [MENU["grammar"], MENU["slang"]], [MENU["words"], MENU["badges"]], [MENU["stats"], MENU["settings"]]]
+    if uid and uid == ADMIN_ID:
+        rows.append([MENU["admin"]])
     return ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=t) for t in r] for r in rows], resize_keyboard=True)
 
 
@@ -468,27 +470,27 @@ HOME_TEXT = (f"🏠 <b>Главное меню</b> · <i>{BRAND}</i> 💖\n\n"
 async def on_home(cb: CallbackQuery):
     S.pop(cb.from_user.id, None)
     await cb.answer()
-    await cb.message.answer(HOME_TEXT, reply_markup=main_kb())
+    await cb.message.answer(HOME_TEXT, reply_markup=main_kb(cb.from_user.id))
 
 
 @router.message(Command("menu"))
 async def cmd_menu(m: Message):
     S.pop(m.from_user.id, None)
     get_user(m.from_user)
-    await m.answer(HOME_TEXT, reply_markup=main_kb())
+    await m.answer(HOME_TEXT, reply_markup=main_kb(m.from_user.id))
 
 
 # ============================ команды ============================
 @router.message(CommandStart())
 async def cmd_start(m: Message):
     u = get_user(m.from_user)
-    await m.answer(WELCOME, reply_markup=main_kb())
+    await m.answer(WELCOME, reply_markup=main_kb(m.from_user.id))
     await m.answer("🗂 Выбери темы слов (можно несколько) и нажми «Готово»:", reply_markup=topics_kb(u))
 
 
 @router.message(Command("help"))
 async def cmd_help(m: Message):
-    await m.answer(WELCOME.replace("Начнём с выбора тем 👇", "Темы можно поменять в /settings."), reply_markup=main_kb())
+    await m.answer(WELCOME.replace("Начнём с выбора тем 👇", "Темы можно поменять в /settings."), reply_markup=main_kb(m.from_user.id))
 
 
 @router.message(Command("new"))
@@ -896,25 +898,41 @@ async def on_text(m: Message, bot: Bot):
 @router.message(F.text.startswith("/"))
 async def unknown_command(m: Message):
     await m.answer("Не знаю такой команды 🙈 Вот что есть: /menu — главное меню, /help — список возможностей.",
-                   reply_markup=main_kb())
+                   reply_markup=main_kb(m.from_user.id))
 
 
 # ============================ рассылка «слова дня» по расписанию ============================
+DEFAULT_REMINDER = "⏰ Время для английского! Сегодня ещё не было практики. Хватит пяти минут{streak} 💪"
+
+
 async def tick(bot: Bot) -> dict:
-    """Вызывается внешним cron-ом (cron-job.org). Работает только для тех, кто включил «Слово дня»."""
-    res = {"daily": 0, "errors": 0}
+    """Вызывается внешним cron-ом (cron-job.org): слово дня, напоминания, назначенные админом, и дайджест для админа."""
+    res = {"daily": 0, "reminders": 0, "digests": 0, "errors": 0}
     for u in list(store.users.values()):
         try:
-            if not u["daily"]:
-                continue
             now = now_of(u)
             today = now.date().isoformat()
-            if now.hour >= u["hour"] and u["last_daily"] != today:
+            if u["daily"] and now.hour >= u["hour"] and u["last_daily"] != today:
                 u["last_daily"] = today                      # ставим сразу — защита от двойных вызовов
                 store.mark("users")
                 note = random.choice(store.notes) if store.notes and random.random() < 0.5 else None
                 await deliver_words(bot, u, u["per_day"], f"☀️ <b>Слова дня</b> · <i>{BRAND}</i> 💖", note)
                 res["daily"] += 1
+            if (u["rem_hour"] and u["uid"] != ADMIN_ID and now.hour >= u["rem_hour"] and now.hour < 23
+                    and u["last_rem"] != today and u["last_active"] != today):
+                u["last_rem"] = today
+                store.mark("users")
+                streak = live_streak(u, now.date())
+                text = u["rem_text"] or DEFAULT_REMINDER.format(streak=f", и серия 🔥 {streak} дн. продолжится" if streak else "")
+                await bot.send_message(u["uid"], esc(text) if u["rem_text"] else text,
+                                       reply_markup=kb([("🧠 Начать квиз", "goquiz")]))
+                res["reminders"] += 1
+            if u["digest"] and u["uid"] == ADMIN_ID and now.hour >= 21 and u["last_digest"] != today:
+                u["last_digest"] = today
+                store.mark("users")
+                import admin_h
+                await bot.send_message(u["uid"], admin_h.digest_text())
+                res["digests"] += 1
         except TelegramForbiddenError:
             log.info("user %s заблокировал бота", u["uid"])
         except Exception:

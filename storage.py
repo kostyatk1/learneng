@@ -14,12 +14,14 @@ USER_COLS = ["uid", "name", "topics", "per_day", "hour", "tz", "remind", "streak
              "last_active", "xp", "correct", "wrong", "last_daily", "last_remind", "joined",
              # --- добавлено позже (старые таблицы подхватываются автоматически) ---
              "goal", "today_n", "today_date", "badges", "freezes", "daily", "hist", "goal_days",
-             "best_combo", "v_ok", "s_ok"]
+             "best_combo", "v_ok", "s_ok",
+             # --- для админ-раздела: напоминания, назначенные админом, дайджест ---
+             "rem_hour", "rem_text", "last_rem", "digest", "last_digest"]
 WORD_COLS = ["uid", "en", "ru", "ex", "topic", "source", "box", "next_review", "added", "correct", "wrong", "kind"]
 VERB_COLS = ["uid", "v1", "box", "next_review", "correct", "wrong"]
 NOTE_COLS = ["text"]
 USER_INT = {"uid", "per_day", "hour", "remind", "streak", "best_streak", "xp", "correct", "wrong", "goal",
-            "today_n", "freezes", "daily", "goal_days", "best_combo", "v_ok", "s_ok"}
+            "today_n", "freezes", "daily", "goal_days", "best_combo", "v_ok", "s_ok", "rem_hour", "digest"}
 WORD_INT = {"uid", "box", "correct", "wrong"}
 VERB_INT = {"uid", "box", "correct", "wrong"}
 
