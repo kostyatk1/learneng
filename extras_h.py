@@ -32,7 +32,7 @@ def _load_dialogs():
         if tag == "B":
             cur["steps"].append({"en": p[0], "ru": p[1], "you": None})
         elif tag == "Y":
-            cur["steps"][-1]["you"] = {"ok": p[0], "ru": p[1], "bad": p[2:4]}
+            cur["steps"][-1]["you"] = {"ok": [v.strip() for v in p[0].split("/") if v.strip()], "ru": p[1]}
     return out
 
 
@@ -68,7 +68,7 @@ async def cmd_dialogs(m: Message):
     h.get_user(m.from_user)
     h.S.pop(m.from_user.id, None)
     await m.answer("🎭 <b>Диалоги</b>: ты играешь одну из сторон, а я — собеседника. "
-                   "На каждую реплику выбери лучший ответ по-английски. "
+                   "На каждую реплику <b>напиши свой ответ по-английски</b> (годится любой разумный вариант). "
                    "Русский перевод реплики спрятан: нажми на него, чтобы подсмотреть.\n\n"
                    "<i>Сценарии вымышленные, учебные.</i>", reply_markup=dialogs_kb())
 
@@ -94,18 +94,16 @@ async def send_step(bot: Bot, u: dict, s: dict):
         h.S.pop(uid, None)
         total = s["total"]
         bonus = ""
-        if total:
-            lines, gain = h.register_answer(u, s["score"] == total, 20, "phrase") if s["score"] == total else ([], 0)
-            bonus = (f"\n\n🏆 Идеально! Бонус +{gain} XP" + ("\n" + "\n".join(lines) if lines else "")) if gain else ""
+        if total and s["score"] == total:
+            lines, gain = h.register_answer(u, True, 20, "phrase")
+            bonus = f"\n\n🏆 Идеально! Бонус +{gain} XP" + ("\n" + "\n".join(lines) if lines else "")
         await bot.send_message(uid, f"{head}\n\n🎉 <b>Диалог пройден!</b> Верных ответов: {s['score']} из {total}.{bonus}",
                                reply_markup=h.kb([("🔊", "say")], [("🎭 Другой диалог", "dm")]))
         return
-    opts = [(st["you"]["ok"], True)] + [(b, False) for b in st["you"]["bad"]]
-    random.shuffle(opts)
-    s["opts"] = opts
+    s["wait"] = True
     s["t"] = __import__("time").time()
-    rows = [[(o[0], f"dc:{i}")] for i, o in enumerate(opts)] + [[("🔊", "say"), ("🚪 Выйти", "exit")]]
-    await bot.send_message(uid, head + "\n\n<i>Как ответишь?</i>", reply_markup=h.kb(*rows))
+    await bot.send_message(uid, head + "\n\n✍️ <i>Напиши свой ответ по-английски сообщением</i>",
+                           reply_markup=h.kb([("💡 Подсказка", "dlh"), ("👀 Покажи ответ", "dls")], [("🔊", "say"), ("🚪 Выйти", "exit")]))
 
 
 @router.callback_query(F.data.startswith("dg:"))
@@ -116,27 +114,62 @@ async def on_dialog_start(cb: CallbackQuery, bot: Bot):
     await send_step(bot, u, h.S[u["uid"]])
 
 
-@router.callback_query(F.data.startswith("dc:"))
-async def on_dialog_choice(cb: CallbackQuery, bot: Bot):
-    u = h.get_user(cb.from_user)
-    s = h.get_session(u["uid"], {"dlg"})
-    if not s or "opts" not in s:
-        await cb.answer("Этот диалог уже неактуален — выбери его заново")
-        return
-    text, ok = s["opts"][int(cb.data[3:])]
+async def check_dialog(m: Message, u: dict, s: dict, text: str):
     st = DIALOGS[s["d"]]["steps"][s["s"]]
+    variants = st["you"]["ok"]
+    r = content.best_ratio(text, variants)
+    ok = r >= 0.84
     s["total"] += 1
     s["score"] += ok
-    lines, gain = h.register_answer(u, ok, 8, "phrase")
-    mark = f"✅ <b>{h.mot.praise(True)}</b> +{gain} XP" if ok else f"❌ Лучше так: <b>{h.esc(st['you']['ok'])}</b>"
-    body = f"{mark}\n\n🗣 {h.esc(st['you']['ok'])}\n🇷🇺 <i>{h.esc(st['you']['ru'])}</i>"
+    lines, gain = h.register_answer(u, ok, 10 if r >= 0.999 else 8, "phrase")
+    if ok:
+        mark = f"✅ <b>{h.mot.praise(True)}</b> +{gain} XP"
+        if r < 0.999:
+            mark += f"\nОбразец: <b>{h.esc(variants[0])}</b>"
+    else:
+        mark = f"❌ Можно так: <b>{h.esc(variants[0])}</b>"
+    body = f"{mark}\n🇷🇺 <i>{h.esc(st['you']['ru'])}</i>"
+    if len(variants) > 1 and ok is False:
+        body += "\n\nЕщё варианты:\n" + "\n".join(f"• {h.esc(v)}" for v in variants[1:3])
     if lines:
         body += "\n\n" + "\n".join(lines)
-    await h.safe_edit(cb, body, h.kb([("🔊", "say")], home=False))
-    await cb.answer()
-    h.SPEECH[u["uid"]] = st["you"]["ok"]
+    await m.answer(body, reply_markup=h.kb([("🔊", "say")], home=False))
+    h.SPEECH[u["uid"]] = variants[0]
     s["s"] += 1
-    s.pop("opts", None)
+    s.pop("wait", None)
+    await send_step(m.bot, u, s)
+
+
+h.TEXT_HANDLERS["dlg"] = check_dialog
+
+
+@router.callback_query(F.data == "dlh")
+async def on_dialog_hint(cb: CallbackQuery):
+    s = h.get_session(cb.from_user.id, {"dlg"})
+    if not s or not s.get("wait"):
+        await cb.answer("Эта подсказка уже неактуальна")
+        return
+    v = DIALOGS[s["d"]]["steps"][s["s"]]["you"]["ok"][0]
+    words = v.split()
+    await cb.answer(f"Начни так: {' '.join(words[:2])}…  (всего слов: {len(words)})", show_alert=True)
+
+
+@router.callback_query(F.data == "dls")
+async def on_dialog_show(cb: CallbackQuery, bot: Bot):
+    u = h.get_user(cb.from_user)
+    s = h.get_session(u["uid"], {"dlg"})
+    if not s or not s.get("wait"):
+        await cb.answer("Это задание уже неактуально")
+        return
+    st = DIALOGS[s["d"]]["steps"][s["s"]]
+    s["total"] += 1
+    s.pop("wait", None)
+    h.register_answer(u, False, 8, "phrase")
+    h.SPEECH[u["uid"]] = st["you"]["ok"][0]
+    await h.safe_edit(cb, f"👀 Можно ответить так:\n<b>{h.esc(st['you']['ok'][0])}</b>\n🇷🇺 <i>{h.esc(st['you']['ru'])}</i>",
+                      h.kb([("🔊", "say")], home=False))
+    await cb.answer()
+    s["s"] += 1
     await send_step(bot, u, s)
 
 

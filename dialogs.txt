@@ -1,79 +1,190 @@
-// Диалоги. B|реплика собеседника|перевод   Y|верный ответ|перевод|неверный 1|неверный 2   (последняя B без Y — конец диалога)
-// Все сценарии вымышленные и учебные. Имена питомцев: Tyoma, Belyashka, Chernushka (кошки), Mira (собака).
+// Диалоги, где ответ нужно НАПИСАТЬ. B|реплика собеседника|перевод   Y|вариант1/вариант2/...|перевод ответа   (последняя B без Y — конец)
+// Все сценарии вымышленные и учебные. Питомцы: Tyoma, Belyashka, Chernushka (кошки), Mira (собака).
 # 🏨 Заселение в отель
 B|Good evening! Welcome to the hotel. How can I help you?|Добрый вечер! Добро пожаловать в отель. Чем могу помочь?
-Y|I have a reservation for two nights.|У меня бронь на две ночи.|I am reservation two nights.|I want to cook two nights.
+Y|I have a reservation for two nights./I have a reservation for two nights, please./I booked a room for two nights.|У меня бронь на две ночи.
 B|Great. Can I see your passport, please?|Отлично. Можно ваш паспорт, пожалуйста?
-Y|Sure, here you go.|Конечно, вот, пожалуйста.|No, I am hungry.|Sure, I go yesterday.
+Y|Sure, here you go./Sure, here it is./Of course, here you are.|Конечно, вот, пожалуйста.
 B|Would you like a room with a view of the city or the park?|Вам номер с видом на город или на парк?
-Y|The park, please. I like quiet places.|На парк, пожалуйста. Мне нравятся тихие места.|The park, please. I am like quiet.|City park I like are quiet.
+Y|The park, please./A room with a park view, please./I would like the park view, please.|На парк, пожалуйста.
 B|Perfect. Your room is on the third floor. The elevator is on your left.|Прекрасно. Ваш номер на третьем этаже. Лифт слева.
-Y|Thank you! What time is breakfast?|Спасибо! Во сколько завтрак?|Thank you! What time breakfast is?|Thanks! When breakfast time is it?
+Y|Thank you! What time is breakfast?/Thanks! What time is breakfast?/Thank you. When is breakfast?|Спасибо! Во сколько завтрак?
 B|Breakfast is from seven to ten. Enjoy your stay!|Завтрак с семи до десяти. Приятного пребывания!
 # ☕ В кафе
 B|Hi! What can I get for you today?|Привет! Что вам предложить сегодня?
-Y|Can I have a medium latte, please?|Можно мне средний латте, пожалуйста?|Can I having a medium latte?|I can latte medium please have.
+Y|Can I have a medium latte, please?/I'd like a medium latte, please./Could I get a medium latte, please?|Можно мне средний латте, пожалуйста?
 B|Sure. For here or to go?|Конечно. Здесь или с собой?
-Y|To go, please.|С собой, пожалуйста.|To going, please.|For here to go.
+Y|To go, please./To go./For here, please.|С собой, пожалуйста.
 B|Would you like anything to eat? We have fresh cookies.|Хотите что-нибудь поесть? У нас свежее печенье.
-Y|Yes, one chocolate cookie, please.|Да, одно шоколадное печенье, пожалуйста.|Yes, one chocolate cookie, I please.|Yes, I chocolate cookie one please.
+Y|Yes, one chocolate cookie, please./Yes, I'll have a chocolate cookie, please./Yes, a chocolate cookie, please.|Да, одно шоколадное печенье, пожалуйста.
 B|That's six dollars and fifty cents.|С вас шесть долларов пятьдесят центов.
-Y|Can I pay by card?|Можно оплатить картой?|Can I paying by card?|I can pay card by?
+Y|Can I pay by card?/Can I pay with a card?/Can I pay with my card?|Можно оплатить картой?
 B|Of course. Here is your receipt. Have a nice day!|Конечно. Вот ваш чек. Хорошего дня!
 # ✈️ В аэропорту
 B|Hello! Where are you flying today?|Здравствуйте! Куда вы летите сегодня?
-Y|I'm flying to Chicago.|Я лечу в Чикаго.|I flying to Chicago.|I am fly Chicago.
+Y|I'm flying to Chicago./I am flying to Chicago./I'm going to Chicago.|Я лечу в Чикаго.
 B|Do you have any bags to check?|У вас есть багаж для сдачи?
-Y|Yes, one suitcase and a carry-on.|Да, один чемодан и ручная кладь.|Yes, one suitcase and carry-on bag of me.|Yes, I have suitcase one carry-on.
+Y|Yes, one suitcase and a carry-on./Yes, I have one suitcase and a carry-on./Yes, one suitcase and one carry-on.|Да, один чемодан и ручная кладь.
 B|Would you like a window seat or an aisle seat?|Вам место у окна или у прохода?
-Y|A window seat, please.|Место у окна, пожалуйста.|Window seat, I like please.|A seat window, please.
+Y|A window seat, please./Window seat, please./I'd like a window seat, please.|Место у окна, пожалуйста.
 B|Here is your boarding pass. Your gate is B12, and boarding starts at 5:30.|Вот ваш посадочный талон. Ваш выход B12, посадка начинается в 5:30.
-Y|Thank you. Is the flight on time?|Спасибо. Рейс по расписанию?|Thank you. Is flight on the time?|Thank you. Flight is time on?
+Y|Thank you. Is the flight on time?/Thanks. Is the flight on time?/Thank you. Is my flight on time?|Спасибо. Рейс по расписанию?
 B|Yes, it's on time. Have a great trip!|Да, по расписанию. Приятного полёта!
 # 🚕 В такси
 B|Hi! Where are you going?|Здравствуйте! Куда едем?
-Y|To the airport, please.|В аэропорт, пожалуйста.|To airport please I go.|At the airport, I please.
+Y|To the airport, please./I need to go to the airport./The airport, please.|В аэропорт, пожалуйста.
 B|No problem. Do you have any luggage?|Без проблем. У вас есть багаж?
-Y|Yes, it's in the trunk.|Да, он в багажнике.|Yes, he is in the trunk.|Yes, it are in trunk.
+Y|Yes, it's in the trunk./Yes, it is in the trunk./Yes, my suitcase is in the trunk.|Да, он в багажнике.
 B|Traffic is heavy today. It may take forty minutes.|Сегодня большие пробки. Это может занять сорок минут.
-Y|That's fine. I'm not in a hurry.|Ничего страшного. Я не спешу.|That's fine. I'm not hurry.|That fine. I no in hurry.
+Y|That's fine. I'm not in a hurry./That is fine. I am not in a hurry./It's okay. I'm not in a hurry.|Ничего страшного. Я не спешу.
 B|We're here. That'll be thirty-five dollars.|Приехали. С вас тридцать пять долларов.
-Y|Here you go. Keep the change.|Вот, возьмите. Сдачу оставьте себе.|Here you went. Keep change the.|Here you are. Keeping the change.
+Y|Here you go. Keep the change./Here you are. Keep the change./Here you go. You can keep the change.|Вот, возьмите. Сдачу оставьте себе.
 # 🛍 Покупка одежды
 B|Hi! Can I help you find something?|Здравствуйте! Помочь вам что-нибудь найти?
-Y|I'm looking for a warm sweater.|Я ищу тёплый свитер.|I looking for a warm sweater.|I'm look a sweater warm.
+Y|I'm looking for a warm sweater./I am looking for a warm sweater./Yes, I'm looking for a warm sweater.|Я ищу тёплый свитер.
 B|What size do you wear?|Какой размер вы носите?
-Y|Medium, I think.|Средний, кажется.|Medium, I am think.|I think medium I'm.
+Y|Medium, I think./I wear a medium./I think I'm a medium.|Средний, кажется.
 B|Here is a nice blue one. Would you like to try it on?|Вот хороший синий. Хотите примерить?
-Y|Yes, where is the fitting room?|Да, где примерочная?|Yes, where the fitting room is?|Yes, where is fitting room it?
+Y|Yes, where is the fitting room?/Yes, where's the fitting room?/Yes, please. Where is the fitting room?|Да, где примерочная?
 B|Right over there, next to the shoes.|Вон там, рядом с обувью.
-Y|It fits well. How much is it?|Мне подходит. Сколько стоит?|It fit good. How much it is?|It fits well. How much costs it?
+Y|It fits well. How much is it?/It fits. How much is it?/It fits well. How much does it cost?|Мне подходит. Сколько стоит?
 B|It's forty dollars, and it's on sale today.|Сорок долларов, и сегодня на него скидка.
 # 🐾 У ветеринара
 B|Hello! Who is our patient today?|Здравствуйте! Кто сегодня наш пациент?
-Y|This is Tyoma, my cat. He isn't eating.|Это Тёма, мой кот. Он не ест.|This is Tyoma, my cat. He not eating is.|This Tyoma my cat, he don't eating.
+Y|This is Tyoma, my cat. He isn't eating./This is my cat Tyoma. He isn't eating./It's Tyoma, my cat. He doesn't eat.|Это Тёма, мой кот. Он не ест.
 B|How long has he been like this?|Как долго он такой?
-Y|Since yesterday morning.|Со вчерашнего утра.|From yesterday morning is.|Since yesterday morning was.
+Y|Since yesterday morning./He has been like this since yesterday morning./For one day.|Со вчерашнего утра.
 B|Does he drink water? Does he play with your other pets?|Он пьёт воду? Играет с другими питомцами?
-Y|He drinks a little. We also have two more cats, Belyashka and Chernushka, and a dog named Mira.|Он немного пьёт. У нас ещё две кошки, Беляшка и Чернушка, и собака по имени Мира.|He drink a little. We have also two cats more, Belyashka and Chernushka, and dog Mira name.|He drinks a little. We has two more cats, Belyashka and Chernushka, and a dog Mira name.
+Y|He drinks a little. We also have two more cats and a dog./He drinks a little. We have two more cats, Belyashka and Chernushka, and a dog named Mira.|Он немного пьёт. У нас ещё две кошки и собака.
 B|Okay. Let me check him. I think he just has a small stomachache.|Хорошо. Давайте я его осмотрю. Думаю, у него небольшая боль в животе.
-Y|Oh, thank goodness. Does he need medicine?|Ох, слава богу. Ему нужно лекарство?|Oh, thank goodness. He need medicine?|Oh, thank goodness. Medicine he needs?
+Y|Oh, thank goodness. Does he need medicine?/Thank goodness. Does he need any medicine?/Oh, good. Does he need medicine?|Ох, слава богу. Ему нужно лекарство?
 B|Yes, give him these pills twice a day. He'll feel better soon!|Да, давайте ему эти таблетки два раза в день. Скоро ему станет лучше!
 # 💬 Разговор о семье и питомцах
 B|Hi! Do you have any pets?|Привет! У вас есть домашние животные?
-Y|Yes, we have three cats and a dog.|Да, у нас три кошки и собака.|Yes, we has three cats and dog.|Yes, we have three cat and a dogs.
+Y|Yes, we have three cats and a dog./Yes, I have three cats and a dog./Yes, we have three cats and one dog.|Да, у нас три кошки и собака.
 B|Wow! What are their names?|Ого! Как их зовут?
-Y|The cats are Tyoma, Belyashka, and Chernushka. The dog is Mira.|Кошек зовут Тёма, Беляшка и Чернушка. Собаку зовут Мира.|The cats is Tyoma, Belyashka, and Chernushka. The dog are Mira.|Cats are Tyoma, Belyashka, Chernushka. Dog is called by Mira.
+Y|The cats are Tyoma, Belyashka, and Chernushka. The dog is Mira./Our cats are Tyoma, Belyashka and Chernushka, and our dog is Mira./Tyoma, Belyashka, Chernushka, and Mira.|Кошек зовут Тёма, Беляшка и Чернушка. Собаку зовут Мира.
 B|Do they get along?|Они ладят друг с другом?
-Y|Mostly. Mira loves the cats, and Tyoma loves to sleep on the couch.|В основном да. Мира любит кошек, а Тёма любит спать на диване.|Mostly. Mira love the cats, and Tyoma love sleeping at couch.|Mostly. Mira loves cats, and Tyoma love to sleeps on couch.
+Y|Mostly. Mira loves the cats./Yes, mostly. They get along well./Yes, they get along.|В основном да. Мира любит кошек.
 B|That sounds cute! Who feeds them?|Звучит мило! Кто их кормит?
-Y|My husband and I feed them every morning.|Мы с мужем кормим их каждое утро.|Me and my husband feeding them every morning.|My husband and me feeds them each morning.
+Y|My husband and I feed them every morning./We feed them every morning./My husband and I feed them in the morning.|Мы с мужем кормим их каждое утро.
 B|You take great care of them!|Вы прекрасно о них заботитесь!
 # 🗺 Как пройти
 B|Excuse me, can I help you?|Простите, могу вам помочь?
-Y|Yes, how do I get to the museum?|Да, как мне пройти к музею?|Yes, how I can get to the museum?|Yes, where do I get museum?
+Y|Yes, how do I get to the museum?/Yes, how can I get to the museum?/Yes, where is the museum?|Да, как мне пройти к музею?
 B|Go straight for two blocks, then turn left at the traffic light.|Идите прямо два квартала, затем поверните налево на светофоре.
-Y|Is it far from here?|Это далеко отсюда?|It is far of here?|Is far from here?
+Y|Is it far from here?/Is it far?/Is it far from here, please?|Это далеко отсюда?
 B|No, it's about a ten-minute walk.|Нет, это около десяти минут пешком.
-Y|Thank you so much. You're very kind!|Большое спасибо. Вы очень добры!|Thank you so much. You are very kindly!|Thanks much. You are kind very!
+Y|Thank you so much. You're very kind!/Thank you so much. You are very kind!/Thanks a lot. You're very kind!|Большое спасибо. Вы очень добры!
 B|You're welcome. Enjoy the museum!|Пожалуйста. Приятного посещения музея!
+# 🏥 У врача
+B|Hello! What seems to be the problem?|Здравствуйте! Что вас беспокоит?
+Y|I have a sore throat and a cough./I have a cough and a sore throat./My throat hurts and I have a cough.|У меня болит горло и кашель.
+B|How long have you had these symptoms?|Как давно у вас эти симптомы?
+Y|For three days./Since three days ago./About three days.|Три дня.
+B|Do you have a fever?|У вас есть температура?
+Y|Yes, a little./Yes, I have a little fever./Yes, a small fever.|Да, небольшая.
+B|Let me check your throat. Open your mouth, please.|Давайте я посмотрю горло. Откройте рот, пожалуйста.
+Y|Okay. Is it serious?/Okay. Is it something serious?/Okay. Is it bad?|Хорошо. Это серьёзно?
+B|No, it's just a cold. Rest, drink warm tea, and take this medicine.|Нет, это просто простуда. Отдыхайте, пейте тёплый чай и принимайте это лекарство.
+# 💊 В аптеке
+B|Hi! How can I help you?|Здравствуйте! Чем могу помочь?
+Y|I need something for a headache./I need medicine for a headache./Do you have something for a headache?|Мне нужно что-нибудь от головной боли.
+B|Sure. Do you have any allergies?|Конечно. У вас есть аллергия?
+Y|Yes, I'm allergic to penicillin./Yes, I am allergic to penicillin./No, I don't have any allergies.|Да, у меня аллергия на пенициллин.
+B|Okay, then this one is safe for you. Take one pill every six hours.|Тогда этот вам подойдёт. Принимайте по одной таблетке каждые шесть часов.
+Y|Can I take it with food?/Can I take it after eating?/Should I take it with food?|Можно принимать с едой?
+B|Yes, that's fine. Anything else?|Да, можно. Что-нибудь ещё?
+Y|Yes, I also need some vitamins./Yes, I'd also like some vitamins./Yes, please give me some vitamins.|Да, мне ещё нужны витамины.
+# 🏦 В банке
+B|Good morning! How can I help you today?|Доброе утро! Чем могу помочь сегодня?
+Y|I'd like to open a bank account./I would like to open an account./I want to open a bank account.|Я хотела бы открыть банковский счёт.
+B|Sure. Do you have an ID with you?|Конечно. У вас с собой удостоверение личности?
+Y|Yes, here is my passport./Yes, here is my ID./Yes, I have my passport.|Да, вот мой паспорт.
+B|Thank you. Would you like a debit card with the account?|Спасибо. Хотите дебетовую карту к счёту?
+Y|Yes, please. How long will it take?/Yes, please. When will I get it?/Yes, please. How long does it take?|Да, пожалуйста. Сколько на это уйдёт времени?
+B|You'll get it by mail in about a week.|Вы получите её по почте примерно через неделю.
+Y|Great, thank you for your help./Great, thanks for your help./That's great. Thank you for your help.|Отлично, спасибо за помощь.
+# 📮 На почте
+B|Hi! What would you like to send?|Здравствуйте! Что хотите отправить?
+Y|I'd like to send this package to Texas./I want to send this package to Texas./I need to send this package to Texas.|Я хотела бы отправить эту посылку в Техас.
+B|Okay. Let me weigh it. It's two pounds.|Хорошо. Давайте взвесим. Два фунта.
+Y|How much is it to send?/How much does it cost?/How much is the shipping?|Сколько стоит отправка?
+B|Regular mail is ten dollars. Express is twenty.|Обычная почта десять долларов, экспресс двадцать.
+Y|Regular mail, please./I'll take regular mail./The regular one, please.|Обычную, пожалуйста.
+B|Okay. It will arrive in about five days.|Хорошо. Придёт примерно через пять дней.
+Y|Perfect. Thank you!/Great. Thank you very much!/Perfect. Thanks!|Отлично. Спасибо!
+# 📞 Бронь столика по телефону
+B|Good evening, Bella Pasta. How can I help you?|Добрый вечер, «Белла Паста». Чем могу помочь?
+Y|I'd like to book a table for two./I would like to reserve a table for two./Can I book a table for two, please?|Я хотела бы забронировать столик на двоих.
+B|Of course. What day and time?|Конечно. На какой день и время?
+Y|This Saturday at seven p.m./Saturday at seven p.m., please./This Saturday at seven in the evening.|В эту субботу в семь вечера.
+B|Perfect. Can I have your name, please?|Отлично. Можно ваше имя?
+Y|My name is Ksenia./It's Ksenia./Ksenia.|Меня зовут Ксения.
+B|Great. Any special requests?|Прекрасно. Есть особые пожелания?
+Y|Yes, a quiet table, please./Yes, can we have a quiet table?/A quiet table, please.|Да, тихий столик, пожалуйста.
+B|No problem. See you on Saturday!|Без проблем. Ждём вас в субботу!
+# 💼 Собеседование
+B|Hello! Please, have a seat. Tell me a little about yourself.|Здравствуйте! Присаживайтесь. Расскажите немного о себе.
+Y|I'm a designer with three years of experience./I am a designer with three years of experience./I have three years of experience as a designer.|Я дизайнер с трёхлетним опытом.
+B|Why do you want to work for our company?|Почему вы хотите работать в нашей компании?
+Y|I like your projects and your team./I like your projects./Your company has great projects.|Мне нравятся ваши проекты и команда.
+B|What are your strengths?|Каковы ваши сильные стороны?
+Y|I am creative and I work well in a team./I'm creative and I work well in a team./I am responsible and creative.|Я креативна и хорошо работаю в команде.
+B|Great. Do you have any questions for us?|Отлично. У вас есть вопросы к нам?
+Y|Yes, what is the work schedule?/Yes, what are the working hours?/Yes, what is the schedule?|Да, какой рабочий график?
+B|It's nine to five, with some remote days. Thank you for coming!|С девяти до пяти, плюс несколько удалённых дней. Спасибо, что пришли!
+# 🚗 Аренда машины
+B|Welcome! Do you have a reservation?|Добро пожаловать! У вас есть бронь?
+Y|Yes, under the name Ksenia./Yes, I have a reservation under Ksenia./Yes, my name is Ksenia.|Да, на имя Ксения.
+B|Great. May I see your driver's license?|Отлично. Можно ваши водительские права?
+Y|Sure, here it is./Of course, here you go./Sure, here you are.|Конечно, вот они.
+B|You have a small sedan. Do you want to add full insurance?|У вас небольшой седан. Хотите добавить полную страховку?
+Y|Yes, please. How much is it?/Yes, please. How much does it cost?/Yes. How much is the insurance?|Да, пожалуйста. Сколько это стоит?
+B|It's fifteen dollars a day. Please bring the car back with a full tank.|Пятнадцать долларов в день. Пожалуйста, верните машину с полным баком.
+Y|Okay. Where is the nearest gas station?/Okay. Where can I find a gas station?/Sure. Is there a gas station nearby?|Хорошо. Где ближайшая заправка?
+# 🛒 В супермаркете
+B|Excuse me, can I help you find something?|Простите, могу помочь вам что-нибудь найти?
+Y|Yes, where is the milk?/Yes, where can I find milk?/Yes, I'm looking for milk.|Да, где молоко?
+B|It's in aisle five, next to the eggs.|Оно в пятом ряду, рядом с яйцами.
+Y|Thank you. Do you have fresh bread?/Thanks. Do you have fresh bread?/Thank you. Where is the fresh bread?|Спасибо. У вас есть свежий хлеб?
+B|Yes, the bakery is at the back of the store.|Да, пекарня в глубине магазина.
+Y|Great. Is there any discount today?/Great. Do you have any discounts today?/Great. Is anything on sale today?|Отлично. Сегодня есть скидки?
+B|Yes, all fruit is twenty percent off today.|Да, все фрукты сегодня со скидкой двадцать процентов.
+Y|Perfect, I'll take some apples./Perfect, I will take some apples./Great, I'll buy some apples.|Отлично, я возьму яблок.
+# 🐱 В зоомагазине
+B|Hi! Can I help you find anything for your pet?|Здравствуйте! Помочь подобрать что-нибудь для питомца?
+Y|Yes, I need food for my cats./Yes, I'm looking for cat food./Yes, I need cat food.|Да, мне нужен корм для моих кошек.
+B|How many cats do you have?|Сколько у вас кошек?
+Y|I have three cats./We have three cats./Three cats.|У меня три кошки.
+B|Wow! Do you have any other pets?|Ого! У вас есть ещё питомцы?
+Y|Yes, we also have a dog named Mira./Yes, a dog. Her name is Mira./Yes, I have a dog named Mira.|Да, ещё собака по имени Мира.
+B|Nice. Here is a big bag of cat food, and this toy is great for dogs.|Здорово. Вот большая упаковка корма для кошек, а эта игрушка отлично подойдёт для собак.
+Y|Perfect. I'll take both, please./Great. I'll take both./Perfect. I will take both.|Отлично. Я возьму и то и другое, пожалуйста.
+# 👋 Знакомство с соседом
+B|Hi! I'm your new neighbor. My name is Emma.|Привет! Я ваша новая соседка. Меня зовут Эмма.
+Y|Nice to meet you, Emma. I'm Ksenia./Nice to meet you. My name is Ksenia./Hi Emma, nice to meet you. I'm Ksenia.|Приятно познакомиться, Эмма. Я Ксения.
+B|Have you lived here long?|Вы давно здесь живёте?
+Y|About two years. I like this neighborhood./For about two years./I have lived here for two years.|Около двух лет. Мне нравится этот район.
+B|Great! Is there a good grocery store nearby?|Здорово! Здесь рядом есть хороший продуктовый магазин?
+Y|Yes, there is one around the corner./Yes, it's around the corner./Yes, there is a store around the corner.|Да, есть один за углом.
+B|Thanks! Do you want to have coffee sometime?|Спасибо! Хотите как-нибудь выпить кофе?
+Y|Sure, I'd love to!/Sure, that sounds great!/Yes, I'd love that.|Конечно, с удовольствием!
+# 🍽 Ужин в ресторане
+B|Here is your menu. Can I get you something to drink?|Вот ваше меню. Что-нибудь выпить?
+Y|Just water, please./Water, please./I'd like some water, please.|Только воды, пожалуйста.
+B|Are you ready to order?|Вы готовы сделать заказ?
+Y|Yes, I'll have the chicken salad./Yes, I will have the chicken salad./Yes, I'd like the chicken salad.|Да, я буду салат с курицей.
+B|Any allergies I should know about?|Есть ли аллергия, о которой мне стоит знать?
+Y|Yes, I'm allergic to nuts./Yes, I am allergic to nuts./Yes, I can't eat nuts.|Да, у меня аллергия на орехи.
+B|No problem. Would you like dessert?|Без проблем. Хотите десерт?
+Y|No, thank you. Can we have the check, please?/No, thanks. Can I have the check, please?/No, thank you. The check, please.|Нет, спасибо. Можно счёт, пожалуйста?
+# 🛏 Проблема в отеле
+B|Front desk, how can I help you?|Ресепшен, чем могу помочь?
+Y|There is no hot water in my room./I have no hot water in my room./We have no hot water in the room.|В моём номере нет горячей воды.
+B|I'm so sorry. What is your room number?|Мне очень жаль. Какой у вас номер комнаты?
+Y|It's room 305./Room 305./My room number is 305.|Комната 305.
+B|We'll send someone right away. Is there anything else?|Мы сейчас же пришлём сотрудника. Что-нибудь ещё?
+Y|Yes, the air conditioner doesn't work either./Yes, the air conditioning doesn't work too./Yes, the air conditioner is broken too.|Да, кондиционер тоже не работает.
+B|Understood. We'll fix both problems in fifteen minutes.|Поняла вас. Мы устраним обе проблемы за пятнадцать минут.
+Y|Thank you. I really appreciate your help./Thank you very much./Thanks. I appreciate your help.|Спасибо. Очень ценю вашу помощь.

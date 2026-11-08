@@ -1,0 +1,89 @@
+// Новые категории фраз. Формат: русская фраза|вариант1/вариант2/...
+# 🩺 У врача и в аптеке
+Мне нужно записаться на приём к врачу.|I need to make an appointment with a doctor./I need to book a doctor's appointment./I'd like to make an appointment with the doctor.
+У меня болит живот.|I have a stomachache./My stomach hurts./I have a stomach ache.
+Я простудился.|I have a cold./I caught a cold./I've caught a cold.
+У меня аллергия на пыль.|I'm allergic to dust./I am allergic to dust./I have an allergy to dust.
+Сколько раз в день принимать лекарство?|How many times a day should I take this medicine?/How often should I take this medicine?
+У вас есть что-нибудь от кашля?|Do you have anything for a cough?/Do you have something for a cough?
+Мне нужен рецепт.|I need a prescription./I need a prescription, please.
+У меня кружится голова.|I feel dizzy./I'm dizzy./I am dizzy.
+Я принимаю витамины каждое утро.|I take vitamins every morning./I take vitamins in the morning every day.
+Вам нужно больше отдыхать.|You need to rest more./You should rest more./You need more rest.
+# 🏦 Банк и почта
+Я хочу открыть счёт.|I want to open an account./I'd like to open an account./I would like to open a bank account.
+Мне нужно снять наличные.|I need to withdraw some cash./I need to take out some cash./I need to get some cash.
+Где ближайший банкомат?|Where is the nearest ATM?/Where's the nearest ATM?
+Моя карта не работает.|My card doesn't work./My card is not working./My card isn't working.
+Я хочу отправить посылку.|I want to send a package./I'd like to send a package./I need to send a package.
+Сколько идёт посылка до Германии?|How long does a package take to Germany?/How long will the package take to get to Germany?
+Мне нужна марка, пожалуйста.|I need a stamp, please./Can I have a stamp, please?
+Можно отследить мою посылку?|Can I track my package?/Can I track my parcel?/Can you track my package?
+Какой у вас курс обмена?|What is the exchange rate?/What's the exchange rate?
+Сколько стоит перевод денег?|How much is a money transfer?/How much does a money transfer cost?
+# 📞 Телефон и приглашения
+Алло, это Ксения.|Hello, this is Ksenia./Hello, it's Ksenia./Hi, this is Ksenia.
+Можно поговорить с менеджером?|Can I speak to the manager?/May I speak to the manager?/Could I speak with the manager?
+Я перезвоню вам позже.|I'll call you back later./I will call you back later./I'll call you later.
+Связь плохая, повторите, пожалуйста.|The connection is bad, please repeat that./The connection is bad. Could you repeat that, please?
+Я хочу пригласить тебя на ужин.|I want to invite you to dinner./I'd like to invite you to dinner.
+Спасибо за приглашение!|Thank you for the invitation!/Thanks for the invitation!
+Во сколько начинается вечеринка?|What time does the party start?/What time does the party begin?
+Мне нужно отменить встречу.|I need to cancel the meeting./I have to cancel the meeting./I need to cancel the appointment.
+Давай перенесём на завтра.|Let's move it to tomorrow./Let's reschedule for tomorrow.
+Я скоро буду.|I'll be there soon./I will be there soon./I'll be there shortly.
+# 🙏 Просьбы и вежливость
+Не могли бы вы мне помочь?|Could you help me, please?/Could you please help me?/Would you mind helping me?
+Простите, вы не подскажете, который час?|Excuse me, do you know what time it is?/Excuse me, could you tell me the time?/Excuse me, what time is it?
+Можно я открою окно?|Can I open the window?/May I open the window?/Do you mind if I open the window?
+Извините за беспокойство.|Sorry to bother you./Sorry for bothering you./Sorry for the trouble.
+Спасибо большое за помощь.|Thank you very much for your help./Thanks a lot for your help./Thank you so much for your help.
+Ничего страшного.|No problem./It's okay./That's okay./It's no big deal.
+Не за что.|You're welcome./No problem./Don't mention it.
+Вы не против, если я присяду?|Do you mind if I sit here?/Would you mind if I sat here?/Is it okay if I sit here?
+Можно мне ещё немного времени?|Can I have a little more time?/Could I have a little more time?/Can I have some more time?
+Приятно было с вами поговорить.|It was nice talking to you./It was nice to talk to you./Nice talking to you.
+# 💭 Мнения и эмоции
+Мне это очень нравится.|I really like it./I like it very much./I really like this.
+Я с тобой согласен.|I agree with you./I agree.
+Я не уверен.|I'm not sure./I am not sure.
+Я думаю, это хорошая идея.|I think it's a good idea./I think that's a good idea./I think this is a good idea.
+Мне скучно.|I'm bored./I am bored.
+Я очень устал.|I'm very tired./I am very tired./I'm so tired.
+Я рад тебя видеть.|I'm happy to see you./I am happy to see you./I'm glad to see you.
+Мне жаль это слышать.|I'm sorry to hear that./I am sorry to hear that.
+Я волнуюсь перед экзаменом.|I'm nervous about the exam./I am nervous about the exam./I'm worried about the exam.
+Это было здорово!|That was great!/That was awesome!/It was great!
+# 🐾 Питомцы
+У нас три кошки и собака.|We have three cats and a dog./We have three cats and one dog.
+Кошка спит на диване.|The cat is sleeping on the couch./The cat sleeps on the couch.
+Я выгуливаю собаку два раза в день.|I walk the dog twice a day./I walk my dog two times a day.
+Кормить кошек нужно утром и вечером.|You need to feed the cats in the morning and in the evening./I need to feed the cats in the morning and at night.
+Собака любит играть с мячом.|The dog likes to play with the ball./The dog loves to play with a ball.
+Нашему коту нужна прививка.|Our cat needs a vaccine./Our cat needs a shot./Our cat needs vaccination.
+Кошка мурлычет у меня на коленях.|The cat is purring on my lap./The cat purrs on my lap.
+Мы купили новый корм для кошек.|We bought new cat food./We bought some new cat food.
+Моя собака боится грозы.|My dog is afraid of thunderstorms./My dog is scared of thunder./My dog is afraid of thunder.
+Кот поцарапал диван.|The cat scratched the couch./The cat scratched the sofa.
+# 🧑‍🍳 Готовка и дом
+Мне нужно нарезать лук.|I need to chop the onion./I have to chop the onions./I need to cut the onion.
+Нагрей духовку до двухсот градусов.|Preheat the oven to two hundred degrees./Heat the oven to two hundred degrees.
+Вскипяти воду.|Boil the water./Boil some water.
+Добавь немного соли и перца.|Add some salt and pepper./Add a little salt and pepper.
+Где у нас сковорода?|Where is the frying pan?/Where's the frying pan?/Where is our frying pan?
+У нас закончилась мука.|We ran out of flour./We're out of flour./We have no more flour.
+Лампочка перегорела.|The light bulb burned out./The lightbulb burned out./The light bulb is out.
+Под раковиной течёт вода.|There is a leak under the sink./The sink is leaking./Water is leaking under the sink.
+Мне нужна отвёртка.|I need a screwdriver.
+Повесь картину на стену.|Hang the picture on the wall./Hang the painting on the wall.
+# 🏖 Отпуск и достопримечательности
+Мы проводим отпуск на море.|We're spending our vacation at the beach./We are spending our vacation by the sea./We're on vacation at the seaside.
+Сколько стоит входной билет?|How much is the entrance ticket?/How much is admission?/How much is a ticket?
+Во сколько открывается музей?|What time does the museum open?/When does the museum open?
+Можно здесь фотографировать?|Can I take photos here?/Can I take pictures here?/Is photography allowed here?
+Мы хотим заказать экскурсию.|We want to book a tour./We'd like to book a tour./We would like to book a tour.
+Это самое красивое место, которое я видел.|It's the most beautiful place I've ever seen./This is the most beautiful place I have ever seen.
+Нам нужна карта города.|We need a city map./We need a map of the city./We need a map.
+Мы заблудились.|We're lost./We are lost./We got lost.
+Я забыл свой паспорт в отеле.|I left my passport at the hotel./I forgot my passport at the hotel./I left my passport in the hotel.
+Мы отлично провели время.|We had a great time./We had a wonderful time./We had a really good time.

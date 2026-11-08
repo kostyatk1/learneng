@@ -54,3 +54,47 @@ Q|This hotel is ___ than that one.|more expensive|expensiver|more expensiver|Д�
 Q|Today is ___ than yesterday.|better|gooder|more good|good → better.
 Q|My brother is ___ than me.|older|more old|oldest|Короткое слово → older than.
 Q|Tea is ___ than soda.|healthier|more healthy|healthyer|healthy → healthier (y → ier).
+# 📐 Предлоги in / on / at
+T|<b>at</b> — точное время и точка: <i>at 5 o'clock, at the station, at home</i>.
+T|<b>on</b> — дни и поверхности: <i>on Monday, on the table, on the couch</i>.
+T|<b>in</b> — месяцы, годы, внутри: <i>in July, in 2026, in the kitchen, in the car</i>.
+Q|The meeting is ___ 9 a.m.|at|on|in|Точное время → at.
+Q|My birthday is ___ July.|in|on|at|Месяц → in.
+Q|The cat is sleeping ___ the couch.|on|in|at|На поверхности → on.
+Q|We have a party ___ Saturday.|on|in|at|День недели → on.
+Q|She lives ___ Chicago.|in|on|at|Город → in.
+# 📐 Will и going to
+T|<b>going to</b> — план или то, что уже видно: <i>I'm going to cook dinner. Look at the clouds! It's going to rain.</i>
+T|<b>will</b> — спонтанное решение, обещание, предположение: <i>I'll help you. I think it will be fun.</i>
+Q|We ___ visit my parents this summer. We already bought tickets.|are going to|will|are|План уже есть → going to.
+Q|The phone is ringing. I ___ answer it.|'ll|am going to|will to|Решение в момент речи → will ('ll).
+Q|Look! The cat ___ jump!|is going to|will|goes|Видно по признакам → going to.
+Q|I promise I ___ call you tomorrow.|will|am going|do|Обещание → will.
+Q|I think it ___ rain tomorrow.|will|is going|does|Предположение, I think → will.
+# 📐 Much, many, a lot of
+T|<b>many</b> — с исчисляемыми во мн. числе: <i>many cats, many people</i>. <b>much</b> — с неисчисляемыми: <i>much water, much time</i>.
+T|В вопросах и отрицаниях: <i>How many cats? How much milk? There isn't much time.</i>
+T|<b>a lot of</b> подходит почти везде в утверждениях: <i>We have a lot of friends. I drink a lot of water.</i>
+Q|How ___ cats do you have?|many|much|a lot|Cats — исчисляемое → many.
+Q|How ___ milk is in the fridge?|much|many|few|Milk — неисчисляемое → much.
+Q|We don't have ___ time.|much|many|a lot|Отрицание + неисчисляемое → much.
+Q|There are ___ people in the park.|a lot of|much|a little|Утверждение с людьми → a lot of.
+Q|She doesn't have ___ friends here.|many|much|a lot|Friends — исчисляемое → many.
+# 📐 Should / must / have to
+T|<b>should</b> — совет: <i>You should rest.</i> <b>must</b> — сильная необходимость или запрет: <i>You must wear a seat belt.</i>
+T|<b>have to</b> — обязанность по обстоятельствам: <i>I have to work on Saturday.</i> Для he/she/it: <b>has to</b>.
+T|<b>mustn't</b> — «нельзя». <b>don't have to</b> — «не обязательно».
+Q|You look tired. You ___ rest.|should|must to|have|Совет → should.
+Q|He ___ work on Sunday. It's his shift.|has to|have to|must to|he/she/it → has to.
+Q|You ___ park here. It's not allowed.|mustn't|don't have to|shouldn't to|Запрет → mustn't.
+Q|You ___ come early. The party starts late.|don't have to|mustn't|can't to|Не обязательно → don't have to.
+Q|Children ___ wear a helmet when they ride a bike.|should|shoulds|to should|После should — V1 без to.
+# 📐 Present Perfect
+T|<b>Present Perfect</b> = <b>have/has + V3</b>. Говорим о результате и опыте: <i>I have lost my keys. She has been to Paris.</i>
+T|Слова-подсказки: <i>ever, never, already, yet, just</i>. Вопрос: <i>Have you ever…?</i>
+T|С конкретным временем в прошлом (yesterday, last week) — не Present Perfect, а Past Simple.
+Q|I ___ my keys. I can't open the door.|have lost|lost|am losing|Результат важен сейчас → have lost.
+Q|She has never ___ to Japan.|been|was|be|Present Perfect: has never + V3 (been).
+Q|Have you ___ eaten sushi?|ever|yesterday|ago|ever в вопросах Present Perfect.
+Q|We ___ already finished dinner.|have|has|are|we → have.
+Q|I ___ him yesterday.|saw|have seen|have saw|Есть yesterday → Past Simple.

@@ -1,0 +1,230 @@
+// Новые темы. Формат: english|перевод|пример
+# 🐾 Животные и питомцы
+cat|кошка, кот|Our cat sleeps on the couch.
+dog|собака|The dog barks at the mailman.
+kitten|котёнок|The kitten is very small.
+puppy|щенок|The puppy loves to play.
+pet|домашнее животное|Do you have any pets?
+paw|лапа|The cat licked its paw.
+tail|хвост|The dog wags its tail.
+fur|шерсть|The cat's fur is soft.
+whiskers|усы (у кошки)|Cats have long whiskers.
+leash|поводок|Take the dog out on a leash.
+collar|ошейник|The dog has a red collar.
+cat food|корм для кошек|We need to buy cat food.
+treat|лакомство|Give the dog a treat.
+bowl|миска|The cat's bowl is empty.
+litter box|кошачий лоток|Please clean the litter box.
+to bark|лаять|The dog barks loudly.
+to meow|мяукать|The cat meows when it's hungry.
+to purr|мурлыкать|The cat purrs on my lap.
+to scratch|царапать|The cat scratched the sofa.
+to feed|кормить|I feed the cats every morning.
+to walk the dog|выгуливать собаку|I walk the dog twice a day.
+vet|ветеринар|We took the cat to the vet.
+vaccine|прививка|The puppy got its vaccine.
+bird|птица|A bird is singing outside.
+fish|рыбка (питомец)|Our fish swims in the tank.
+rabbit|кролик|The rabbit eats carrots.
+horse|лошадь|She rides a horse.
+cow|корова|The cow gives milk.
+mouse|мышь|The cat caught a mouse.
+spider|паук|I'm afraid of spiders.
+# 🧍 Тело и внешность
+head|голова|My head hurts.
+hair|волосы|She has long hair.
+face|лицо|Wash your face.
+eye|глаз|He has blue eyes.
+ear|ухо|My ear hurts.
+nose|нос|The dog has a wet nose.
+mouth|рот|Open your mouth, please.
+tooth|зуб|I have a toothache.
+neck|шея|My neck is stiff.
+shoulder|плечо|He carried the bag on his shoulder.
+arm|рука (от плеча)|She broke her arm.
+hand|кисть, рука|Wash your hands.
+finger|палец руки|I cut my finger.
+back|спина|My back hurts.
+stomach|живот, желудок|I have a stomachache.
+leg|нога|He hurt his leg.
+knee|колено|My knee is sore.
+foot|ступня|My foot hurts.
+skin|кожа|Use cream for dry skin.
+beard|борода|He has a short beard.
+smile|улыбка; улыбаться|She has a beautiful smile.
+tall|высокий|My brother is very tall.
+slim|стройный|She is tall and slim.
+curly|кудрявый|He has curly hair.
+blond|светловолосый|The little boy is blond.
+brown|коричневый|She has brown eyes.
+cute|милый|What a cute kitten!
+pretty|симпатичная|She is a pretty girl.
+handsome|красивый (о мужчине)|He is a handsome man.
+young|молодой|My sister is young.
+# 🍅 Овощи, фрукты, готовка
+tomato|помидор|I put a tomato in the salad.
+potato|картофель|We had mashed potatoes.
+carrot|морковь|Rabbits love carrots.
+onion|лук|Don't cry when you cut an onion.
+cucumber|огурец|Add a cucumber to the salad.
+pepper|перец|Add some salt and pepper.
+garlic|чеснок|I love garlic in pasta.
+mushroom|гриб|She made mushroom soup.
+corn|кукуруза|We grilled corn.
+lemon|лимон|Add a slice of lemon to your tea.
+orange|апельсин; оранжевый|I drink orange juice.
+banana|банан|I eat a banana for breakfast.
+strawberry|клубника|The strawberries are sweet.
+grapes|виноград|We bought some grapes.
+peach|персик|This peach is so juicy.
+watermelon|арбуз|We eat watermelon in summer.
+to boil|варить, кипятить|Boil the water first.
+to fry|жарить|Fry the eggs for two minutes.
+to chop|нарезать, рубить|Chop the onions.
+to mix|смешивать|Mix the flour and the eggs.
+to stir|помешивать|Stir the soup slowly.
+to peel|чистить (овощи)|Peel the potatoes.
+to slice|нарезать ломтиками|Slice the bread.
+recipe|рецепт|This recipe is easy.
+ingredient|ингредиент|What are the ingredients?
+frying pan|сковорода|Heat the frying pan.
+pot|кастрюля|Put the pasta in the pot.
+cutting board|разделочная доска|Use a cutting board.
+flour|мука|We need flour and sugar.
+salt|соль|Pass me the salt, please.
+# 💰 Деньги, банк, почта
+money|деньги|I don't have much money.
+dollar|доллар|It costs five dollars.
+cent|цент|It's ninety-nine cents.
+coin|монета|I have a few coins.
+bank account|банковский счёт|I opened a bank account.
+debit card|дебетовая карта|I pay with my debit card.
+balance|баланс|Check your account balance.
+to save|копить, сохранять|I'm saving money for a trip.
+to spend|тратить|Don't spend it all.
+to borrow|занимать (брать в долг)|Can I borrow ten dollars?
+to lend|одалживать (давать в долг)|Can you lend me some money?
+to owe|быть должным|I owe you twenty dollars.
+to afford|позволить себе|I can't afford a new car.
+cost|стоимость; стоить|What is the cost of the ticket?
+tax|налог|The price includes tax.
+fee|плата, комиссия|There is a small fee.
+income|доход|Her income is stable.
+budget|бюджет|We have a small budget.
+bill|счёт (за услуги)|The electric bill is high.
+payment|платёж|The payment is due Friday.
+transfer|перевод (денег)|I made a bank transfer.
+envelope|конверт|Put the letter in an envelope.
+stamp|почтовая марка|I need a stamp.
+parcel|посылка|The parcel arrived today.
+to ship|отправлять (груз)|They ship worldwide.
+tracking number|номер отслеживания|Here is your tracking number.
+delivery|доставка|Delivery takes three days.
+address|адрес|Write the address here.
+zip code|почтовый индекс|What's your zip code?
+mailbox|почтовый ящик|I checked the mailbox.
+# 🎉 Праздники и события
+birthday|день рождения|Today is my birthday.
+holiday|праздник|Christmas is my favorite holiday.
+party|вечеринка|We're having a party.
+gift|подарок|I bought her a gift.
+card|открытка|I sent a birthday card.
+cake|торт|We cut the cake.
+candle|свеча|Blow out the candles!
+balloon|воздушный шарик|The kids love balloons.
+guest|гость|We have ten guests tonight.
+invitation|приглашение|I got an invitation to the wedding.
+to invite|приглашать|I want to invite you to dinner.
+to celebrate|праздновать|We celebrate on Saturday.
+to congratulate|поздравлять|I want to congratulate you!
+toast|тост|He made a toast.
+Christmas|Рождество|We decorate a tree for Christmas.
+New Year|Новый год|Happy New Year!
+Thanksgiving|День благодарения|We eat turkey on Thanksgiving.
+Halloween|Хэллоуин|Kids wear costumes on Halloween.
+fireworks|фейерверк|We watched the fireworks.
+anniversary|годовщина|It's our anniversary today.
+# 👔 Профессии
+teacher|учитель|My teacher is very kind.
+doctor|врач|The doctor is in the office.
+nurse|медсестра|The nurse took my temperature.
+engineer|инженер|He is a software engineer.
+designer|дизайнер|She works as a designer.
+driver|водитель|The driver was polite.
+cook|повар|The cook is making soup.
+chef|шеф-повар|The chef is famous.
+waiter|официант|The waiter brought the menu.
+cashier|кассир|The cashier gave me a receipt.
+lawyer|юрист|My friend is a lawyer.
+accountant|бухгалтер|The accountant checks the numbers.
+police officer|полицейский|The police officer helped us.
+firefighter|пожарный|The firefighter is brave.
+pilot|пилот|The pilot is very experienced.
+farmer|фермер|The farmer grows corn.
+artist|художник|The artist painted a cat.
+writer|писатель|She is a writer.
+photographer|фотограф|The photographer took great photos.
+mechanic|механик|The mechanic fixed my car.
+dentist|стоматолог|The dentist checked my teeth.
+vet|ветеринар|The vet is very gentle.
+hairdresser|парикмахер|My hairdresser is great.
+manager|менеджер|The manager called me.
+# 🌍 Страны и национальности
+country|страна|Which country are you from?
+city|город|I live in a big city.
+the United States|США|She lives in the United States.
+Russia|Россия|My parents live in Russia.
+Germany|Германия|We live in Germany.
+Canada|Канада|He is from Canada.
+Mexico|Мексика|We went to Mexico.
+Italy|Италия|I love Italian food.
+France|Франция|She is from France.
+Spain|Испания|We spent a week in Spain.
+Japan|Япония|Japan is beautiful in spring.
+China|Китай|He travels to China often.
+American|американец; американский|He is American.
+Russian|русский|She speaks Russian.
+German|немец; немецкий|My neighbor is German.
+English|английский язык|I'm learning English.
+language|язык|How many languages do you speak?
+to speak|говорить|Do you speak English?
+accent|акцент|She has a nice accent.
+native speaker|носитель языка|He is a native speaker.
+# 🎨 Цвета и формы
+red|красный|She wore a red dress.
+blue|синий, голубой|The sky is blue.
+green|зелёный|The grass is green.
+yellow|жёлтый|I like yellow flowers.
+black|чёрный|The cat is black.
+white|белый|The snow is white.
+gray|серый|He has a gray sweater.
+pink|розовый|She loves pink.
+purple|фиолетовый|The flower is purple.
+orange|оранжевый|The sunset is orange.
+gold|золотой|She wore a gold ring.
+silver|серебряный|He has a silver watch.
+dark|тёмный|It's dark outside.
+light|светлый; свет|The room is light and clean.
+round|круглый|The table is round.
+square|квадратный|We have a square window.
+straight|прямой|Draw a straight line.
+flat|плоский|The road is flat.
+# 🧰 Дом: ремонт и инструменты
+hammer|молоток|Hand me the hammer.
+nail|гвоздь|Put a nail in the wall.
+screwdriver|отвёртка|I need a screwdriver.
+drill|дрель|He used a drill.
+paint|краска; красить|We paint the walls white.
+brush|кисть, щётка|Use a small brush.
+ladder|стремянка, лестница|Hold the ladder, please.
+light bulb|лампочка|The light bulb burned out.
+outlet|розетка|Plug it into the outlet.
+switch|выключатель|Where's the light switch?
+pipe|труба|The pipe is leaking.
+leak|протечка; течь|There is a leak under the sink.
+to fix|чинить|Can you fix the door?
+to repair|ремонтировать|We need to repair the roof.
+to install|устанавливать|They installed a new sink.
+to hang|вешать|Hang the picture on the wall.
+broken|сломанный|The window is broken.
+toolbox|ящик с инструментами|The toolbox is in the garage.

@@ -41,7 +41,7 @@ def _load_bank(files, kind: str, seen: set):
 
 _seen: set = set()
 BANK = _load_bank(sorted(BASE.glob("words*.txt"), key=lambda p: (p.name != "words.txt", p.name)), "", _seen)
-SLANG_BANK = _load_bank([BASE / "slang.txt"], "slang", _seen)
+SLANG_BANK = _load_bank([BASE / "slang.txt"], "slang", _seen)   # (темы в одном файле slang.txt)
 TOPICS = list(BANK)
 SLANG_TOPICS = list(SLANG_BANK)
 ALL_WORDS = [w for t in TOPICS for w in BANK[t]]
@@ -104,6 +104,11 @@ def check_answer(user: str, variants: list[str]) -> str:
     if best >= 0.999:
         return "exact"
     return "close" if best >= 0.88 else "wrong"
+
+
+def best_ratio(user: str, variants: list[str]) -> float:
+    u = canon(user)
+    return max(SequenceMatcher(None, u, canon(v)).ratio() for v in variants)
 
 
 # ---------------- локальный словарь (мгновенный перевод без интернета) ----------------
