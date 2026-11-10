@@ -13,6 +13,7 @@ from aiogram.webhook.aiohttp_server import SimpleRequestHandler
 
 import handlers
 import admin_h
+import daily_h
 import drills_h
 import extras_h
 import verbs_h
@@ -63,6 +64,7 @@ def make_dp() -> Dispatcher:
     dp = Dispatcher()
     dp.update.outer_middleware(Access())
     dp.include_router(admin_h.router)
+    dp.include_router(daily_h.router)
     dp.include_router(drills_h.router)
     dp.include_router(extras_h.router)
     dp.include_router(verbs_h.router)        # раньше основного: иначе кнопка «📘 Глаголы» уйдёт в переводчик

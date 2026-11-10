@@ -1,0 +1,265 @@
+// Бытовые предложения (разговорный американский английский). Формат: english|перевод. Строки с # — разделы.
+# 🍎 Еда и кафе
+I'm starving. Let's grab a bite.|Я умираю с голоду. Давай перекусим.
+What're you in the mood for?|Чего тебе хочется?
+I'll just have a salad.|Я возьму просто салат.
+Can I get this to go?|Можно это с собой?
+Could we get the check, please?|Можно нам счёт, пожалуйста?
+This is on me.|Это за мой счёт.
+Let's split it.|Давай поделим счёт.
+Wanna get some pizza?|Хочешь пиццу?
+That's way too spicy for me.|Это слишком остро для меня.
+I'm stuffed.|Я объелся.
+Can I get a refill?|Можно ещё налить?
+Dinner's ready!|Ужин готов!
+# 🏠 Дом и быт
+Did you lock the door?|Ты закрыл дверь?
+Can you take out the trash?|Вынеси мусор, пожалуйста.
+We're out of milk.|У нас закончилось молоко.
+I gotta do laundry.|Мне надо постирать.
+Who left the lights on?|Кто оставил свет включённым?
+Turn down the TV, please.|Сделай потише телевизор.
+The sink is clogged again.|Раковина снова засорилась.
+Make yourself at home.|Чувствуй себя как дома.
+Mind if I open a window?|Ничего, если я открою окно?
+It's freezing in here.|Здесь жутко холодно.
+Let's clean up real quick.|Давай быстро приберёмся.
+I'll do the dishes.|Я помою посуду.
+# ✈️ Путешествия
+What time's our flight?|Во сколько наш рейс?
+I'm running late!|Я опаздываю!
+Where do I check in?|Где мне зарегистрироваться?
+Is this seat taken?|Это место занято?
+We missed our connection.|Мы опоздали на пересадку.
+How far is it from here?|Как далеко это отсюда?
+I think we're lost.|Кажется, мы заблудились.
+Can you drop me off here?|Высадите меня здесь, пожалуйста.
+Keep the change.|Сдачу оставьте себе.
+Traffic's crazy today.|Сегодня безумные пробки.
+Let's hit the road.|Давай выезжать.
+Did you pack your charger?|Ты взял зарядку?
+# 💼 Работа и учёба
+I'm swamped at work.|Я завалена работой.
+Let's touch base tomorrow.|Давай созвонимся завтра.
+I'll send you an email.|Я отправлю тебе письмо.
+Can we push the meeting?|Можем перенести встречу?
+I've got a deadline Friday.|У меня дедлайн в пятницу.
+Great job on the report!|Отличная работа с отчётом!
+I'm taking a day off.|Я беру выходной.
+I aced my exam!|Я отлично сдала экзамен!
+I have a ton of homework.|У меня куча домашки.
+Wanna study together?|Хочешь поучиться вместе?
+I'm so behind on emails.|Я сильно отстала с почтой.
+He got the promotion.|Его повысили.
+# 🛍 Покупки и деньги
+How much is this?|Сколько это стоит?
+That's a total rip-off.|Это сплошной грабёж.
+It's a steal at that price.|По такой цене это находка.
+Do you take cards?|Вы принимаете карты?
+I'm broke until Friday.|У меня нет денег до пятницы.
+Is this on sale?|На это есть скидка?
+Can I try this on?|Можно примерить?
+I'd like to return this.|Я хотела бы это вернуть.
+I splurged on new shoes.|Я шикарно потратилась на туфли.
+Do you have this in a medium?|У вас есть это в размере M?
+Keep the receipt.|Сохрани чек.
+I'm just looking, thanks.|Я просто смотрю, спасибо.
+# 🏃 Здоровье
+I don't feel so great.|Мне как-то нехорошо.
+I've got a killer headache.|У меня зверски болит голова.
+I think I'm coming down with a cold.|Кажется, я заболеваю простудой.
+I need to see a doctor.|Мне нужно к врачу.
+Get some rest.|Отдохни как следует.
+I'm wiped out.|Я совсем без сил.
+I'm on a diet.|Я на диете.
+Wanna hit the gym?|Пойдём в спортзал?
+I pulled a muscle.|Я потянула мышцу.
+I can't sleep at night.|Я не могу спать по ночам.
+Drink plenty of water.|Пей побольше воды.
+I'm feeling much better now.|Мне уже гораздо лучше.
+# 👥 Люди, чувства, семья
+I'm so excited!|Я так рада!
+Don't freak out.|Не паникуй.
+She's a total sweetheart.|Она просто прелесть.
+He's kind of shy.|Он довольно застенчивый.
+I'm so proud of you.|Я так горжусь тобой.
+My mom's visiting this weekend.|Моя мама приезжает на выходные.
+We get along great.|Мы отлично ладим.
+I'm bummed out.|Я расстроена.
+You look tired. You okay?|Ты выглядишь усталым. Всё в порядке?
+I miss you.|Я скучаю по тебе.
+Give me a hug.|Обними меня.
+That's so sweet of you!|Это так мило с твоей стороны!
+# 🌤 Погода и природа
+It's pouring outside.|На улице ливень.
+It's boiling today.|Сегодня жара.
+Bundle up, it's freezing!|Одевайся теплее, там мороз!
+Looks like it's gonna rain.|Похоже, будет дождь.
+What a gorgeous day!|Какой чудесный день!
+The wind's really picking up.|Ветер сильно усиливается.
+It's muggy today.|Сегодня душно и влажно.
+I love fall weather.|Я обожаю осеннюю погоду.
+It snowed all night.|Снег шёл всю ночь.
+Don't forget your umbrella.|Не забудь зонт.
+The sky is so clear tonight.|Сегодня такое ясное небо.
+Let's go for a walk.|Пойдём погуляем.
+# 👕 Одежда и внешность
+I love your jacket!|Мне нравится твоя куртка!
+These jeans don't fit anymore.|Эти джинсы мне больше не подходят.
+Do I look okay in this?|Я нормально в этом выгляжу?
+You look great today.|Ты сегодня отлично выглядишь.
+I need new sneakers.|Мне нужны новые кроссовки.
+Put on a sweater.|Надень свитер.
+I got a haircut.|Я подстригся.
+That color looks good on you.|Этот цвет тебе идёт.
+My shirt's inside out.|Моя рубашка надета наизнанку.
+Where's my other sock?|Где мой второй носок?
+He's wearing a goofy hat.|На нём дурацкая шляпа.
+Grab your coat.|Бери пальто.
+# 🎬 Хобби и досуг
+Wanna catch a movie?|Хочешь сходить в кино?
+Let's binge-watch the whole season.|Давай посмотрим весь сезон запоем.
+I'm really into jazz lately.|Я в последнее время увлекаюсь джазом.
+We should go camping.|Нам стоит поехать в поход с палатками.
+Let's have a game night.|Давай устроим вечер настольных игр.
+What are you up to this weekend?|Чем занимаешься на выходных?
+I'm just chilling at home.|Я просто отдыхаю дома.
+I'm learning to play guitar.|Я учусь играть на гитаре.
+Let's take a road trip!|Давай махнём в поездку на машине!
+That concert was awesome.|Тот концерт был потрясающим.
+I'm reading a great book.|Я читаю отличную книгу.
+Let's go for a bike ride.|Давай покатаемся на велосипедах.
+# 📱 Технологии
+My phone's about to die.|Мой телефон почти разрядился.
+What's the Wi-Fi password?|Какой пароль от вайфая?
+I'll text you the address.|Я скину тебе адрес сообщением.
+My laptop froze again.|Мой ноутбук опять завис.
+Send me the link.|Пришли мне ссылку.
+I forgot my password.|Я забыла пароль.
+Did you get my message?|Ты получил моё сообщение?
+Can you FaceTime me later?|Можешь потом позвонить мне по видео?
+I'm taking a screenshot.|Я делаю скриншот.
+The app keeps crashing.|Приложение постоянно вылетает.
+Turn off your notifications.|Выключи уведомления.
+Let me charge my phone.|Дай мне зарядить телефон.
+# 🕒 Время и планы
+What time works for you?|Во сколько тебе удобно?
+Let's meet at six.|Давай встретимся в шесть.
+I'll be there in five.|Буду через пять минут.
+I'm free after lunch.|Я свободна после обеда.
+Can we do it another time?|Можем сделать это в другой раз?
+See you tomorrow!|Увидимся завтра!
+It's almost midnight.|Уже почти полночь.
+I gotta be up early.|Мне надо рано вставать.
+Hang on, I'll be right back.|Подожди, я сейчас вернусь.
+Let's make plans for Saturday.|Давай составим планы на субботу.
+I'm free all day.|Я свободна весь день.
+Running a few minutes behind.|Опаздываю на пару минут.
+# 🐾 Питомцы
+The cats are hungry again.|Кошки снова голодные.
+Did you feed the cats?|Ты покормил кошек?
+Mira needs a walk.|Мире нужно погулять.
+The cat's purring on my lap.|Кошка мурлыкает у меня на коленях.
+Our dog loves treats.|Наша собака обожает лакомства.
+Get off the couch!|Слезай с дивана!
+She scratched the sofa again.|Она опять поцарапала диван.
+Don't let the dog out.|Не выпускай собаку.
+The cat knocked over my cup.|Кошка опрокинула мою чашку.
+Time for the vet.|Пора к ветеринару.
+He's afraid of thunder.|Он боится грома.
+Who's a good boy?|Кто у нас хороший мальчик?
+# 🍳 Готовка
+I'm cooking tonight.|Сегодня вечером готовлю я.
+Can you chop the onions?|Нарежешь лук?
+Add a pinch of salt.|Добавь щепотку соли.
+Is the oven preheated?|Духовка уже разогрета?
+Don't burn the toast!|Не сожги тосты!
+Taste this. Does it need salt?|Попробуй. Соли не хватает?
+We're having leftovers.|Сегодня ужинаем остатками.
+The soup's boiling over!|Суп убегает!
+Can you pass the pepper?|Передашь перец?
+That smells amazing!|Пахнет потрясающе!
+Let me stir it real quick.|Дай я быстро помешаю.
+I made too much food.|Я приготовила слишком много.
+# 🏨 Отель и отдых
+We have a reservation under Smith.|У нас бронь на фамилию Смит.
+What time's checkout?|Во сколько выезд?
+Can we get a late checkout?|Можно поздний выезд?
+The AC isn't working.|Кондиционер не работает.
+Is breakfast included?|Завтрак включён?
+Could you send up more towels?|Принесите, пожалуйста, ещё полотенец.
+We're on vacation.|Мы в отпуске.
+The view is unreal.|Вид просто нереальный.
+It's way too noisy in here.|Здесь слишком шумно.
+Where's the elevator?|Где лифт?
+I'd like a quiet room.|Мне нужен тихий номер.
+We had an amazing time.|Мы чудесно провели время.
+# 💬 Повседневное общение
+How's it going?|Как дела?
+What's up?|Что нового?
+Long time no see!|Сто лет не виделись!
+No worries.|Не переживай.
+Sorry, my bad.|Прости, моя вина.
+Thanks a lot!|Огромное спасибо!
+You bet.|Конечно, без проблем.
+Excuse me, got a sec?|Простите, есть минутка?
+Take care!|Береги себя!
+I totally agree.|Полностью согласна.
+Wait, what?|Подожди, что?
+That makes sense.|Это логично.
+# 😎 Сленг и разговорные формы
+I'm gonna call her later.|Я потом ей позвоню.
+I wanna go home.|Я хочу домой.
+I gotta run.|Мне надо бежать.
+It's kinda cold out here.|Здесь как-то холодно.
+Lemme check real quick.|Дай-ка я быстро проверю.
+Gimme a minute.|Дай мне минутку.
+I dunno, maybe.|Не знаю, может быть.
+No way! For real?|Не может быть! Серьёзно?
+That party was lit!|Та вечеринка была огонь!
+Dude, that's awesome!|Чувак, это круто!
+I'm so over it.|Меня это уже достало.
+That's kinda sketchy.|Это как-то подозрительно.
+Y'all ready?|Вы все готовы?
+Chill out, it's fine.|Расслабься, всё нормально.
+Hit me up later.|Напиши мне позже.
+Catch you later!|Увидимся!
+# 🔧 Ремонт и бытовые проблемы
+The faucet's leaking.|Кран течёт.
+The light bulb burned out.|Лампочка перегорела.
+Can you fix this?|Ты можешь это починить?
+Where's the screwdriver?|Где отвёртка?
+The power's out.|Отключили электричество.
+My car won't start.|Моя машина не заводится.
+We need a plumber.|Нам нужен сантехник.
+Hang this picture for me?|Повесишь мне эту картину?
+The door's stuck.|Дверь заклинило.
+I'll call the landlord.|Я позвоню хозяину квартиры.
+Is the heat on?|Отопление включено?
+Something's wrong with the fridge.|С холодильником что-то не так.
+# 🎉 Праздники и гости
+Happy birthday!|С днём рождения!
+Congrats!|Поздравляю!
+Come on in!|Заходите!
+Can I bring anything?|Что-нибудь принести?
+Thanks for having us.|Спасибо, что пригласили.
+Cheers!|За здоровье!
+Wanna dance?|Потанцуем?
+We're throwing a party Saturday.|В субботу мы устраиваем вечеринку.
+Help yourself.|Угощайтесь.
+It was a blast!|Было круто!
+Merry Christmas!|С Рождеством!
+Let's make a toast.|Давайте произнесём тост.
+# 📞 Телефон и сообщения
+Hey, it's me.|Привет, это я.
+Can you hear me?|Ты меня слышишь?
+You're breaking up.|Тебя плохо слышно.
+I'll call you back.|Я перезвоню.
+Text me when you get there.|Напиши мне, когда доберёшься.
+Sorry, I missed your call.|Прости, я пропустила твой звонок.
+Leave me a voicemail.|Оставь мне голосовое сообщение.
+Can I call you in ten?|Можно я позвоню через десять минут?
+Who's calling?|Кто звонит?
+I'm on my way.|Я уже в пути.
+Got your text.|Получила твоё сообщение.
+Talk to you soon!|Скоро поговорим!

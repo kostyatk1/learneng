@@ -42,7 +42,7 @@ PH_CAT: dict[int, int | None] = {}                        # выбранная �
 TEXT_HANDLERS: dict = {}                                  # тип упражнения -> функция проверки ответа текстом
 
 MENU = {"quiz": "🧠 Квиз", "new": "🆕 Новые слова", "phrase": "✍️ Фразы", "verbs": "📘 Глаголы",
-        "slang": "😎 Сленг", "dialogs": "🎭 Диалоги", "games": "🎮 Упражнения", "listen": "🎧 Аудирование", "grammar": "📐 Грамматика", "words": "📚 Мои слова", "badges": "🏅 Достижения", "stats": "📊 Прогресс",
+        "slang": "😎 Сленг", "dialogs": "🎭 Диалоги", "games": "🎮 Упражнения", "daily": "🗣 Бытовые фразы", "listen": "🎧 Аудирование", "grammar": "📐 Грамматика", "words": "📚 Мои слова", "badges": "🏅 Достижения", "stats": "📊 Прогресс",
         "settings": "⚙️ Настройки", "admin": "🛠 Админ"}
 
 WELCOME = (
@@ -57,6 +57,7 @@ WELCOME = (
     "🎭 /dialogs — диалоги, где ты сама пишешь ответы (20 сценариев, в том числе с нашими питомцами)\n"
     "🎧 /listen — аудирование · 📐 /grammar — мини-грамматика\n"
     "⚠️ /hard — сложные слова (где чаще ошибаешься)\n"
+    "🗣 /daily — бытовые предложения: короткие разговорные фразы с транскрипцией, переводом под спойлером и озвучкой\n"
     "🎮 /games — упражнения: диктант, составь предложение, найди ошибку, соедини пары, квиз по теме\n"
     "🏠 /menu — вернуться в главное меню\n"
     "📚 /words — твой словарь, ➕ /add — добавить своё слово\n"
@@ -106,7 +107,7 @@ def kb(*rows, home: bool = True) -> InlineKeyboardMarkup:
 
 def main_kb(uid: int = 0) -> ReplyKeyboardMarkup:
     rows = [[MENU["quiz"], MENU["new"]], [MENU["phrase"], MENU["verbs"]], [MENU["dialogs"], MENU["listen"]],
-            [MENU["grammar"], MENU["slang"]], [MENU["games"]], [MENU["words"], MENU["badges"]], [MENU["stats"], MENU["settings"]]]
+            [MENU["grammar"], MENU["slang"]], [MENU["games"], MENU["daily"]], [MENU["words"], MENU["badges"]], [MENU["stats"], MENU["settings"]]]
     if uid and uid == ADMIN_ID:
         rows.append([MENU["admin"]])
     return ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=t) for t in r] for r in rows], resize_keyboard=True)
@@ -462,7 +463,7 @@ async def on_add_pending(cb: CallbackQuery):
 
 # ============================ главное меню ============================
 HOME_TEXT = (f"🏠 <b>Главное меню</b> · <i>{BRAND}</i> 💖\n\n"
-             "🧠 Квиз · 🆕 Новые слова · ✍️ Фразы · 📘 Глаголы\n🎭 Диалоги · 🎧 Аудирование · 📐 Грамматика · 😎 Сленг · 🎮 Упражнения\n"
+             "🧠 Квиз · 🆕 Новые слова · ✍️ Фразы · 📘 Глаголы\n🎭 Диалоги · 🎧 Аудирование · 📐 Грамматика · 😎 Сленг · 🎮 Упражнения · 🗣 Бытовые фразы\n"
              "📚 Мои слова · 🏅 Достижения · 📊 Прогресс · ⚙️ Настройки\n\n"
              "Или просто напиши слово — я его переведу.")
 

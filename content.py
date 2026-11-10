@@ -71,6 +71,43 @@ def _load_phrases():
 
 PHRASE_CATS, PHRASES = _load_phrases()
 
+# ---------- бытовые предложения (разговорный американский) + русская транскрипция ----------
+_COLLOQ = [("gonna", "going to"), ("wanna", "want to"), ("gotta", "have to"), ("kinda", "kind of"),
+           ("lemme", "let me"), ("gimme", "give me"), ("dunno", "don't know"), ("y'all", "you all")]
+
+
+def expand_variants(en: str) -> list[str]:
+    """Для проверки ответов: «gonna» принимаем и как «going to» и т. д."""
+    out, full = [en], en
+    for a, b in _COLLOQ:
+        if re.search(rf"\b{a}\b", full, re.I):
+            full = re.sub(rf"\b{a}\b", b, full, flags=re.I)
+    if full != en:
+        out.append(full)
+    return out
+
+
+def _load_everyday():
+    cats, items = [], []
+    tr = json.loads((BASE / "everyday_tr.json").read_text(encoding="utf-8")) if (BASE / "everyday_tr.json").exists() else {}
+    for line in _lines(BASE / "everyday.txt"):
+        if line.startswith("#"):
+            cats.append(line[1:].strip())
+            continue
+        en, ru = (p.strip() for p in line.split("|", 1))
+        items.append({"cat": len(cats) - 1, "en": en, "ru": ru, "tr": tr.get(en, "")})
+    return cats, items
+
+
+EVERYDAY_CATS, EVERYDAY = _load_everyday()
+_ed_cat = len(PHRASE_CATS)
+PHRASE_CATS.append("🗣 Бытовые предложения")
+_seen_ru = {p["ru"] for p in PHRASES}
+for _e in EVERYDAY:
+    if _e["ru"] not in _seen_ru:
+        _seen_ru.add(_e["ru"])
+        PHRASES.append({"ru": _e["ru"], "en": expand_variants(_e["en"]), "cat": _ed_cat})
+
 _V = json.loads((BASE / "verbs.json").read_text(encoding="utf-8"))
 VERB_GROUPS: list[str] = _V["groups"]
 VERBS: list[dict] = _V["verbs"]
