@@ -1,0 +1,969 @@
+// Автоконвертация старых списков (уровень A2). Формат: en|часть речи|перевод|пример|примечание|уровень
+# N
+apple|сущ.|яблоко|I eat an apple every day.|о еде и кафе|A2
+bread|сущ.|хлеб|We need fresh bread for breakfast.|о еде и кафе|A2
+cheese|сущ.|сыр|Do you like cheese on your pizza?|о еде и кафе|A2
+chicken|сущ.|курица|I usually cook chicken with rice.|о еде и кафе|A2
+vegetables|сущ.|овощи|Eat more vegetables, they are healthy.|о еде и кафе|A2
+breakfast|сущ.|завтрак|I have breakfast at eight o'clock.|о еде и кафе|A2
+menu|сущ.|меню|Can I see the menu, please?|о еде и кафе|A2
+check|сущ.|счёт в ресторане|Can we get the check, please?|о еде и кафе|A2
+bill|сущ.|счёт; купюра|I paid the electric bill online.|о еде и кафе|A2
+sugar|сущ.|сахар|Do you take sugar in your coffee?|о еде и кафе|A2
+soup|сущ.|суп|The soup is hot.|о еде и кафе|A2
+salad|сущ.|салат|I'd like a salad with chicken.|о еде и кафе|A2
+sandwich|сущ.|сэндвич|He made a sandwich for lunch.|о еде и кафе|A2
+french fries|сущ.|картофель фри|Can I have a burger and french fries?|о еде и кафе|A2
+rice|сущ.|рис|We had rice and beans for dinner.|о еде и кафе|A2
+pasta|сущ.|паста, макароны|I love pasta with tomato sauce.|о еде и кафе|A2
+fish|сущ.|рыба|My dad cooks fish on Fridays.|о еде и кафе|A2
+meat|сущ.|мясо|She doesn't eat meat.|о еде и кафе|A2
+beef|сущ.|говядина|The beef was very tender.|о еде и кафе|A2
+eggs|сущ.|яйца|I'd like two eggs and toast.|о еде и кафе|A2
+butter|сущ.|сливочное масло|Put some butter on the bread.|о еде и кафе|A2
+milk|сущ.|молоко|Do you want milk in your coffee?|о еде и кафе|A2
+juice|сущ.|сок|I drink orange juice in the morning.|о еде и кафе|A2
+soda|сущ.|газировка|Can I have a soda, please?|о еде и кафе|A2
+cookie|сущ.|печенье|These cookies are still warm.|о еде и кафе|A2
+candy|сущ.|конфеты|Kids love candy.|о еде и кафе|A2
+dessert|сущ.|десерт|What's for dessert?|о еде и кафе|A2
+snack|сущ.|перекус|I need a snack before the gym.|о еде и кафе|A2
+dinner|сущ.|ужин|We have dinner at seven.|о еде и кафе|A2
+lunch|сущ.|обед|Let's have lunch together.|о еде и кафе|A2
+waiter|сущ.|официант|The waiter brought our drinks.|о еде и кафе|A2
+waitress|сущ.|официантка|The waitress was very friendly.|о еде и кафе|A2
+tip|сущ.|чаевые|In the US, you leave a tip of about 20 percent.|о еде и кафе|A2
+refill|сущ.|долив (напитка)|Can I get a refill, please?|о еде и кафе|A2
+napkin|сущ.|салфетка|Can I have a napkin, please?|о еде и кафе|A2
+fork|сущ.|вилка|I need a clean fork.|о еде и кафе|A2
+spoon|сущ.|ложка|Use a spoon for the soup.|о еде и кафе|A2
+knife|сущ.|нож|Be careful with that knife.|о еде и кафе|A2
+plate|сущ.|тарелка|She put the pizza on a plate.|о еде и кафе|A2
+glass|сущ.|стакан; стекло|I'd like a glass of water.|о еде и кафе|A2
+cup|сущ.|чашка|He drank a cup of tea.|о еде и кафе|A2
+delicious|сущ.|очень вкусный|The pie was delicious.|о еде и кафе|A2
+apartment|сущ.|квартира|We live in a small apartment.|о доме и быте|A2
+kitchen|сущ.|кухня|My mother is in the kitchen.|о доме и быте|A2
+bedroom|сущ.|спальня|The bedroom is quiet and dark.|о доме и быте|A2
+bathroom|сущ.|ванная, туалет|The bathroom is next to the kitchen.|о доме и быте|A2
+living room|сущ.|гостиная|We watch TV in the living room.|о доме и быте|A2
+window|сущ.|окно|Please open the window.|о доме и быте|A2
+floor|сущ.|пол; этаж|I live on the second floor.|о доме и быте|A2
+furniture|сущ.|мебель|We bought new furniture last month.|о доме и быте|A2
+neighbor|сущ.|сосед|Our neighbor is very friendly.|о доме и быте|A2
+rent|сущ.|аренда; снимать|They rent a small apartment downtown.|о доме и быте|A2
+landlord|сущ.|арендодатель, хозяин жилья|The landlord fixed the heater.|о доме и быте|A2
+key|сущ.|ключ|I can't find my keys.|о доме и быте|A2
+lamp|сущ.|лампа|Turn on the lamp, it's dark.|о доме и быте|A2
+laundry|сущ.|стирка; бельё|I do the laundry on Sunday.|о доме и быте|A2
+dishes|сущ.|посуда|Who's going to wash the dishes?|о доме и быте|A2
+trash|сущ.|мусор|Please take out the trash.|о доме и быте|A2
+vacuum cleaner|сущ.|пылесос|Where is the vacuum cleaner?|о доме и быте|A2
+fridge|сущ.|холодильник|There is milk in the fridge.|о доме и быте|A2
+stove|сущ.|плита|Don't leave the stove on.|о доме и быте|A2
+oven|сущ.|духовка|The oven is very hot.|о доме и быте|A2
+microwave|сущ.|микроволновка|Heat it in the microwave.|о доме и быте|A2
+sink|сущ.|раковина|The sink is full of dishes.|о доме и быте|A2
+bathtub|сущ.|ванна|She relaxes in the bathtub.|о доме и быте|A2
+mirror|сущ.|зеркало|There is a big mirror in the hall.|о доме и быте|A2
+blanket|сущ.|одеяло, плед|I need another blanket.|о доме и быте|A2
+pillow|сущ.|подушка|This pillow is very soft.|о доме и быте|A2
+towel|сущ.|полотенце|Here is a clean towel.|о доме и быте|A2
+closet|сущ.|шкаф, гардероб|My clothes are in the closet.|о доме и быте|A2
+shelf|сущ.|полка|Put the books on the shelf.|о доме и быте|A2
+couch|сущ.|диван|The cat is sleeping on the couch.|о доме и быте|A2
+yard|сущ.|двор, участок|The kids play in the yard.|о доме и быте|A2
+garage|сущ.|гараж|The car is in the garage.|о доме и быте|A2
+stairs|сущ.|лестница|Take the stairs to the third floor.|о доме и быте|A2
+doorbell|сущ.|дверной звонок|Someone rang the doorbell.|о доме и быте|A2
+heater|сущ.|обогреватель|Turn on the heater, it's cold.|о доме и быте|A2
+curtain|сущ.|штора|Close the curtains, please.|о доме и быте|A2
+airport|сущ.|аэропорт|The airport is far from the city.|в аэропорту и в самолёте|A2
+flight|сущ.|рейс, перелёт|Our flight leaves at six.|в аэропорту и в самолёте|A2
+ticket|сущ.|билет|I need two tickets to Berlin.|в аэропорту и в самолёте|A2
+boarding pass|сущ.|посадочный талон|Please show your boarding pass.|в аэропорту и в самолёте|A2
+passport|сущ.|паспорт|Don't forget your passport.|в аэропорту и в самолёте|A2
+visa|сущ.|виза|Do I need a visa for Canada?|в аэропорту и в самолёте|A2
+luggage|сущ.|багаж|My luggage is very heavy.|в аэропорту и в самолёте|A2
+baggage claim|сущ.|получение багажа|Meet me at baggage claim.|в аэропорту и в самолёте|A2
+carry-on|сущ.|ручная кладь|I only have a carry-on.|в аэропорту и в самолёте|A2
+suitcase|сущ.|чемодан|Her suitcase is very big.|в аэропорту и в самолёте|A2
+security|сущ.|досмотр, охрана|We waited in the security line.|в аэропорту и в самолёте|A2
+customs|сущ.|таможня|We went through customs quickly.|в аэропорту и в самолёте|A2
+gate|сущ.|выход на посадку|Your gate is B12.|в аэропорту и в самолёте|A2
+terminal|сущ.|терминал|Our flight leaves from Terminal 2.|в аэропорту и в самолёте|A2
+departure|сущ.|вылет, отправление|The departure time is 8:30.|в аэропорту и в самолёте|A2
+arrival|сущ.|прибытие|What is the arrival time?|в аэропорту и в самолёте|A2
+delay|сущ.|задержка|There is a delay of one hour.|в аэропорту и в самолёте|A2
+canceled|сущ.|отменён|My flight was canceled.|в аэропорту и в самолёте|A2
+layover|сущ.|пересадка (остановка между рейсами)|We have a three-hour layover in Chicago.|в аэропорту и в самолёте|A2
+connecting flight|сущ.|стыковочный рейс|I missed my connecting flight.|в аэропорту и в самолёте|A2
+direct flight|сущ.|прямой рейс|Is there a direct flight to Miami?|в аэропорту и в самолёте|A2
+window seat|сущ.|место у окна|I always ask for a window seat.|в аэропорту и в самолёте|A2
+aisle seat|сущ.|место у прохода|He prefers an aisle seat.|в аэропорту и в самолёте|A2
+seat belt|сущ.|ремень безопасности|Please fasten your seat belt.|в аэропорту и в самолёте|A2
+pilot|сущ.|пилот|The pilot welcomed us on board.|в аэропорту и в самолёте|A2
+flight attendant|сущ.|бортпроводник|The flight attendant brought us water.|в аэропорту и в самолёте|A2
+round-trip|сущ.|туда и обратно|I bought a round-trip ticket.|в аэропорту и в самолёте|A2
+one-way|сущ.|в одну сторону|A one-way ticket is cheaper.|в аэропорту и в самолёте|A2
+passport control|сущ.|паспортный контроль|The passport control line was long.|в аэропорту и в самолёте|A2
+overhead bin|сущ.|багажная полка в салоне|Put your bag in the overhead bin.|в аэропорту и в самолёте|A2
+jet lag|сущ.|смена часовых поясов, джетлаг|I have terrible jet lag.|в аэропорту и в самолёте|A2
+tourist|сущ.|турист|There are many tourists in summer.|в аэропорту и в самолёте|A2
+currency exchange|сущ.|обмен валюты|Where is the currency exchange?|в аэропорту и в самолёте|A2
+bus|сущ.|автобус|The bus is late again.|о дороге и транспорте|A2
+train|сущ.|поезд|The train leaves at nine.|о дороге и транспорте|A2
+subway|сущ.|метро|I take the subway to work.|о дороге и транспорте|A2
+taxi|сущ.|такси|Let's take a taxi.|о дороге и транспорте|A2
+rental car|сущ.|арендованная машина|We got a rental car at the airport.|о дороге и транспорте|A2
+driver's license|сущ.|водительские права|Do you have a driver's license?|о дороге и транспорте|A2
+gas station|сущ.|заправка|Is there a gas station near here?|о дороге и транспорте|A2
+gas|сущ.|бензин|Gas is expensive here.|о дороге и транспорте|A2
+highway|сущ.|шоссе|We drove on the highway for hours.|о дороге и транспорте|A2
+traffic|сущ.|движение, пробки|There is a lot of traffic today.|о дороге и транспорте|A2
+traffic jam|сущ.|пробка|We were stuck in a traffic jam.|о дороге и транспорте|A2
+parking lot|сущ.|парковка|The parking lot is full.|о дороге и транспорте|A2
+road|сущ.|дорога|The road is closed.|о дороге и транспорте|A2
+street|сущ.|улица|Our hotel is on Main Street.|о дороге и транспорте|A2
+corner|сущ.|угол|The store is on the corner.|о дороге и транспорте|A2
+intersection|сущ.|перекрёсток|Turn left at the next intersection.|о дороге и транспорте|A2
+traffic light|сущ.|светофор|Stop at the traffic light.|о дороге и транспорте|A2
+crosswalk|сущ.|пешеходный переход|Use the crosswalk.|о дороге и транспорте|A2
+bridge|сущ.|мост|We crossed the bridge.|о дороге и транспорте|A2
+sidewalk|сущ.|тротуар|Walk on the sidewalk.|о дороге и транспорте|A2
+bus stop|сущ.|автобусная остановка|Where is the bus stop?|о дороге и транспорте|A2
+platform|сущ.|платформа (на вокзале)|The train leaves from platform five.|о дороге и транспорте|A2
+station|сущ.|станция, вокзал|How do I get to the station?|о дороге и транспорте|A2
+schedule|сущ.|расписание|Check the bus schedule.|о дороге и транспорте|A2
+route|сущ.|маршрут|What is the best route to the city?|о дороге и транспорте|A2
+fare|сущ.|стоимость проезда|The fare is two dollars.|о дороге и транспорте|A2
+GPS|сущ.|навигатор|My GPS says turn left.|о дороге и транспорте|A2
+turn left|сущ.|поверните налево|Turn left at the light.|о дороге и транспорте|A2
+turn right|сущ.|поверните направо|Turn right after the bank.|о дороге и транспорте|A2
+go straight|сущ.|идти прямо|Go straight for two blocks.|о дороге и транспорте|A2
+block|сущ.|квартал (городской)|The museum is two blocks away.|о дороге и транспорте|A2
+across from|предлог|напротив|The hotel is across from the park.|о дороге и транспорте|A2
+next to|предлог|рядом с|The bank is next to the pharmacy.|о дороге и транспорте|A2
+between|предлог|между|The cafe is between the bank and the bookstore.|о дороге и транспорте|A2
+in front of|предлог|перед, напротив|Meet me in front of the station.|о дороге и транспорте|A2
+behind|предлог|позади, за|The parking lot is behind the building.|о дороге и транспорте|A2
+lost|сущ.|потерявшийся, заблудившийся|Excuse me, I'm lost.|о дороге и транспорте|A2
+sightseeing|сущ.|осмотр достопримечательностей|We went sightseeing all day.|в поездках и туризме|A2
+guide|сущ.|гид; путеводитель|Our guide was very funny.|в поездках и туризме|A2
+tour|сущ.|экскурсия, тур|We took a city tour.|в поездках и туризме|A2
+museum|сущ.|музей|The museum opens at ten.|в поездках и туризме|A2
+castle|сущ.|замок|We visited an old castle.|в поездках и туризме|A2
+beach|сущ.|пляж|The beach was crowded.|в поездках и туризме|A2
+island|сущ.|остров|They live on a small island.|в поездках и туризме|A2
+lake|сущ.|озеро|The lake is beautiful in the morning.|в поездках и туризме|A2
+souvenir|сущ.|сувенир|I bought a souvenir for my mom.|в поездках и туризме|A2
+postcard|сущ.|открытка|She sent me a postcard from Rome.|в поездках и туризме|A2
+camera|сущ.|фотоаппарат|Don't forget your camera.|в поездках и туризме|A2
+photo|сущ.|фотография|Can you take a photo of us?|в поездках и туризме|A2
+ticket office|сущ.|касса|The ticket office is on the left.|в поездках и туризме|A2
+entrance|сущ.|вход|The entrance is around the corner.|в поездках и туризме|A2
+exit|сущ.|выход|Where is the exit?|в поездках и туризме|A2
+open|сущ.|открыт|The museum is open until five.|в поездках и туризме|A2
+closed|сущ.|закрыт|The restaurant is closed on Mondays.|в поездках и туризме|A2
+attraction|сущ.|достопримечательность|The tower is the main attraction.|в поездках и туризме|A2
+landmark|сущ.|знаковое место|The bridge is a famous landmark.|в поездках и туризме|A2
+neighborhood|сущ.|район|It's a quiet neighborhood.|в поездках и туризме|A2
+city center|сущ.|центр города|Our hotel is in the city center.|в поездках и туризме|A2
+itinerary|сущ.|маршрут поездки, план|Here is our itinerary for the week.|в поездках и туризме|A2
+vacation|сущ.|отпуск, каникулы|We're on vacation in Spain.|в поездках и туризме|A2
+trip|сущ.|поездка|It was a great trip.|в поездках и туризме|A2
+backpack|сущ.|рюкзак|He packed his backpack.|в поездках и туризме|A2
+sunscreen|сущ.|солнцезащитный крем|Don't forget the sunscreen.|в поездках и туризме|A2
+sunglasses|сущ.|солнцезащитные очки|I lost my sunglasses.|в поездках и туризме|A2
+swimsuit|сущ.|купальник|She packed a swimsuit.|в поездках и туризме|A2
+adventure|сущ.|приключение|The trip was a real adventure.|в поездках и туризме|A2
+view|сущ.|вид|The view from the hotel is amazing.|в поездках и туризме|A2
+job|сущ.|работа, должность|I'm looking for a new job.|о работе|A2
+boss|сущ.|начальник|My boss is very kind.|о работе|A2
+coworker|сущ.|коллега|My coworkers are friendly.|о работе|A2
+meeting|сущ.|встреча, совещание|We have a meeting at ten.|о работе|A2
+salary|сущ.|зарплата|The salary is good.|о работе|A2
+office|сущ.|офис|I go to the office by bus.|о работе|A2
+interview|сущ.|собеседование|I have a job interview tomorrow.|о работе|A2
+deadline|сущ.|крайний срок|The deadline is on Friday.|о работе|A2
+experience|сущ.|опыт|She has a lot of experience.|о работе|A2
+skill|сущ.|навык|Communication is an important skill.|о работе|A2
+customer|сущ.|клиент|The customer is always right.|о работе|A2
+resume|сущ.|резюме|Please send me your resume.|о работе|A2
+shift|сущ.|смена|I work the night shift.|о работе|A2
+full-time|сущ.|полный рабочий день|He has a full-time job.|о работе|A2
+part-time|сущ.|неполный рабочий день|She works part-time.|о работе|A2
+manager|сущ.|менеджер|The manager is in a meeting.|о работе|A2
+employee|сущ.|сотрудник|The company has fifty employees.|о работе|A2
+team|сущ.|команда|Our team is great.|о работе|A2
+project|сущ.|проект|We finished the project on time.|о работе|A2
+task|сущ.|задача|My first task is to answer emails.|о работе|A2
+report|сущ.|отчёт|I have to write a report.|о работе|A2
+email|сущ.|электронное письмо|I'll send you an email.|о работе|A2
+break|сущ.|перерыв|Let's take a ten-minute break.|о работе|A2
+overtime|сущ.|сверхурочные|He worked overtime last night.|о работе|A2
+raise|сущ.|повышение зарплаты|I asked my boss for a raise.|о работе|A2
+promotion|сущ.|повышение в должности|She got a promotion.|о работе|A2
+paycheck|сущ.|зарплатный чек|I get my paycheck on Friday.|о работе|A2
+business trip|сущ.|командировка|He is on a business trip.|о работе|A2
+contract|сущ.|контракт|Read the contract carefully.|о работе|A2
+remote work|сущ.|удалённая работа|I do remote work two days a week.|о работе|A2
+price|сущ.|цена|What is the price of this bag?|в магазине и о покупках|A2
+discount|сущ.|скидка|There is a 20 percent discount today.|в магазине и о покупках|A2
+sale|сущ.|распродажа|Everything is on sale.|в магазине и о покупках|A2
+receipt|сущ.|чек|Keep the receipt, please.|в магазине и о покупках|A2
+cart|сущ.|тележка, корзина|Put the apples in the cart.|в магазине и о покупках|A2
+size|сущ.|размер|Do you have this in a bigger size?|в магазине и о покупках|A2
+cash|сущ.|наличные|Can I pay in cash?|в магазине и о покупках|A2
+credit card|сущ.|кредитная карта|Do you take credit cards?|в магазине и о покупках|A2
+change|сущ.|сдача; менять|Here is your change.|в магазине и о покупках|A2
+refund|сущ.|возврат денег|I'd like a refund, please.|в магазине и о покупках|A2
+fitting room|сущ.|примерочная|The fitting room is in the back.|в магазине и о покупках|A2
+store|сущ.|магазин|The store closes at nine.|в магазине и о покупках|A2
+mall|сущ.|торговый центр|We went to the mall on Saturday.|в магазине и о покупках|A2
+checkout|сущ.|касса|There is a long line at the checkout.|в магазине и о покупках|A2
+cashier|сущ.|кассир|The cashier was very nice.|в магазине и о покупках|A2
+shopping bag|сущ.|пакет с покупками|Do you need a shopping bag?|в магазине и о покупках|A2
+customer service|сущ.|служба поддержки клиентов|Call customer service.|в магазине и о покупках|A2
+coupon|сущ.|купон|I have a coupon for ten dollars.|в магазине и о покупках|A2
+gift|сущ.|подарок|I'm looking for a gift for my sister.|в магазине и о покупках|A2
+wallet|сущ.|кошелёк|I left my wallet at home.|в магазине и о покупках|A2
+brand|сущ.|бренд|This is my favorite brand.|в магазине и о покупках|A2
+grocery store|сущ.|продуктовый магазин|I'm going to the grocery store.|в магазине и о покупках|A2
+headache|сущ.|головная боль|I have a terrible headache.|о здоровье и спорте|A2
+medicine|сущ.|лекарство|Take this medicine twice a day.|о здоровье и спорте|A2
+doctor|сущ.|врач|You should see a doctor.|о здоровье и спорте|A2
+exercise|сущ.|упражнение; заниматься|I exercise three times a week.|о здоровье и спорте|A2
+gym|сущ.|спортзал|He goes to the gym after work.|о здоровье и спорте|A2
+pain|сущ.|боль|I have a pain in my back.|о здоровье и спорте|A2
+cold|сущ.|простуда|I think I have a cold.|о здоровье и спорте|A2
+appointment|сущ.|приём (у врача)|I have an appointment at three.|о здоровье и спорте|A2
+fever|сущ.|температура, жар|The child has a fever.|о здоровье и спорте|A2
+cough|сущ.|кашель; кашлять|I have a bad cough.|о здоровье и спорте|A2
+sore throat|сущ.|больное горло|I have a sore throat.|о здоровье и спорте|A2
+runny nose|сущ.|насморк|I have a runny nose.|о здоровье и спорте|A2
+allergy|сущ.|аллергия|He has an allergy to nuts.|о здоровье и спорте|A2
+pharmacy|сущ.|аптека|The pharmacy is open until ten.|о здоровье и спорте|A2
+prescription|сущ.|рецепт (на лекарство)|The doctor gave me a prescription.|о здоровье и спорте|A2
+vitamin|сущ.|витамин|I take a vitamin every morning.|о здоровье и спорте|A2
+injury|сущ.|травма|He has a knee injury.|о здоровье и спорте|A2
+bandage|сущ.|бинт, повязка|I need a bandage.|о здоровье и спорте|A2
+dentist|сущ.|стоматолог|I have a dentist appointment tomorrow.|о здоровье и спорте|A2
+hospital|сущ.|больница|She works at a hospital.|о здоровье и спорте|A2
+emergency|сущ.|экстренная ситуация|Call 911 in an emergency.|о здоровье и спорте|A2
+ambulance|сущ.|скорая помощь|Call an ambulance!|о здоровье и спорте|A2
+health insurance|сущ.|медицинская страховка|Do you have health insurance?|о здоровье и спорте|A2
+dizzy|сущ.|с головокружением|I feel dizzy.|о здоровье и спорте|A2
+stomachache|сущ.|боль в животе|I have a stomachache.|о здоровье и спорте|A2
+rest|сущ.|отдых; отдыхать|You need to rest.|о здоровье и спорте|A2
+workout|сущ.|тренировка|My workout was hard today.|о здоровье и спорте|A2
+yoga|сущ.|йога|She does yoga every day.|о здоровье и спорте|A2
+friend|сущ.|друг|She is my best friend.|о людях и чувствах|A2
+stressed|сущ.|в стрессе|I'm stressed at work.|о людях и чувствах|A2
+weather|сущ.|погода|The weather is nice today.|о погоде и природе|A2
+rain|сущ.|дождь|I don't like rain.|о погоде и природе|A2
+wind|сущ.|ветер|There is a strong wind.|о погоде и природе|A2
+snow|сущ.|снег|Kids love snow.|о погоде и природе|A2
+fog|сущ.|туман|Be careful, there is fog.|о погоде и природе|A2
+storm|сущ.|гроза, буря|A storm is coming.|о погоде и природе|A2
+forest|сущ.|лес|We walked in the forest.|о погоде и природе|A2
+river|сущ.|река|The river is very wide.|о погоде и природе|A2
+mountain|сущ.|гора|They climb mountains every summer.|о погоде и природе|A2
+temperature|сущ.|температура|The temperature is minus five.|о погоде и природе|A2
+freezing|сущ.|очень холодный, ледяной|It's freezing outside!|о погоде и природе|A2
+thunder|сущ.|гром|I heard thunder.|о погоде и природе|A2
+lightning|сущ.|молния|The lightning was bright.|о погоде и природе|A2
+rainbow|сущ.|радуга|Look, a rainbow!|о погоде и природе|A2
+umbrella|сущ.|зонт|Take an umbrella with you.|о погоде и природе|A2
+forecast|сущ.|прогноз|What's the weather forecast?|о погоде и природе|A2
+spring|сущ.|весна|Flowers bloom in spring.|о погоде и природе|A2
+summer|сущ.|лето|We travel in the summer.|о погоде и природе|A2
+fall|сущ.|осень|The leaves change color in the fall.|о погоде и природе|A2
+winter|сущ.|зима|Winter is my favorite season.|о погоде и природе|A2
+flower|сущ.|цветок|She bought some flowers.|о погоде и природе|A2
+tree|сущ.|дерево|The tree is very old.|о погоде и природе|A2
+grass|сущ.|трава|The grass is wet.|о погоде и природе|A2
+sky|сущ.|небо|The sky is clear tonight.|о погоде и природе|A2
+moon|сущ.|луна|The moon is full tonight.|о погоде и природе|A2
+star|сущ.|звезда|We watched the stars.|о погоде и природе|A2
+ocean|сущ.|океан|The ocean is so big.|о погоде и природе|A2
+desert|сущ.|пустыня|The desert is hot and dry.|о погоде и природе|A2
+hill|сущ.|холм|We climbed the hill.|о погоде и природе|A2
+mom|сущ.|мама|My mom is a teacher.|о семье и отношениях|A2
+dad|сущ.|папа|My dad cooks on weekends.|о семье и отношениях|A2
+parents|сущ.|родители|My parents live in Ohio.|о семье и отношениях|A2
+brother|сущ.|брат|My brother is older than me.|о семье и отношениях|A2
+sister|сущ.|сестра|I have a younger sister.|о семье и отношениях|A2
+grandmother|сущ.|бабушка|My grandmother makes great cookies.|о семье и отношениях|A2
+grandfather|сущ.|дедушка|My grandfather tells funny stories.|о семье и отношениях|A2
+aunt|сущ.|тётя|My aunt lives in Texas.|о семье и отношениях|A2
+uncle|сущ.|дядя|My uncle is a pilot.|о семье и отношениях|A2
+cousin|сущ.|двоюродный брат/сестра|I'm visiting my cousin this weekend.|о семье и отношениях|A2
+niece|сущ.|племянница|My niece is five years old.|о семье и отношениях|A2
+nephew|сущ.|племянник|My nephew loves dinosaurs.|о семье и отношениях|A2
+son|сущ.|сын|Their son is in college.|о семье и отношениях|A2
+daughter|сущ.|дочь|We have a daughter.|о семье и отношениях|A2
+husband|сущ.|муж|My husband is at work.|о семье и отношениях|A2
+wife|сущ.|жена|His wife is a doctor.|о семье и отношениях|A2
+boyfriend|сущ.|парень, бойфренд|Her boyfriend is very nice.|о семье и отношениях|A2
+girlfriend|сущ.|девушка, подруга (романтическая)|He called his girlfriend.|о семье и отношениях|A2
+in-laws|сущ.|родственники мужа/жены|We're visiting my in-laws.|о семье и отношениях|A2
+baby|сущ.|малыш|The baby is sleeping.|о семье и отношениях|A2
+kid|сущ.|ребёнок|They have two kids.|о семье и отношениях|A2
+teenager|сущ.|подросток|My neighbor's son is a teenager.|о семье и отношениях|A2
+relatives|сущ.|родственники|All my relatives came to the wedding.|о семье и отношениях|A2
+wedding|сущ.|свадьба|We went to a wedding on Saturday.|о семье и отношениях|A2
+couple|сущ.|пара|They are a lovely couple.|о семье и отношениях|A2
+anniversary|сущ.|годовщина|Today is our anniversary.|о семье и отношениях|A2
+roommate|сущ.|сосед по комнате|My roommate is from Canada.|о семье и отношениях|A2
+best friend|сущ.|лучший друг|She is my best friend.|о семье и отношениях|A2
+shirt|сущ.|рубашка|He wore a white shirt.|об одежде|A2
+T-shirt|сущ.|футболка|I bought a blue T-shirt.|об одежде|A2
+pants|сущ.|брюки|These pants are too long.|об одежде|A2
+jeans|сущ.|джинсы|I wear jeans every day.|об одежде|A2
+sweater|сущ.|свитер|Put on a sweater, it's cold.|об одежде|A2
+hoodie|сущ.|худи|He is wearing a gray hoodie.|об одежде|A2
+jacket|сущ.|куртка, пиджак|Take your jacket with you.|об одежде|A2
+coat|сущ.|пальто|She bought a new coat.|об одежде|A2
+dress|сущ.|платье|She wore a red dress.|об одежде|A2
+skirt|сущ.|юбка|I love this skirt.|об одежде|A2
+shorts|сущ.|шорты|It's hot, so I'm wearing shorts.|об одежде|A2
+socks|сущ.|носки|I need new socks.|об одежде|A2
+shoes|сущ.|обувь|These shoes are very comfortable.|об одежде|A2
+sneakers|сущ.|кроссовки|I wear sneakers to the gym.|об одежде|A2
+boots|сущ.|ботинки, сапоги|Wear boots in the snow.|об одежде|A2
+sandals|сущ.|сандалии|She wears sandals in summer.|об одежде|A2
+hat|сущ.|шляпа, шапка|He wore a funny hat.|об одежде|A2
+cap|сущ.|кепка|Nice cap!|об одежде|A2
+scarf|сущ.|шарф|Wear a scarf, it's windy.|об одежде|A2
+gloves|сущ.|перчатки|Don't forget your gloves.|об одежде|A2
+belt|сущ.|ремень|I need a new belt.|об одежде|A2
+suit|сущ.|костюм|He wore a suit to the interview.|об одежде|A2
+pajamas|сущ.|пижама|I stay in my pajamas on Sunday.|об одежде|A2
+underwear|сущ.|нижнее бельё|Pack extra underwear.|об одежде|A2
+purse|сущ.|женская сумка|She put her phone in her purse.|об одежде|A2
+pocket|сущ.|карман|My keys are in my pocket.|об одежде|A2
+button|сущ.|пуговица|A button fell off my coat.|об одежде|A2
+zipper|сущ.|молния (застёжка)|The zipper is broken.|об одежде|A2
+hobby|сущ.|хобби|My hobby is photography.|о хобби и отдыхе|A2
+movie|сущ.|фильм|Let's watch a movie tonight.|о хобби и отдыхе|A2
+TV show|сущ.|телешоу, сериал|What's your favorite TV show?|о хобби и отдыхе|A2
+music|сущ.|музыка|I listen to music all day.|о хобби и отдыхе|A2
+song|сущ.|песня|This is my favorite song.|о хобби и отдыхе|A2
+concert|сущ.|концерт|We went to a concert.|о хобби и отдыхе|A2
+novel|сущ.|роман|She wrote a novel.|о хобби и отдыхе|A2
+gardening|сущ.|садоводство|Gardening is relaxing.|о хобби и отдыхе|A2
+board game|сущ.|настольная игра|We played board games all night.|о хобби и отдыхе|A2
+video game|сущ.|видеоигра|My son plays video games.|о хобби и отдыхе|A2
+party|сущ.|вечеринка|We're having a party on Saturday.|о хобби и отдыхе|A2
+camping|сущ.|поход с палаткой|We went camping last summer.|о хобби и отдыхе|A2
+fishing|сущ.|рыбалка|My dad loves fishing.|о хобби и отдыхе|A2
+hiking|сущ.|пеший поход|We went hiking in the mountains.|о хобби и отдыхе|A2
+biking|сущ.|катание на велосипеде|Biking is fun.|о хобби и отдыхе|A2
+soccer|сущ.|футбол|The kids play soccer.|о хобби и отдыхе|A2
+football|сущ.|американский футбол|Football is very popular in the US.|о хобби и отдыхе|A2
+baseball|сущ.|бейсбол|We watched a baseball game.|о хобби и отдыхе|A2
+basketball|сущ.|баскетбол|He plays basketball every day.|о хобби и отдыхе|A2
+picnic|сущ.|пикник|Let's have a picnic.|о хобби и отдыхе|A2
+free time|сущ.|свободное время|What do you do in your free time?|о хобби и отдыхе|A2
+weekend|сущ.|выходные|What are you doing this weekend?|о хобби и отдыхе|A2
+phone|сущ.|телефон|Where's my phone?|о телефоне и интернете|A2
+smartphone|сущ.|смартфон|She has a new smartphone.|о телефоне и интернете|A2
+laptop|сущ.|ноутбук|I work on my laptop.|о телефоне и интернете|A2
+tablet|сущ.|планшет|He reads on his tablet.|о телефоне и интернете|A2
+computer|сущ.|компьютер|My computer is slow.|о телефоне и интернете|A2
+screen|сущ.|экран|The screen is broken.|о телефоне и интернете|A2
+keyboard|сущ.|клавиатура|I need a new keyboard.|о телефоне и интернете|A2
+charger|сущ.|зарядное устройство|Do you have a charger?|о телефоне и интернете|A2
+battery|сущ.|батарея|My battery is almost dead.|о телефоне и интернете|A2
+password|сущ.|пароль|I forgot my password.|о телефоне и интернете|A2
+username|сущ.|имя пользователя|Enter your username.|о телефоне и интернете|A2
+text|сущ.|сообщение (SMS); писать сообщение|Text me when you arrive.|о телефоне и интернете|A2
+app|сущ.|приложение|Download this app.|о телефоне и интернете|A2
+website|сущ.|веб-сайт|Visit our website.|о телефоне и интернете|A2
+link|сущ.|ссылка|Send me the link.|о телефоне и интернете|A2
+Wi-Fi|сущ.|вайфай|What's the Wi-Fi password?|о телефоне и интернете|A2
+account|сущ.|аккаунт, счёт|I created an account.|о телефоне и интернете|A2
+notification|сущ.|уведомление|I got a notification.|о телефоне и интернете|A2
+settings|сущ.|настройки|Open the settings.|о телефоне и интернете|A2
+update|сущ.|обновление; обновлять|You need to update the app.|о телефоне и интернете|A2
+headphones|сущ.|наушники|I forgot my headphones.|о телефоне и интернете|A2
+social media|сущ.|соцсети|She spends a lot of time on social media.|о телефоне и интернете|A2
+video call|сущ.|видеозвонок|We had a video call with grandma.|о телефоне и интернете|A2
+screenshot|сущ.|скриншот|I took a screenshot.|о телефоне и интернете|A2
+midnight|сущ.|полночь|The party ended at midnight.|о времени и частоте|A2
+noon|сущ.|полдень|Let's meet at noon.|о времени и частоте|A2
+weekday|сущ.|будний день|I work on weekdays.|о времени и частоте|A2
+week|сущ.|неделя|I'll call you next week.|о времени и частоте|A2
+month|сущ.|месяц|My birthday is next month.|о времени и частоте|A2
+year|сущ.|год|This year was great.|о времени и частоте|A2
+half|сущ.|половина|Half of the pizza is gone.|о времени и частоте|A2
+a quarter|сущ.|четверть|It's a quarter to six.|о времени и частоте|A2
+dozen|сущ.|дюжина|I bought a dozen eggs.|о времени и частоте|A2
+hundred|сущ.|сто|There are a hundred people here.|о времени и частоте|A2
+thousand|сущ.|тысяча|It costs a thousand dollars.|о времени и частоте|A2
+a.m.|предлог|до полудня|The flight is at 7 a.m.|о времени и частоте|A2
+p.m.|предлог|после полудня|The store closes at 9 p.m.|о времени и частоте|A2
+school|сущ.|школа|My kids go to school.|об учёбе|A2
+class|сущ.|класс; занятие|My class starts at nine.|об учёбе|A2
+lesson|сущ.|урок|The lesson was interesting.|об учёбе|A2
+teacher|сущ.|учитель|My teacher is very good.|об учёбе|A2
+student|сущ.|студент, ученик|She is a college student.|об учёбе|A2
+homework|сущ.|домашнее задание|I have a lot of homework.|об учёбе|A2
+test|сущ.|тест, контрольная|We have a test tomorrow.|об учёбе|A2
+exam|сущ.|экзамен|The exam was hard.|об учёбе|A2
+grade|сущ.|оценка; класс|I got a good grade.|об учёбе|A2
+notebook|сущ.|тетрадь, блокнот|Write it in your notebook.|об учёбе|A2
+textbook|сущ.|учебник|Open your textbook.|об учёбе|A2
+subject|сущ.|предмет|My favorite subject is history.|об учёбе|A2
+math|сущ.|математика|Math is easy for me.|об учёбе|A2
+history|сущ.|история|I love history.|об учёбе|A2
+science|сущ.|наука, естествознание|He likes science.|об учёбе|A2
+college|сущ.|колледж, университет|She goes to college in Boston.|об учёбе|A2
+university|сущ.|университет|He studies at a big university.|об учёбе|A2
+degree|сущ.|степень, диплом|She has a degree in biology.|об учёбе|A2
+library|сущ.|библиотека|I study at the library.|об учёбе|A2
+mistake|сущ.|ошибка|Everyone makes mistakes.|об учёбе|A2
+question|сущ.|вопрос|I have a question.|об учёбе|A2
+answer|сущ.|ответ; отвечать|What's the answer?|об учёбе|A2
+dictionary|сущ.|словарь|Look it up in the dictionary.|об учёбе|A2
+bank|сущ.|банк|I need to go to the bank.|о городе и услугах|A2
+ATM|сущ.|банкомат|Is there an ATM nearby?|о городе и услугах|A2
+post office|сущ.|почта|The post office closes at five.|о городе и услугах|A2
+mail|сущ.|почта (письма); отправлять по почте|I'll mail the letter today.|о городе и услугах|A2
+package|сущ.|посылка|I'm waiting for a package.|о городе и услугах|A2
+stamp|сущ.|марка|I need a stamp.|о городе и услугах|A2
+envelope|сущ.|конверт|Put the letter in an envelope.|о городе и услугах|A2
+supermarket|сущ.|супермаркет|The supermarket is open late.|о городе и услугах|A2
+bakery|сущ.|пекарня|The bakery smells so good.|о городе и услугах|A2
+bookstore|сущ.|книжный магазин|I found it at the bookstore.|о городе и услугах|A2
+police|сущ.|полиция|Call the police.|о городе и услугах|A2
+church|сущ.|церковь|The church is very old.|о городе и услугах|A2
+city hall|сущ.|мэрия|The city hall is downtown.|о городе и услугах|A2
+hair salon|сущ.|парикмахерская, салон|I have a hair salon appointment.|о городе и услугах|A2
+barbershop|сущ.|мужская парикмахерская|He went to the barbershop.|о городе и услугах|A2
+laundromat|сущ.|прачечная самообслуживания|The laundromat is on Main Street.|о городе и услугах|A2
+dry cleaner|сущ.|химчистка|I took my coat to the dry cleaner.|о городе и услугах|A2
+address|сущ.|адрес|What's your address?|о городе и услугах|A2
+line|сущ.|очередь; линия|We waited in line.|о городе и услугах|A2
+form|сущ.|бланк, анкета|Please fill out this form.|о городе и услугах|A2
+ID|сущ.|удостоверение личности|Please show your ID.|о городе и услугах|A2
+hotel|сущ.|отель||в отеле|A2
+room|сущ.|номер / комната||в отеле|A2
+hotel room|сущ.|номер в отеле||в отеле|A2
+single room|сущ.|одноместный номер||в отеле|A2
+double room|сущ.|двухместный номер||в отеле|A2
+twin room|сущ.|номер с двумя отдельными кроватями||в отеле|A2
+family room|сущ.|семейный номер||в отеле|A2
+suite|сущ.|номер-люкс||в отеле|A2
+bed|сущ.|кровать||в отеле|A2
+single bed|сущ.|односпальная кровать||в отеле|A2
+double bed|сущ.|двуспальная кровать||в отеле|A2
+sheet|сущ.|простыня||в отеле|A2
+pillowcase|сущ.|наволочка||в отеле|A2
+bedding|сущ.|постельное бельё||в отеле|A2
+shower|сущ.|душ||в отеле|A2
+bath|сущ.|ванна||в отеле|A2
+restroom|сущ.|туалет (общественный)||в отеле|A2
+hair dryer|сущ.|фен||в отеле|A2
+soap|сущ.|мыло||в отеле|A2
+shampoo|сущ.|шампунь||в отеле|A2
+toothbrush|сущ.|зубная щётка||в отеле|A2
+toothpaste|сущ.|зубная паста||в отеле|A2
+air conditioning|сущ.|кондиционер||в отеле|A2
+air conditioner|сущ.|кондиционер||в отеле|A2
+heating|сущ.|отопление||в отеле|A2
+key card|сущ.|ключ-карта||в отеле|A2
+reception|сущ.|стойка регистрации||в отеле|A2
+receptionist|сущ.|администратор||в отеле|A2
+reception desk|сущ.|стойка регистрации||в отеле|A2
+guest|сущ.|гость||в отеле|A2
+staff|сущ.|персонал||в отеле|A2
+booking|сущ.|бронирование||в отеле|A2
+reservation|сущ.|бронирование||в отеле|A2
+reservation number|сущ.|номер бронирования||в отеле|A2
+booking confirmation|сущ.|подтверждение бронирования||в отеле|A2
+book online|сущ.|забронировать онлайн||в отеле|A2
+available|сущ.|доступный / свободный||в отеле|A2
+unavailable|сущ.|недоступный / занятый||в отеле|A2
+check-in|сущ.|заселение / регистрация||в отеле|A2
+check-in time|сущ.|время заселения||в отеле|A2
+check-out|сущ.|выезд||в отеле|A2
+check-out time|сущ.|время выезда||в отеле|A2
+early check-in|сущ.|раннее заселение||в отеле|A2
+late check-out|сущ.|поздний выезд||в отеле|A2
+night|сущ.|ночь||в отеле|A2
+morning|сущ.|утро||в отеле|A2
+afternoon|сущ.|день / после обеда||в отеле|A2
+evening|сущ.|вечер||в отеле|A2
+lobby|сущ.|вестибюль / холл||в отеле|A2
+elevator|сущ.|лифт||в отеле|A2
+first floor|сущ.|первый этаж||в отеле|A2
+second floor|сущ.|второй этаж||в отеле|A2
+balcony|сущ.|балкон||в отеле|A2
+sea view|сущ.|вид на море||в отеле|A2
+city view|сущ.|вид на город||в отеле|A2
+door|сущ.|дверь||в отеле|A2
+TV|сущ.|телевизор||в отеле|A2
+mini-fridge|сущ.|мини-холодильник||в отеле|A2
+wardrobe|сущ.|шкаф||в отеле|A2
+desk|сущ.|письменный стол||в отеле|A2
+chair|сущ.|стул||в отеле|A2
+near|сущ.|рядом / близко||в отеле|A2
+cleaning|сущ.|уборка||в отеле|A2
+housekeeping|сущ.|служба уборки||в отеле|A2
+cleaning service|сущ.|услуга уборки||в отеле|A2
+room service|сущ.|обслуживание в номере||в отеле|A2
+restaurant|сущ.|ресторан||в отеле|A2
+cafe|сущ.|кафе||в отеле|A2
+bar|сущ.|бар||в отеле|A2
+breakfast included|сущ.|завтрак включён||в отеле|A2
+half board|сущ.|полупансион||в отеле|A2
+full board|сущ.|полный пансион||в отеле|A2
+all inclusive|сущ.|всё включено||в отеле|A2
+per night|сущ.|за ночь||в отеле|A2
+total price|сущ.|общая цена||в отеле|A2
+deposit|сущ.|залог / депозит||в отеле|A2
+tourist tax|сущ.|туристический сбор||в отеле|A2
+information|сущ.|информация||в отеле|A2
+help|сущ.|помощь||в отеле|A2
+problem|сущ.|проблема||в отеле|A2
+service|сущ.|обслуживание / услуга||в отеле|A2
+friendly staff|сущ.|дружелюбный персонал||в отеле|A2
+extra bed|сущ.|дополнительная кровать||в отеле|A2
+extra charge|сущ.|дополнительная плата||в отеле|A2
+good location|сущ.|хорошее расположение||в отеле|A2
+near downtown|сущ.|рядом с центром города||в отеле|A2
+bag|сущ.|сумка||в отеле|A2
+train station|сущ.|железнодорожный вокзал||в отеле|A2
+guesthouse|сущ.|гостевой дом||в отеле|A2
+hostel|сущ.|хостел||в отеле|A2
+on vacation|сущ.|в отпуске||в отеле|A2
+holiday|сущ.|праздник|We celebrate the holiday with family.|в отеле|A2
+toilet|сущ.|унитаз; туалет||в отеле|A2
+downtown|сущ.|центр города|The hotel is right downtown.|в отеле|A2
+cat|сущ.|кошка, кот|Our cat sleeps on the couch.|о животных и питомцах|A2
+dog|сущ.|собака|The dog barks at the mailman.|о животных и питомцах|A2
+kitten|сущ.|котёнок|The kitten is very small.|о животных и питомцах|A2
+puppy|сущ.|щенок|The puppy loves to play.|о животных и питомцах|A2
+pet|сущ.|домашнее животное|Do you have any pets?|о животных и питомцах|A2
+paw|сущ.|лапа|The cat licked its paw.|о животных и питомцах|A2
+tail|сущ.|хвост|The dog wags its tail.|о животных и питомцах|A2
+fur|сущ.|шерсть|The cat's fur is soft.|о животных и питомцах|A2
+whiskers|сущ.|усы (у кошки)|Cats have long whiskers.|о животных и питомцах|A2
+leash|сущ.|поводок|Take the dog out on a leash.|о животных и питомцах|A2
+collar|сущ.|ошейник|The dog has a red collar.|о животных и питомцах|A2
+cat food|сущ.|корм для кошек|We need to buy cat food.|о животных и питомцах|A2
+treat|сущ.|лакомство|Give the dog a treat.|о животных и питомцах|A2
+bowl|сущ.|миска|The cat's bowl is empty.|о животных и питомцах|A2
+litter box|сущ.|кошачий лоток|Please clean the litter box.|о животных и питомцах|A2
+vet|сущ.|ветеринар|We took the cat to the vet.|о животных и питомцах|A2
+vaccine|сущ.|прививка|The puppy got its vaccine.|о животных и питомцах|A2
+bird|сущ.|птица|A bird is singing outside.|о животных и питомцах|A2
+rabbit|сущ.|кролик|The rabbit eats carrots.|о животных и питомцах|A2
+horse|сущ.|лошадь|She rides a horse.|о животных и питомцах|A2
+cow|сущ.|корова|The cow gives milk.|о животных и питомцах|A2
+mouse|сущ.|мышь|The cat caught a mouse.|о животных и питомцах|A2
+spider|сущ.|паук|I'm afraid of spiders.|о животных и питомцах|A2
+head|сущ.|голова|My head hurts.|о теле и внешности|A2
+hair|сущ.|волосы|She has long hair.|о теле и внешности|A2
+face|сущ.|лицо|Wash your face.|о теле и внешности|A2
+eye|сущ.|глаз|He has blue eyes.|о теле и внешности|A2
+ear|сущ.|ухо|My ear hurts.|о теле и внешности|A2
+nose|сущ.|нос|The dog has a wet nose.|о теле и внешности|A2
+mouth|сущ.|рот|Open your mouth, please.|о теле и внешности|A2
+tooth|сущ.|зуб|I have a toothache.|о теле и внешности|A2
+neck|сущ.|шея|My neck is stiff.|о теле и внешности|A2
+shoulder|сущ.|плечо|He carried the bag on his shoulder.|о теле и внешности|A2
+arm|сущ.|рука (от плеча)|She broke her arm.|о теле и внешности|A2
+hand|сущ.|кисть, рука|Wash your hands.|о теле и внешности|A2
+finger|сущ.|палец руки|I cut my finger.|о теле и внешности|A2
+back|сущ.|спина|My back hurts.|о теле и внешности|A2
+stomach|сущ.|живот, желудок|I have a stomachache.|о теле и внешности|A2
+leg|сущ.|нога|He hurt his leg.|о теле и внешности|A2
+knee|сущ.|колено|My knee is sore.|о теле и внешности|A2
+foot|сущ.|ступня|My foot hurts.|о теле и внешности|A2
+skin|сущ.|кожа|Use cream for dry skin.|о теле и внешности|A2
+beard|сущ.|борода|He has a short beard.|о теле и внешности|A2
+smile|сущ.|улыбка; улыбаться|She has a beautiful smile.|о теле и внешности|A2
+tomato|сущ.|помидор|I put a tomato in the salad.|о еде и готовке|A2
+potato|сущ.|картофель|We had mashed potatoes.|о еде и готовке|A2
+carrot|сущ.|морковь|Rabbits love carrots.|о еде и готовке|A2
+onion|сущ.|лук|Don't cry when you cut an onion.|о еде и готовке|A2
+cucumber|сущ.|огурец|Add a cucumber to the salad.|о еде и готовке|A2
+pepper|сущ.|перец|Add some salt and pepper.|о еде и готовке|A2
+garlic|сущ.|чеснок|I love garlic in pasta.|о еде и готовке|A2
+mushroom|сущ.|гриб|She made mushroom soup.|о еде и готовке|A2
+corn|сущ.|кукуруза|We grilled corn.|о еде и готовке|A2
+lemon|сущ.|лимон|Add a slice of lemon to your tea.|о еде и готовке|A2
+orange|сущ.|апельсин; оранжевый|I drink orange juice.|о еде и готовке|A2
+banana|сущ.|банан|I eat a banana for breakfast.|о еде и готовке|A2
+strawberry|сущ.|клубника|The strawberries are sweet.|о еде и готовке|A2
+grapes|сущ.|виноград|We bought some grapes.|о еде и готовке|A2
+peach|сущ.|персик|This peach is so juicy.|о еде и готовке|A2
+watermelon|сущ.|арбуз|We eat watermelon in summer.|о еде и готовке|A2
+recipe|сущ.|рецепт|This recipe is easy.|о еде и готовке|A2
+ingredient|сущ.|ингредиент|What are the ingredients?|о еде и готовке|A2
+frying pan|сущ.|сковорода|Heat the frying pan.|о еде и готовке|A2
+pot|сущ.|кастрюля|Put the pasta in the pot.|о еде и готовке|A2
+cutting board|сущ.|разделочная доска|Use a cutting board.|о еде и готовке|A2
+flour|сущ.|мука|We need flour and sugar.|о еде и готовке|A2
+salt|сущ.|соль|Pass me the salt, please.|о еде и готовке|A2
+money|сущ.|деньги|I don't have much money.|о деньгах, банке и почте|A2
+dollar|сущ.|доллар|It costs five dollars.|о деньгах, банке и почте|A2
+cent|сущ.|цент|It's ninety-nine cents.|о деньгах, банке и почте|A2
+coin|сущ.|монета|I have a few coins.|о деньгах, банке и почте|A2
+bank account|сущ.|банковский счёт|I opened a bank account.|о деньгах, банке и почте|A2
+debit card|сущ.|дебетовая карта|I pay with my debit card.|о деньгах, банке и почте|A2
+balance|сущ.|баланс|Check your account balance.|о деньгах, банке и почте|A2
+cost|сущ.|стоимость; стоить|What is the cost of the ticket?|о деньгах, банке и почте|A2
+tax|сущ.|налог|The price includes tax.|о деньгах, банке и почте|A2
+fee|сущ.|плата, комиссия|There is a small fee.|о деньгах, банке и почте|A2
+income|сущ.|доход|Her income is stable.|о деньгах, банке и почте|A2
+budget|сущ.|бюджет|We have a small budget.|о деньгах, банке и почте|A2
+payment|сущ.|платёж|The payment is due Friday.|о деньгах, банке и почте|A2
+parcel|сущ.|посылка|The parcel arrived today.|о деньгах, банке и почте|A2
+tracking number|сущ.|номер отслеживания|Here is your tracking number.|о деньгах, банке и почте|A2
+delivery|сущ.|доставка|Delivery takes three days.|о деньгах, банке и почте|A2
+zip code|сущ.|почтовый индекс|What's your zip code?|о деньгах, банке и почте|A2
+mailbox|сущ.|почтовый ящик|I checked the mailbox.|о деньгах, банке и почте|A2
+birthday|сущ.|день рождения|Today is my birthday.|о праздниках и гостях|A2
+card|сущ.|открытка|I sent a birthday card.|о праздниках и гостях|A2
+cake|сущ.|торт|We cut the cake.|о праздниках и гостях|A2
+candle|сущ.|свеча|Blow out the candles!|о праздниках и гостях|A2
+balloon|сущ.|воздушный шарик|The kids love balloons.|о праздниках и гостях|A2
+invitation|сущ.|приглашение|I got an invitation to the wedding.|о праздниках и гостях|A2
+toast|сущ.|тост|He made a toast.|о праздниках и гостях|A2
+Christmas|сущ.|Рождество|We decorate a tree for Christmas.|о праздниках и гостях|A2
+New Year|сущ.|Новый год|Happy New Year!|о праздниках и гостях|A2
+Thanksgiving|сущ.|День благодарения|We eat turkey on Thanksgiving.|о праздниках и гостях|A2
+Halloween|сущ.|Хэллоуин|Kids wear costumes on Halloween.|о праздниках и гостях|A2
+fireworks|сущ.|фейерверк|We watched the fireworks.|о праздниках и гостях|A2
+nurse|сущ.|медсестра|The nurse took my temperature.|о профессиях|A2
+engineer|сущ.|инженер|He is a software engineer.|о профессиях|A2
+designer|сущ.|дизайнер|She works as a designer.|о профессиях|A2
+driver|сущ.|водитель|The driver was polite.|о профессиях|A2
+chef|сущ.|шеф-повар|The chef is famous.|о профессиях|A2
+lawyer|сущ.|юрист|My friend is a lawyer.|о профессиях|A2
+accountant|сущ.|бухгалтер|The accountant checks the numbers.|о профессиях|A2
+police officer|сущ.|полицейский|The police officer helped us.|о профессиях|A2
+firefighter|сущ.|пожарный|The firefighter is brave.|о профессиях|A2
+farmer|сущ.|фермер|The farmer grows corn.|о профессиях|A2
+artist|сущ.|художник|The artist painted a cat.|о профессиях|A2
+writer|сущ.|писатель|She is a writer.|о профессиях|A2
+photographer|сущ.|фотограф|The photographer took great photos.|о профессиях|A2
+mechanic|сущ.|механик|The mechanic fixed my car.|о профессиях|A2
+hairdresser|сущ.|парикмахер|My hairdresser is great.|о профессиях|A2
+country|сущ.|страна|Which country are you from?|о странах и языках|A2
+city|сущ.|город|I live in a big city.|о странах и языках|A2
+the United States|сущ.|США|She lives in the United States.|о странах и языках|A2
+Russia|сущ.|Россия|My parents live in Russia.|о странах и языках|A2
+Germany|сущ.|Германия|We live in Germany.|о странах и языках|A2
+Canada|сущ.|Канада|He is from Canada.|о странах и языках|A2
+Mexico|сущ.|Мексика|We went to Mexico.|о странах и языках|A2
+Italy|сущ.|Италия|I love Italian food.|о странах и языках|A2
+France|сущ.|Франция|She is from France.|о странах и языках|A2
+Spain|сущ.|Испания|We spent a week in Spain.|о странах и языках|A2
+Japan|сущ.|Япония|Japan is beautiful in spring.|о странах и языках|A2
+China|сущ.|Китай|He travels to China often.|о странах и языках|A2
+American|сущ.|американец; американский|He is American.|о странах и языках|A2
+German|сущ.|немец; немецкий|My neighbor is German.|о странах и языках|A2
+English|сущ.|английский язык|I'm learning English.|о странах и языках|A2
+language|сущ.|язык|How many languages do you speak?|о странах и языках|A2
+accent|сущ.|акцент|She has a nice accent.|о странах и языках|A2
+native speaker|сущ.|носитель языка|He is a native speaker.|о странах и языках|A2
+hammer|сущ.|молоток|Hand me the hammer.|о ремонте и инструментах|A2
+nail|сущ.|гвоздь|Put a nail in the wall.|о ремонте и инструментах|A2
+screwdriver|сущ.|отвёртка|I need a screwdriver.|о ремонте и инструментах|A2
+drill|сущ.|дрель|He used a drill.|о ремонте и инструментах|A2
+brush|сущ.|кисть, щётка|Use a small brush.|о ремонте и инструментах|A2
+ladder|сущ.|стремянка, лестница|Hold the ladder, please.|о ремонте и инструментах|A2
+light bulb|сущ.|лампочка|The light bulb burned out.|о ремонте и инструментах|A2
+outlet|сущ.|розетка|Plug it into the outlet.|о ремонте и инструментах|A2
+switch|сущ.|выключатель|Where's the light switch?|о ремонте и инструментах|A2
+pipe|сущ.|труба|The pipe is leaking.|о ремонте и инструментах|A2
+leak|сущ.|протечка; течь|There is a leak under the sink.|о ремонте и инструментах|A2
+toolbox|сущ.|ящик с инструментами|The toolbox is in the garage.|о ремонте и инструментах|A2
+# V
+to order|гл.|заказывать|Are you ready to order?|о еде и кафе|A2
+to cook|гл.|готовить|I cook dinner every night.|о еде и кафе|A2
+to bake|гл.|печь (в духовке)|She bakes a cake every Sunday.|о еде и кафе|A2
+to clean|гл.|убирать|I clean the apartment on Saturdays.|о доме и быте|A2
+to check in|гл.|регистрироваться на рейс|You can check in online.|в аэропорту и в самолёте|A2
+to board|гл.|садиться (в самолёт)|Passengers are now boarding.|в аэропорту и в самолёте|A2
+to land|гл.|приземляться|The plane will land in ten minutes.|в аэропорту и в самолёте|A2
+to take off|гл.|взлетать|The plane takes off at noon.|в аэропорту и в самолёте|A2
+to book|гл.|бронировать|I want to book a flight.|в аэропорту и в самолёте|A2
+to park|гл.|парковаться|You can't park here.|о дороге и транспорте|A2
+to get on|гл.|садиться (в транспорт)|Get on the bus at the next stop.|о дороге и транспорте|A2
+to get off|гл.|выходить (из транспорта)|I'll get off at the next stop.|о дороге и транспорте|A2
+to transfer|гл.|делать пересадку|You need to transfer at Central Station.|о дороге и транспорте|A2
+to explore|гл.|исследовать|I want to explore the old town.|в поездках и туризме|A2
+to pack|гл.|упаковывать вещи|I need to pack tonight.|в поездках и туризме|A2
+to travel|гл.|путешествовать|They love to travel.|в поездках и туризме|A2
+to apply|гл.|подавать заявку|I want to apply for this job.|о работе|A2
+to hire|гл.|нанимать|They want to hire a new designer.|о работе|A2
+to fire|гл.|увольнять|The company fired ten people.|о работе|A2
+to quit|гл.|уволиться, бросать|He quit his job last month.|о работе|A2
+to pay|гл.|платить|I'll pay by card.|в магазине и о покупках|A2
+to try on|гл.|примерять|Can I try on these shoes?|в магазине и о покупках|A2
+to return|гл.|возвращать (товар)|I want to return this sweater.|в магазине и о покупках|A2
+to exchange|гл.|обменивать|Can I exchange it for a larger size?|в магазине и о покупках|A2
+to sleep|гл.|спать|I need to sleep more.|о здоровье и спорте|A2
+to recover|гл.|выздоравливать|He is recovering after the surgery.|о здоровье и спорте|A2
+to run|гл.|бегать|I run every morning.|о здоровье и спорте|A2
+to swim|гл.|плавать|We swim on Saturdays.|о здоровье и спорте|A2
+to stretch|гл.|растягиваться|Stretch before you run.|о здоровье и спорте|A2
+to wake up|гл.|просыпаться|I wake up at seven.|в повседневной речи|A2
+to get up|гл.|вставать|I get up early on weekdays.|в повседневной речи|A2
+to look for|гл.|искать|I'm looking for my phone.|в повседневной речи|A2
+to give up|гл.|сдаваться, бросать|Don't give up!|в повседневной речи|A2
+to find out|гл.|узнавать|I want to find out the truth.|в повседневной речи|A2
+to turn on|гл.|включать|Please turn on the light.|в повседневной речи|A2
+to turn off|гл.|выключать|Turn off the TV, please.|в повседневной речи|A2
+to wait for|гл.|ждать|I'm waiting for the bus.|в повседневной речи|A2
+to take care of|гл.|заботиться о|She takes care of her grandmother.|в повседневной речи|A2
+to come back|гл.|возвращаться|When will you come back?|в повседневной речи|A2
+to pick up|гл.|забирать|I pick up my son from school.|в повседневной речи|A2
+to put on|гл.|надевать|Put on your jacket, it's cold.|в повседневной речи|A2
+to look after|гл.|присматривать за|Can you look after my dog?|в повседневной речи|A2
+to go out|гл.|выходить, гулять|Let's go out tonight.|в повседневной речи|A2
+to sit down|гл.|садиться|Please sit down.|в повседневной речи|A2
+to stand up|гл.|вставать|Everyone stood up.|в повседневной речи|A2
+to hang out|гл.|проводить время, тусоваться|We hang out on weekends.|в повседневной речи|A2
+to check out|гл.|проверять; выписываться|Check out this video!|в повседневной речи|A2
+to figure out|гл.|разобраться, понять|I can't figure out this problem.|в повседневной речи|A2
+to get along|гл.|ладить|I get along with my neighbors.|в повседневной речи|A2
+to run out of|гл.|заканчиваться (о запасах)|We ran out of milk.|в повседневной речи|A2
+to show up|гл.|появляться, приходить|He didn't show up.|в повседневной речи|A2
+to set up|гл.|настраивать, организовывать|I set up my new phone.|в повседневной речи|A2
+to call back|гл.|перезвонить|I'll call you back later.|в повседневной речи|A2
+to fill out|гл.|заполнять (форму)|Please fill out this form.|в повседневной речи|A2
+to drop off|гл.|подбросить, оставить|I'll drop you off at the station.|в повседневной речи|A2
+to try out|гл.|пробовать|I want to try out the new cafe.|в повседневной речи|A2
+to throw away|гл.|выбрасывать|Don't throw away the box.|в повседневной речи|A2
+to work out|гл.|тренироваться; получаться|Everything worked out well.|в повседневной речи|A2
+to hurry up|гл.|торопиться|Hurry up, we're late!|в повседневной речи|A2
+to calm down|гл.|успокаиваться|Calm down, everything is fine.|в повседневной речи|A2
+to slow down|гл.|замедляться|Please slow down.|в повседневной речи|A2
+to mean|гл.|значить|What does this word mean?|в повседневной речи|A2
+to remember|гл.|помнить|I remember her name.|в повседневной речи|A2
+to get married|гл.|пожениться|They got married last year.|о семье и отношениях|A2
+to date|гл.|встречаться (романтически)|They've been dating for two years.|о семье и отношениях|A2
+to wear|гл.|носить, быть одетым в|She wears glasses.|об одежде|A2
+to fit|гл.|подходить по размеру|These jeans don't fit me.|об одежде|A2
+to draw|гл.|рисовать|He likes to draw.|о хобби и отдыхе|A2
+to paint|гл.|красить; писать красками|She paints landscapes.|о хобби и отдыхе|A2
+to dance|гл.|танцевать|They love to dance.|о хобби и отдыхе|A2
+to sing|гл.|петь|She sings in the shower.|о хобби и отдыхе|A2
+to play|гл.|играть|He plays the guitar.|о хобби и отдыхе|A2
+to go for a walk|гл.|идти гулять|Let's go for a walk.|о хобби и отдыхе|A2
+to relax|гл.|расслабляться|I relax on the weekend.|о хобби и отдыхе|A2
+to download|гл.|скачивать|I downloaded the file.|о телефоне и интернете|A2
+to upload|гл.|загружать|Upload the photo here.|о телефоне и интернете|A2
+to log in|гл.|входить (в аккаунт)|I can't log in.|о телефоне и интернете|A2
+to sign up|гл.|регистрироваться|Sign up for free.|о телефоне и интернете|A2
+to search|гл.|искать (в интернете)|Search for the address online.|о телефоне и интернете|A2
+to click|гл.|нажимать, кликать|Click the link.|о телефоне и интернете|A2
+to share|гл.|делиться|Share the photo with me.|о телефоне и интернете|A2
+to delete|гл.|удалять|I deleted the message.|о телефоне и интернете|A2
+to save|гл.|сохранять|Save the file.|о телефоне и интернете|A2
+to stream|гл.|смотреть онлайн, стримить|We stream movies at home.|о телефоне и интернете|A2
+to study|гл.|учиться, изучать|I study English every day.|об учёбе|A2
+to learn|гл.|учиться, узнавать|I want to learn Spanish.|об учёбе|A2
+to teach|гл.|преподавать|She teaches math.|об учёбе|A2
+to graduate|гл.|заканчивать (учёбу)|He graduated last year.|об учёбе|A2
+to pass|гл.|сдать (экзамен)|She passed the exam.|об учёбе|A2
+to fail|гл.|провалить|He failed the test.|об учёбе|A2
+to practice|гл.|практиковаться|You need to practice every day.|об учёбе|A2
+to review|гл.|повторять, пересматривать|Let's review the words.|об учёбе|A2
+to wait in line|гл.|стоять в очереди|We waited in line for an hour.|о городе и услугах|A2
+to arrive|гл.|прибыть||в отеле|A2
+to leave|гл.|уехать / покинуть||в отеле|A2
+to stay|гл.|останавливаться / проживать||в отеле|A2
+to fix|гл.|починить||в отеле|A2
+to repair|гл.|ремонтировать||в отеле|A2
+to bark|гл.|лаять|The dog barks loudly.|о животных и питомцах|A2
+to meow|гл.|мяукать|The cat meows when it's hungry.|о животных и питомцах|A2
+to purr|гл.|мурлыкать|The cat purrs on my lap.|о животных и питомцах|A2
+to scratch|гл.|царапать|The cat scratched the sofa.|о животных и питомцах|A2
+to feed|гл.|кормить|I feed the cats every morning.|о животных и питомцах|A2
+to walk the dog|гл.|выгуливать собаку|I walk the dog twice a day.|о животных и питомцах|A2
+to boil|гл.|варить, кипятить|Boil the water first.|о еде и готовке|A2
+to fry|гл.|жарить|Fry the eggs for two minutes.|о еде и готовке|A2
+to chop|гл.|нарезать, рубить|Chop the onions.|о еде и готовке|A2
+to mix|гл.|смешивать|Mix the flour and the eggs.|о еде и готовке|A2
+to stir|гл.|помешивать|Stir the soup slowly.|о еде и готовке|A2
+to peel|гл.|чистить (овощи)|Peel the potatoes.|о еде и готовке|A2
+to slice|гл.|нарезать ломтиками|Slice the bread.|о еде и готовке|A2
+to spend|гл.|тратить|Don't spend it all.|о деньгах, банке и почте|A2
+to borrow|гл.|занимать (брать в долг)|Can I borrow ten dollars?|о деньгах, банке и почте|A2
+to lend|гл.|одалживать (давать в долг)|Can you lend me some money?|о деньгах, банке и почте|A2
+to owe|гл.|быть должным|I owe you twenty dollars.|о деньгах, банке и почте|A2
+to afford|гл.|позволить себе|I can't afford a new car.|о деньгах, банке и почте|A2
+to ship|гл.|отправлять (груз)|They ship worldwide.|о деньгах, банке и почте|A2
+to invite|гл.|приглашать|I want to invite you to dinner.|о праздниках и гостях|A2
+to celebrate|гл.|праздновать|We celebrate on Saturday.|о праздниках и гостях|A2
+to congratulate|гл.|поздравлять|I want to congratulate you!|о праздниках и гостях|A2
+to speak|гл.|говорить|Do you speak English?|о странах и языках|A2
+to install|гл.|устанавливать|They installed a new sink.|о ремонте и инструментах|A2
+to hang|гл.|вешать|Hang the picture on the wall.|о ремонте и инструментах|A2
+# A
+tasty|прил.|вкусный|This soup is very tasty.|о еде и кафе|A2
+hungry|прил.|голодный|I'm hungry. Let's have lunch.|о еде и кафе|A2
+to go|нареч.|с собой|Can I get this to go?|о еде и кафе|A2
+spicy|прил.|острый (о еде)|I don't like spicy food.|о еде и кафе|A2
+sweet|прил.|сладкий|This cake is too sweet.|о еде и кафе|A2
+salty|прил.|солёный|The soup is a little salty.|о еде и кафе|A2
+fresh|прил.|свежий|The fruit is fresh.|о еде и кафе|A2
+duty-free|прич.|беспошлинный (магазин)|We bought perfume at the duty-free shop.|в аэропорту и в самолёте|A2
+abroad|нареч.|за границей|She often travels abroad.|в аэропорту и в самолёте|A2
+far|нареч.|далеко|Is it far from here?|о дороге и транспорте|A2
+nearby|нареч.|поблизости|Is there a restaurant nearby?|о дороге и транспорте|A2
+crowded|прил.|многолюдный|The square was very crowded.|в поездках и туризме|A2
+local|прил.|местный|Let's try the local food.|в поездках и туризме|A2
+cheap|прил.|дешёвый|This shirt is cheap.|в магазине и о покупках|A2
+expensive|прил.|дорогой|The hotel is too expensive.|в магазине и о покупках|A2
+in stock|прил.|есть в наличии|Is this jacket in stock?|в магазине и о покупках|A2
+out of stock|прил.|нет в наличии|That size is out of stock.|в магазине и о покупках|A2
+healthy|прил.|здоровый, полезный|Fruit is healthy.|о здоровье и спорте|A2
+tired|прич.|уставший|I'm very tired today.|о здоровье и спорте|A2
+happy|прил.|счастливый|I'm happy to see you.|о людях и чувствах|A2
+sad|прил.|грустный|He looks sad today.|о людях и чувствах|A2
+angry|прил.|злой, сердитый|My boss was angry.|о людях и чувствах|A2
+worried|прич.|обеспокоенный|I'm worried about the exam.|о людях и чувствах|A2
+excited|прич.|взволнованный (радостно)|We're excited about the trip.|о людях и чувствах|A2
+proud|прил.|гордый|I'm proud of you.|о людях и чувствах|A2
+lonely|прил.|одинокий|She feels lonely in a new city.|о людях и чувствах|A2
+polite|прил.|вежливый|The waiter was very polite.|о людях и чувствах|A2
+shy|прил.|застенчивый|He is shy with strangers.|о людях и чувствах|A2
+kind|прил.|добрый|My grandmother is very kind.|о людях и чувствах|A2
+honest|прил.|честный|Be honest with me.|о людях и чувствах|A2
+nervous|прич.|нервничающий|I'm nervous before the interview.|о людях и чувствах|A2
+bored|прич.|скучающий|I'm bored. Let's do something.|о людях и чувствах|A2
+surprised|прич.|удивлённый|I was surprised to see her.|о людях и чувствах|A2
+embarrassed|прич.|смущённый|He was embarrassed by his mistake.|о людях и чувствах|A2
+confused|прич.|растерянный|I'm confused. Can you explain?|о людях и чувствах|A2
+jealous|прил.|ревнивый, завистливый|She is jealous of her sister.|о людях и чувствах|A2
+grateful|прил.|благодарный|I'm grateful for your help.|о людях и чувствах|A2
+curious|прил.|любопытный|Kids are curious about everything.|о людях и чувствах|A2
+patient|прил.|терпеливый|Be patient, please.|о людях и чувствах|A2
+rude|прил.|грубый|That was rude.|о людях и чувствах|A2
+funny|прил.|смешной|He is a very funny guy.|о людях и чувствах|A2
+smart|прил.|умный|She is a smart girl.|о людях и чувствах|A2
+lazy|прил.|ленивый|I feel lazy today.|о людях и чувствах|A2
+generous|прил.|щедрый|He is very generous.|о людях и чувствах|A2
+brave|прил.|смелый|The firefighter was brave.|о людях и чувствах|A2
+friendly|прил.|дружелюбный|The people here are very friendly.|о людях и чувствах|A2
+creative|прил.|творческий|She has a creative job.|о людях и чувствах|A2
+stubborn|прич.|упрямый|My brother is so stubborn.|о людях и чувствах|A2
+upset|прич.|расстроенный|I'm upset about the news.|о людях и чувствах|A2
+relaxed|прич.|расслабленный|I feel relaxed on vacation.|о людях и чувствах|A2
+scared|прич.|напуганный|I'm scared of spiders.|о людях и чувствах|A2
+disappointed|прич.|разочарованный|We were disappointed with the movie.|о людях и чувствах|A2
+sunny|прил.|солнечный|It's a sunny day.|о погоде и природе|A2
+cloudy|прил.|облачный|Tomorrow will be cloudy.|о погоде и природе|A2
+hot|прил.|жаркий|It's really hot today.|о погоде и природе|A2
+warm|прил.|тёплый|The water is warm.|о погоде и природе|A2
+cool|прил.|прохладный|The evenings are cool.|о погоде и природе|A2
+windy|прил.|ветреный|It's windy today.|о погоде и природе|A2
+rainy|прил.|дождливый|It was a rainy weekend.|о погоде и природе|A2
+humid|прил.|влажный|Summers here are hot and humid.|о погоде и природе|A2
+today|нареч.|сегодня|Today is Monday.|о времени и частоте|A2
+tomorrow|нареч.|завтра|See you tomorrow.|о времени и частоте|A2
+yesterday|нареч.|вчера|I saw her yesterday.|о времени и частоте|A2
+tonight|нареч.|сегодня вечером|What are you doing tonight?|о времени и частоте|A2
+early|нареч.|рано|I get up early.|о времени и частоте|A2
+late|нареч.|поздно, опоздавший|Sorry, I'm late.|о времени и частоте|A2
+soon|нареч.|скоро|See you soon!|о времени и частоте|A2
+already|нареч.|уже|I've already eaten.|о времени и частоте|A2
+yet|нареч.|ещё (в вопросах и отрицаниях)|I haven't finished yet.|о времени и частоте|A2
+still|нареч.|всё ещё|He is still sleeping.|о времени и частоте|A2
+usually|нареч.|обычно|I usually walk to work.|о времени и частоте|A2
+always|нареч.|всегда|She always smiles.|о времени и частоте|A2
+never|нареч.|никогда|I never drink coffee at night.|о времени и частоте|A2
+sometimes|нареч.|иногда|Sometimes we eat out.|о времени и частоте|A2
+often|нареч.|часто|We often go to the movies.|о времени и частоте|A2
+rarely|нареч.|редко|He rarely calls.|о времени и частоте|A2
+every day|нареч.|каждый день|I study English every day.|о времени и частоте|A2
+once|нареч.|один раз|I went there once.|о времени и частоте|A2
+twice|нареч.|дважды|He called twice.|о времени и частоте|A2
+first|прил.|первый|This is my first trip.|о времени и частоте|A2
+last|прил.|последний; длиться|This is the last bus.|о времени и частоте|A2
+next|прич.|следующий|The next train is at six.|о времени и частоте|A2
+all day|нареч.|весь день|It rained all day.|о времени и частоте|A2
+big|прил.|большой|They have a big house.|в любой теме|A2
+small|прил.|маленький|It's a small town.|в любой теме|A2
+tall|прил.|высокий|My brother is tall.|в любой теме|A2
+short|прил.|короткий; низкий|The movie is short.|в любой теме|A2
+heavy|прил.|тяжёлый|This bag is heavy.|в любой теме|A2
+easy|прил.|лёгкий, простой|The test was easy.|в любой теме|A2
+difficult|прил.|трудный|The question is difficult.|в любой теме|A2
+important|прил.|важный|This is an important meeting.|в любой теме|A2
+dangerous|прил.|опасный|It's dangerous to swim here.|в любой теме|A2
+safe|прил.|безопасный|The neighborhood is safe.|в любой теме|A2
+dirty|прил.|грязный|My shoes are dirty.|в любой теме|A2
+quiet|прил.|тихий|It's a quiet street.|в любой теме|A2
+loud|прил.|громкий|The music is too loud.|в любой теме|A2
+busy|прил.|занятой|I'm busy right now.|в любой теме|A2
+free|прил.|свободный; бесплатный|Is this seat free?|в любой теме|A2
+ready|прил.|готовый|Are you ready?|в любой теме|A2
+full|прил.|полный, сытый|I'm full.|в любой теме|A2
+empty|прил.|пустой|The box is empty.|в любой теме|A2
+wrong|прил.|неправильный|You have the wrong number.|в любой теме|A2
+right|прил.|правильный; право|That's right!|в любой теме|A2
+possible|прил.|возможный|Is it possible to change the date?|в любой теме|A2
+strange|прич.|странный|That's strange.|в любой теме|A2
+famous|прил.|известный|She is a famous singer.|в любой теме|A2
+popular|прил.|популярный|This is a popular restaurant.|в любой теме|A2
+new|прил.|новый|I bought a new phone.|в любой теме|A2
+old|прил.|старый|It's an old building.|в любой теме|A2
+modern|прич.|современный|The museum is very modern.|в любой теме|A2
+beautiful|прил.|красивый|What a beautiful day!|в любой теме|A2
+rich|прич.|богатый|He is a rich man.|в любой теме|A2
+fast|нареч.|быстрый; быстро|He drives fast.|в любой теме|A2
+slow|нареч.|медленный|The service is slow.|в любой теме|A2
+quickly|нареч.|быстро|Please come quickly.|в любой теме|A2
+carefully|нареч.|осторожно, внимательно|Read the instructions carefully.|в любой теме|A2
+suddenly|нареч.|вдруг|Suddenly, it started to rain.|в любой теме|A2
+probably|нареч.|вероятно|It will probably rain tomorrow.|в любой теме|A2
+maybe|нареч.|может быть|Maybe we can go tomorrow.|в любой теме|A2
+almost|нареч.|почти|We're almost there.|в любой теме|A2
+enough|нареч.|достаточно|I have enough money.|в любой теме|A2
+too|нареч.|слишком; тоже|It's too expensive.|в любой теме|A2
+quite|нареч.|довольно|The movie was quite good.|в любой теме|A2
+really|нареч.|действительно|I really like this place.|в любой теме|A2
+especially|нареч.|особенно|I love fruit, especially apples.|в любой теме|A2
+exactly|нареч.|точно|That's exactly what I mean.|в любой теме|A2
+together|нареч.|вместе|Let's go together.|в любой теме|A2
+alone|нареч.|один, в одиночестве|She lives alone.|в любой теме|A2
+noisy|прил.|шумный||в отеле|A2
+comfortable|прил.|удобный||в отеле|A2
+uncomfortable|прил.|неудобный||в отеле|A2
+broken|прич.|сломанный||в отеле|A2
+slim|прил.|стройный|She is tall and slim.|о теле и внешности|A2
+curly|прил.|кудрявый|He has curly hair.|о теле и внешности|A2
+blond|прил.|светловолосый|The little boy is blond.|о теле и внешности|A2
+brown|прил.|коричневый|She has brown eyes.|о теле и внешности|A2
+cute|прил.|милый|What a cute kitten!|о теле и внешности|A2
+pretty|прил.|симпатичная|She is a pretty girl.|о теле и внешности|A2
+handsome|прил.|красивый (о мужчине)|He is a handsome man.|о теле и внешности|A2
+young|прил.|молодой|My sister is young.|о теле и внешности|A2
+Russian|прил.|русский|She speaks Russian.|о странах и языках|A2
+red|прил.|красный|She wore a red dress.|о цветах и формах|A2
+blue|прил.|синий, голубой|The sky is blue.|о цветах и формах|A2
+green|прил.|зелёный|The grass is green.|о цветах и формах|A2
+yellow|прич.|жёлтый|I like yellow flowers.|о цветах и формах|A2
+black|прил.|чёрный|The cat is black.|о цветах и формах|A2
+white|прил.|белый|The snow is white.|о цветах и формах|A2
+gray|прил.|серый|He has a gray sweater.|о цветах и формах|A2
+pink|прил.|розовый|She loves pink.|о цветах и формах|A2
+purple|прил.|фиолетовый|The flower is purple.|о цветах и формах|A2
+gold|прил.|золотой|She wore a gold ring.|о цветах и формах|A2
+silver|прил.|серебряный|He has a silver watch.|о цветах и формах|A2
+dark|прил.|тёмный|It's dark outside.|о цветах и формах|A2
+light|прил.|светлый; свет|The room is light and clean.|о цветах и формах|A2
+round|прил.|круглый|The table is round.|о цветах и формах|A2
+square|прил.|квадратный|We have a square window.|о цветах и формах|A2
+straight|прил.|прямой|Draw a straight line.|о цветах и формах|A2
+flat|прил.|плоский|The road is flat.|о цветах и формах|A2

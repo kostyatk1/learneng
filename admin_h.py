@@ -1,5 +1,6 @@
 """Админ-раздел (только для ADMIN_ID): статистика ученицы, управление обучением, напоминания, записки, дайджест."""
 import logging
+import re
 from datetime import date
 
 from aiogram import Bot, F, Router
@@ -8,16 +9,16 @@ from aiogram.types import CallbackQuery, Message
 
 import content
 import handlers as h
-import motivation as mot
-from storage import LEARNED_BOX, live_streak
+import progress
+from storage import LEARNED_BOX
 
 log = logging.getLogger("admin")
 router = Router()
 SEL: dict[int, int] = {}                      # какой ученик выбран у админа
 
-PRESETS = ["⏰ Время для английского! Пять минут — и цель дня будет ближе 💪",
-           "🔥 Не дай серии прерваться — зайди на пару вопросов!",
-           "Ты молодец! Давай повторим пару слов? 💖",
+PRESETS = ["⏰ Время для английского! Пять минут — и ты на шаг ближе к цели 💪",
+           "🧠 Давай повторим пару слов? Квиз уже ждёт!",
+           "Ты молодец! Загляни на минутку — новые слова ждут 💖",
            "🐾 Тёма, Беляшка и Чернушка просят: позанимайся английским!"]
 
 
@@ -43,7 +44,7 @@ def name(u: dict) -> str:
 
 def ago(u: dict) -> str:
     if not u["last_active"]:
-        return "ещё не занимался(ась)"
+        return "ещё не занималась"
     try:
         d = (h.today_of(u) - date.fromisoformat(u["last_active"])).days
     except ValueError:
@@ -53,17 +54,25 @@ def ago(u: dict) -> str:
 
 def acc(u: dict) -> str:
     t = u["correct"] + u["wrong"]
-    return f"{round(100 * u['correct'] / t)}% ({u['correct']}/{t})" if t else "нет данных"
+    return f"{round(100 * u['correct'] / t)}% ({u['correct']} из {t})" if t else "нет данных"
+
+
+def counts(u: dict) -> dict:
+    ws = h.store.words_of(u["uid"])
+    today = h.today_of(u).isoformat()
+    return {"total": len(ws), "learned": sum(w["box"] >= LEARNED_BOX for w in ws),
+            "due": sum(w["next_review"] <= today for w in ws),
+            "verbs": sum(v["box"] >= LEARNED_BOX for v in h.store.verbs_of(u["uid"]))}
 
 
 def brief(u: dict) -> str:
-    c = h.build_ctx(u)
+    c = counts(u)
     today = h.today_of(u)
     n = u["today_n"] if u["today_date"] == today.isoformat() else 0
     return (f"👤 <b>{name(u)}</b>\n"
-            f"   ⭐ {mot.level_name(u['xp'])} · {u['xp']} XP · 🔥 серия {live_streak(u, today)} (рекорд {u['best_streak']})\n"
-            f"   🎯 сегодня {n}/{u['goal'] or 10} · точность {acc(u)}\n"
-            f"   📚 выучено слов {c['words']} из {c['total']} · 📘 глаголов {c['verbs']}/{len(content.VERBS)} · 😎 сленг {c['slang']}\n"
+            f"   📚 в словаре {c['total']} слов, выучено {c['learned']} · 🔁 на повторе сегодня {c['due']}\n"
+            f"   📘 неправильных глаголов выучено {c['verbs']}/{len(content.VERBS)}\n"
+            f"   🎯 точность {acc(u)} · ответов сегодня {n}\n"
             f"   🕒 последнее занятие: {ago(u)}")
 
 
@@ -75,9 +84,9 @@ def digest_text() -> str:
     for u in st:
         today = h.today_of(u)
         n = u["today_n"] if u["today_date"] == today.isoformat() else 0
-        goal = u["goal"] or 10
-        parts.append(f"👤 {name(u)}: ответов {n}/{goal} {'✅' if n >= goal else ('⏳' if n else '⚠️ не занималась')} · "
-                     f"🔥 {live_streak(u, today)} дн. · точность {acc(u)} · {u['xp']} XP")
+        c = counts(u)
+        parts.append(f"👤 {name(u)}: ответов сегодня {n} {'✅' if n else '⚠️ не занималась'} · "
+                     f"выучено слов {c['learned']} · точность {acc(u)}")
     return "\n".join(parts)
 
 
@@ -91,21 +100,20 @@ def panel():
     who = f"Выбрана: <b>{name(sel)}</b>" if sel else "Ученик не выбран — открой «Карточку»."
     me = h.store.users.get(h.ADMIN_ID, {})
     dg = "вкл" if me.get("digest") else "выкл"
-    return (head + f"Учеников: {len(st)}. {who}\n\nСтатистика, настройка обучения, напоминания и сообщения — всё здесь.",
-            h.kb([("📊 Статистика всех", "ad:stats"), ("👤 Карточка ученика", "ad:card")],
+    return (head + f"Учеников: {len(st)}. {who}\n\nСтатистика, управление обучением, напоминания и сообщения — всё здесь.",
+            h.kb([("📊 Статистика", "ad:stats"), ("👤 Карточка ученика", "ad:card")],
                  [("🎯 Управление обучением", "ad:manage")],
                  [("⏰ Напоминания", "ad:rem"), ("📨 Сообщения", "ad:msg")],
                  [("💌 Записки", "ad:notes"), (f"📬 Дайджест: {dg}", "ad:digest")]))
 
 
 def pick_screen(target: str):
-    rows = [[(f"{u['name'] or u['uid']} · {mot.level_name(u['xp'])}", f"ad:u:{u['uid']}:{target}")] for u in students()]
+    rows = [[(f"{u['name'] or u['uid']}", f"ad:u:{u['uid']}:{target}")] for u in students()]
     return "👥 Выбери ученика:", h.kb(*rows, [("⬅️ В админ-панель", "ad:home")])
 
 
 def stats_screen():
-    st = students()
-    body = "\n\n".join(brief(u) for u in st) or "Пока нет учеников."
+    body = "\n\n".join(brief(u) for u in students()) or "Пока нет учеников."
     return "📊 <b>Статистика</b>\n\n" + body, h.kb([("👤 Подробная карточка", "ad:card")], [("⬅️ В админ-панель", "ad:home")])
 
 
@@ -113,16 +121,10 @@ def card_screen(u: dict):
     today = h.today_of(u)
     hard = sorted([w for w in h.store.words_of(u["uid"]) if w["wrong"] > 0], key=lambda w: w["wrong"], reverse=True)[:6]
     hard_txt = "\n".join(f"   • {h.esc(w['en'])} — {h.esc(w['ru'])} (ошибок {w['wrong']})" for w in hard) or "   пока нет ошибок 🎉"
-    topics = ", ".join(content.TOPICS[i] for i in h.topics_of(u)) or "все"
-    due = sum(w["next_review"] <= today.isoformat() for w in h.store.words_of(u["uid"]))
     text = (f"👤 <b>Карточка: {name(u)}</b>\n\n{brief(u)}\n\n"
-            f"🏅 Значков: {len(mot.owned(u))}/{len(mot.BADGES)} · 🧊 заморозок: {u['freezes']} · ⚡ рекорд комбо: {u['best_combo']}\n"
-            f"🔁 На повторе сегодня: {due} · 🏁 Дней с выполненной целью: {u['goal_days']}\n"
-            f"📅 {mot.week_chart(u, today)}\n\n"
+            f"📅 {progress.week_chart(u, today)}\n\n"
             f"⚠️ <b>Сложные слова</b>\n{hard_txt}\n\n"
-            f"⚙️ Настройки: слов за раз {u['per_day']}, цель {u['goal'] or 10}, "
-            f"слово дня {'вкл с ' + str(u['hour']) + ':00' if u['daily'] else 'выкл'}, пояс {h.esc(u['tz'])}\n"
-            f"🗂 Темы: {h.esc(topics)}\n"
+            f"⚙️ Слово дня: {('вкл с ' + str(u['hour']) + ':00') if u['daily'] else 'выкл'} · часовой пояс {h.esc(u['tz'])}\n"
             f"⏰ Напоминание: {('с ' + str(u['rem_hour']) + ':00') if u['rem_hour'] else 'выкл'}")
     return text, h.kb([("🎯 Управлять обучением", "ad:manage"), ("⏰ Напоминание", "ad:rem")],
                       [("👥 Другой ученик", "ad:pick:card")], [("⬅️ В админ-панель", "ad:home")])
@@ -130,30 +132,21 @@ def card_screen(u: dict):
 
 def manage_screen(u: dict):
     mark = lambda cur, v: ("• " if cur == v else "") + str(v)
-    goal = u["goal"] or 10
     text = (f"🎯 <b>Управление обучением: {name(u)}</b>\n\n"
-            f"Цель дня: <b>{goal}</b> · слов за раз: <b>{u['per_day']}</b> · слово дня: "
-            f"<b>{'вкл, с ' + str(u['hour']) + ':00' if u['daily'] else 'выкл'}</b>\n\n"
-            "Можно также добавить слова командой <code>/assign слово - перевод</code> — они сразу появятся в её квизе, "
-            "и бот сообщит ей об этом.")
-    return text, h.kb([("Цель дня:", "noop")] + [(mark(goal, n), f"ad:g:{n}") for n in (5, 10, 20, 30)],
-                      [("Слов за раз:", "noop")] + [(mark(u["per_day"], n), f"ad:p:{n}") for n in (3, 5, 8, 10)],
-                      [(f"☀️ Слово дня: {'вкл' if u['daily'] else 'выкл'}", "ad:dl")],
-                      [("Час слова дня:", "noop")] + [(mark(u["hour"], x), f"ad:h:{x}") for x in (8, 9, 12, 18)],
-                      [("🗂 Темы слов", "ad:tp"), ("🔁 Всё на повтор сегодня", "ad:due")],
-                      [("🎁 +50 XP", "ad:xp"), ("🧊 +1 заморозка", "ad:fz")],
+            f"«Слово дня» (6 новых слов утром): <b>{'вкл, с ' + str(u['hour']) + ':00' if u['daily'] else 'выкл'}</b>\n\n"
+            "• «Прислать 6 слов сейчас» — отправить ей новую порцию прямо сейчас.\n"
+            "• «Всё на повтор сегодня» — все её слова станут просроченными, и квиз начнёт их спрашивать.\n"
+            "• Свои слова ей в квиз: <code>/assign слово - перевод</code>.")
+    return text, h.kb([(f"☀️ Слово дня: {'вкл' if u['daily'] else 'выкл'}", "ad:dl")],
+                      [("Час:", "noop")] + [(mark(u["hour"], x), f"ad:h:{x}") for x in (8, 9, 12, 18)],
+                      [("🆕 Прислать 6 слов сейчас", "ad:push")],
+                      [("🔁 Всё на повтор сегодня", "ad:due")],
                       [("👥 Другой ученик", "ad:pick:manage"), ("⬅️ В админ-панель", "ad:home")])
-
-
-def topics_screen(u: dict):
-    chosen = set(h.topics_of(u))
-    rows = [[(("✅ " if i in chosen else "⬜ ") + t, f"ad:t:{i}")] for i, t in enumerate(content.TOPICS)]
-    return f"🗂 <b>Темы слов для {name(u)}</b> (пусто = все темы):", h.kb(*rows, [("⬅️ Назад", "ad:manage")])
 
 
 def rem_screen(u: dict):
     mark = lambda cur, v: ("• " if cur == v else "") + (f"{v}:00" if v else "выкл")
-    txt = u["rem_text"] or "стандартный (с упоминанием серии)"
+    txt = u["rem_text"] or "стандартный"
     text = (f"⏰ <b>Напоминания: {name(u)}</b>\n\n"
             f"<b>По расписанию:</b> {('каждый день с ' + str(u['rem_hour']) + ':00, если ещё не занималась') if u['rem_hour'] else 'выключено'}\n"
             f"<b>Текст:</b> {h.esc(txt)}\n\n"
@@ -193,14 +186,6 @@ async def cmd_admin(m: Message):
     await m.answer(t, reply_markup=k)
 
 
-async def student_or_pick(cb: CallbackQuery, target: str):
-    u = current(cb.from_user.id)
-    if u is None:
-        t, k = pick_screen(target)
-        await h.safe_edit(cb, t, k)
-    return u
-
-
 @router.callback_query(F.data.startswith("ad:"))
 async def on_admin(cb: CallbackQuery, bot: Bot):
     adm = cb.from_user.id
@@ -210,7 +195,6 @@ async def on_admin(cb: CallbackQuery, bot: Bot):
     parts = cb.data.split(":")
     act = parts[1]
     screen = None
-
     if act == "home":
         screen = panel()
     elif act == "stats":
@@ -233,8 +217,10 @@ async def on_admin(cb: CallbackQuery, bot: Bot):
         screen = panel()
         await cb.answer("Дайджест включён: вечером придёт сводка" if me["digest"] else "Дайджест выключен")
     else:
-        u = await student_or_pick(cb, {"card": "card", "manage": "manage", "rem": "rem"}.get(act, "manage"))
+        u = current(adm)
         if u is None:
+            t, k = pick_screen({"card": "card", "manage": "manage", "rem": "rem"}.get(act, "manage"))
+            await h.safe_edit(cb, t, k)
             await cb.answer()
             return
         h.store.mark("users")
@@ -245,30 +231,23 @@ async def on_admin(cb: CallbackQuery, bot: Bot):
             screen = manage_screen(u)
         elif act == "rem":
             screen = rem_screen(u)
-        elif act == "g":
-            u["goal"] = int(parts[2]); screen, toast = manage_screen(u), "Цель дня изменена"
-        elif act == "p":
-            u["per_day"] = int(parts[2]); screen, toast = manage_screen(u), "Готово"
         elif act == "h":
             u["hour"] = int(parts[2]); screen, toast = manage_screen(u), "Готово"
         elif act == "dl":
             u["daily"] = 0 if u["daily"] else 1; screen, toast = manage_screen(u), "Слово дня переключено"
-        elif act == "tp":
-            screen = topics_screen(u)
-        elif act == "t":
-            chosen = set(h.topics_of(u)) ^ {int(parts[2])}
-            u["topics"] = ",".join(str(x) for x in sorted(chosen)); screen = topics_screen(u)
         elif act == "due":
             today = h.today_of(u).isoformat()
             for w in h.store.words_of(u["uid"]):
                 w["next_review"] = today
             h.store.mark("words"); screen, toast = manage_screen(u), "Все её слова ждут повторения сегодня"
-        elif act == "xp":
-            u["xp"] += 50; screen, toast = manage_screen(u), "+50 XP отправлено"
-            await _safe_send(bot, u["uid"], "🎁 Тебе подарок: <b>+50 XP</b>! Так держать 💖")
-        elif act == "fz":
-            u["freezes"] = min(u["freezes"] + 1, 3); screen, toast = manage_screen(u), "+1 заморозка"
-            await _safe_send(bot, u["uid"], "🎁 Тебе подарок: <b>🧊 +1 заморозка серии</b>!")
+        elif act == "push":
+            try:
+                await h.deliver_words(bot, u, "🎁 <b>Новые слова</b> · специально для тебя 💖")
+                toast = "Отправлено ✅"
+            except Exception as e:
+                log.warning("push failed: %s", e)
+                toast = "Не удалось отправить"
+            screen = manage_screen(u)
         elif act == "rh":
             u["rem_hour"] = int(parts[2]); screen, toast = rem_screen(u), "Расписание обновлено"
         elif act == "nudge":
@@ -295,9 +274,8 @@ async def _safe_send(bot: Bot, uid: int, text: str, markup=None) -> bool:
 
 
 async def send_nudge(bot: Bot, u: dict, text: str | None) -> bool:
-    streak = live_streak(u, h.today_of(u))
-    body = text if text else h.DEFAULT_REMINDER.format(streak=f", и серия 🔥 {streak} дн. продолжится" if streak else "")
-    return await _safe_send(bot, u["uid"], h.esc(body) if text else body, h.kb([("🧠 Начать квиз", "goquiz")]))
+    body = h.esc(text) if text else h.DEFAULT_REMINDER
+    return await _safe_send(bot, u["uid"], body, h.kb([("🧠 Начать квиз", "goquiz")]))
 
 
 # ============================ команды ============================
@@ -342,15 +320,14 @@ async def cmd_assign(m: Message, bot: Bot):
     if u is None:
         await m.answer("Сначала выбери ученика: /admin → «Карточка ученика».")
         return
-    arg = _arg(m)
-    import re
-    parts = re.split(r"\s+[-—–=]\s+|\s*=\s*", arg, maxsplit=1)
+    parts = re.split(r"\s+[-—–=]\s+|\s*=\s*", _arg(m), maxsplit=1)
     if len(parts) != 2 or not parts[0] or not parts[1]:
         await m.answer("Напиши так: <code>/assign apple - яблоко</code>")
         return
     a, b = parts[0].strip(), parts[1].strip()
     en, ru = (b, a) if content.has_cyrillic(a) else (a, b)
-    if h.store.add_word(u["uid"], en, ru, content.BY_EN.get(en.lower(), {}).get("ex", ""), "", "admin", h.today_of(u)):
+    lex = content.BY_KEY.get(content.norm_key(en))
+    if h.store.add_word(u["uid"], en, ru, lex["ex"] if lex else "", "", "admin", h.today_of(u)):
         await _safe_send(bot, u["uid"], f"🎁 Тебе добавили новое слово: <b>{h.esc(en)}</b> — {h.esc(ru)}\nОно уже в твоём квизе!",
                          h.kb([("🧠 Повторить", "goquiz")]))
         await m.answer(f"Добавлено ученику {name(u)}: {h.esc(en)} — {h.esc(ru)} ✅")

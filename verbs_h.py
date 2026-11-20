@@ -13,7 +13,7 @@ from aiogram.types import CallbackQuery, Message
 
 import content
 import handlers as h
-import motivation as mot
+import progress
 from storage import LEARNED_BOX, srs_review
 
 router = Router()
@@ -241,7 +241,7 @@ def _finish(u: dict, v1: str, ok: bool):
 
 
 def _feedback(v: dict, ok: bool, gain: int, lines: list, extra: str = "") -> str:
-    head = f"✅ <b>{mot.praise(True)}</b> +{gain} XP" if ok else f"❌ <b>{mot.praise(False)}</b>"
+    head = f"✅ <b>{h.praise(True)}</b>" if ok else f"❌ <b>{h.praise(False)}</b>"
     text = f"{head}{extra}\n\n{full_card(v)}"
     if lines:
         text += "\n\n" + "\n".join(lines)
@@ -386,7 +386,7 @@ async def on_progress(cb: CallbackQuery):
         learned = sum(1 for v in vs if recs[v["v1"]] and recs[v["v1"]]["box"] >= LEARNED_BOX)
         started = sum(1 for v in vs if recs[v["v1"]])
         total_learned += learned
-        lines.append(f"{h.esc(G[g])}\n   {mot.bar(learned, len(vs))} выучено {learned}/{len(vs)} · начато {started}")
+        lines.append(f"{h.esc(G[g])}\n   {progress.bar(learned, len(vs))} выучено {learned}/{len(vs)} · начато {started}")
     text = (f"📊 <b>Прогресс по глаголам</b>: выучено <b>{total_learned}</b> из {len(V)}\n"
             "<i>«Выучено» — когда глагол верно отвечен несколько раз с интервалами.</i>\n\n" + "\n\n".join(lines))
     await h.safe_edit(cb, text, h.kb([("🎯 Тренировка", "vt:all")], [("⬅️ Все группы", "vm")]))

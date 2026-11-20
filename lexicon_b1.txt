@@ -1,0 +1,250 @@
+// Новые слова уровня A2+ / B1, включая сленг (без отдельной группы). Формат: en|часть речи|перевод|пример|примечание|уровень
+# N
+achievement|сущ.|достижение|Graduating was a big achievement.|об успехах, учёбе и работе|B1
+advantage|сущ.|преимущество|Speaking English is a big advantage.|при выборе, на работе|B1
+argument|сущ.|ссора, спор; довод|We had an argument about money.|об отношениях и обсуждениях|B1
+atmosphere|сущ.|атмосфера|The cafe has a cozy atmosphere.|о местах: кафе, отели, вечеринки|B1
+benefit|сущ.|польза; льгота|The job has great benefits.|о работе и здоровье|B1
+challenge|сущ.|вызов, трудная задача|Learning a language is a challenge.|об учёбе и работе|B1
+chance|сущ.|шанс, возможность|Give me a chance to explain.|в разговоре|A2+
+community|сущ.|сообщество|Our community is very friendly.|о людях и районах|B1
+confidence|сущ.|уверенность|She speaks with confidence.|о характере человека|B1
+consequence|сущ.|последствие|Every action has a consequence.|о решениях и поступках|B1
+decision|сущ.|решение|It was a hard decision.|о выборе, можно в любой теме|A2+
+detail|сущ.|деталь|Tell me every detail.|когда о чём-то рассказывают|A2+
+difference|сущ.|разница|What's the difference?|при сравнении|A2+
+disaster|сущ.|катастрофа, провал|The party was a disaster.|о событиях; в речи — «полный провал»|B1
+effort|сущ.|усилие|It takes a lot of effort.|об учёбе, работе, спорте|B1
+environment|сущ.|окружающая среда; обстановка|We must protect the environment.|о природе и о рабочей обстановке|B1
+expense|сущ.|расход|Travel is a big expense.|о деньгах и бюджете|B1
+fault|сущ.|вина|It's not your fault.|в разговоре о проблемах|A2+
+feedback|сущ.|отзыв, обратная связь|I got great feedback from my boss.|о работе и учёбе|B1
+habit|сущ.|привычка|Reading is a good habit.|об образе жизни|A2+
+imagination|сущ.|воображение|Kids have a wild imagination.|о детях и творчестве|B1
+knowledge|сущ.|знания|Knowledge is power.|об учёбе и работе|B1
+lifestyle|сущ.|образ жизни|She has a healthy lifestyle.|о здоровье и привычках|B1
+opinion|сущ.|мнение|In my opinion, it's too expensive.|в обсуждениях|A2+
+opportunity|сущ.|возможность|This is a great opportunity.|о работе и планах|B1
+patience|сущ.|терпение|Learning takes patience.|о характере|B1
+reason|сущ.|причина|What's the reason for the delay?|в объяснениях|A2+
+relationship|сущ.|отношения|They have a strong relationship.|о людях, семье, работе|B1
+reputation|сущ.|репутация|The hotel has a great reputation.|о людях, местах и компаниях|B1
+responsibility|сущ.|ответственность|It's your responsibility.|о работе и семье|B1
+solution|сущ.|решение (проблемы)|We need a quick solution.|о проблемах|B1
+stress|сущ.|стресс|Exercise helps with stress.|о здоровье и работе|A2+
+success|сущ.|успех|Hard work leads to success.|о работе и целях|B1
+suggestion|сущ.|предложение, совет|Do you have any suggestions?|в обсуждениях, формально-нейтрально|B1
+tradition|сущ.|традиция|It's a family tradition.|о праздниках и семье|B1
+trouble|сущ.|проблемы, беда|I'm in trouble.|в разговоре|A2+
+mood|сущ.|настроение|She's in a good mood.|о людях|A2+
+rumor|сущ.|слух|It's just a rumor.|в разговоре о новостях|B1
+neighborhood|сущ.|район|It's a safe neighborhood.|о городе и жилье|A2+
+gossip|сущ.|сплетни|I don't like gossip.|о людях, неформально|B1
+dude|сущ.|чувак|Dude, that's crazy!|сленг: к другу-парню, неформально|A2+
+bro|сущ.|братан|Thanks, bro!|сленг: к приятелю, очень неформально|A2+
+buddy|сущ.|приятель|Hey, buddy, how's it going?|сленг: к другу или знакомому|A2+
+buck|сущ.|доллар|It costs ten bucks.|сленг: о деньгах|A2+
+vibe|сущ.|атмосфера, настроение|I love the vibe here.|сленг: о местах и людях|B1
+gig|сущ.|подработка, выступление|I have a gig on Friday.|сленг: о работе и музыке|B1
+crush|сущ.|влюблённость, объект симпатии|I have a crush on him.|сленг: о симпатии|A2+
+selfie|сущ.|селфи|Let's take a selfie.|разговорное: о фото|A2+
+foodie|сущ.|гурман, любитель поесть|She's a total foodie.|сленг: о еде|B1
+couch potato|сущ.|ленивец, любитель дивана|He's a couch potato.|сленг: о людях и отдыхе|B1
+rip-off|сущ.|обдираловка|Twenty dollars? What a rip-off!|сленг: о ценах и покупках|B1
+steal|сущ.|выгодная покупка|At that price, it's a steal.|сленг: о покупках|B1
+bummer|сущ.|досада|You missed the show? Bummer!|сленг: когда не повезло|A2+
+FOMO|сущ.|страх что-то упустить|I have FOMO when friends go out.|сленг: о соцсетях и вечеринках|B1
+bestie|сущ.|лучшая подруга/друг|She's my bestie.|сленг: о друзьях|A2+
+drama|сущ.|драма, скандал|I don't need the drama.|сленг: о ссорах и людях|B1
+hangout|сущ.|место, где тусуются|This cafe is our favorite hangout.|сленг: о местах отдыха|B1
+potluck|сущ.|вечеринка с общим угощением|We're having a potluck on Sunday.|о праздниках и гостях|B1
+leftovers|сущ.|остатки еды|We ate leftovers for lunch.|о еде и доме|A2+
+side hustle|сущ.|подработка|She has a side hustle selling candles.|сленг: о работе и деньгах|B1
+road trip|сущ.|поездка на машине|Let's take a road trip!|разговорное: о путешествиях|A2+
+staycation|сущ.|отпуск дома|We had a staycation this year.|сленг: об отдыхе|B1
+they|мест.|они|They're coming at six.|местоимение: о людях и вещах|A2+
+nobody|мест.|никто|Nobody knows the answer.|местоимение: о людях|A2+
+everyone|мест.|все, каждый|Everyone loves her.|местоимение: о людях|A2+
+whatever|мест.|что угодно; ладно, как хочешь|Whatever you want.|местоимение; в споре — «мне всё равно»|B1
+although|союз|хотя|Although it was late, we kept talking.|союз: в рассказах и объяснениях|B1
+unless|союз|если только не|Don't call unless it's urgent.|союз: об условиях|B1
+despite|предлог|несмотря на|We went out despite the rain.|предлог: в рассказах|B1
+# V
+to achieve|гл.|достигать|She achieved her goal.|об успехах и целях|B1
+to admit|гл.|признавать|He admitted his mistake.|о проступках и ошибках|B1
+to agree|гл.|соглашаться|I agree with you.|в обсуждениях|A2+
+to announce|гл.|объявлять|They announced the winner.|о новостях и событиях|B1
+to appreciate|гл.|ценить, быть благодарным|I really appreciate your help.|вежливо, о помощи|B1
+to argue|гл.|спорить, ссориться|They argue about everything.|об отношениях|B1
+to arrange|гл.|организовывать, договариваться|Let's arrange a meeting.|о встречах и планах|B1
+to avoid|гл.|избегать|Avoid the highway at rush hour.|о дороге, людях, проблемах|B1
+to blame|гл.|винить|Don't blame me!|в разговоре о проблемах|B1
+to cancel|гл.|отменять|I need to cancel my reservation.|о бронях, встречах, рейсах|A2+
+to complain|гл.|жаловаться|He always complains about the food.|о сервисе и людях|B1
+to concentrate|гл.|сосредоточиться|I can't concentrate with this noise.|об учёбе и работе|B1
+to consider|гл.|обдумывать|I'm considering a new job.|о решениях|B1
+to contact|гл.|связаться|Contact me by email.|о работе и сервисе, нейтрально|B1
+to convince|гл.|убеждать|He convinced me to try it.|в разговорах и спорах|B1
+to cope with|гл.|справляться с|How do you cope with stress?|о трудностях|B1
+to count on|гл.|рассчитывать на|You can count on me.|о людях и помощи|B1
+to deal with|гл.|иметь дело с, разбираться|I have to deal with a problem.|о работе и проблемах|B1
+to decide|гл.|решать|We decided to stay home.|о выборе|A2+
+to depend on|гл.|зависеть от|It depends on the weather.|о планах и условиях|B1
+to describe|гл.|описывать|Describe your room.|об учёбе и рассказах|B1
+to develop|гл.|развивать(ся)|The kids develop fast.|о навыках, бизнесе, детях|B1
+to discover|гл.|открывать, узнавать|I discovered a great cafe.|о находках|B1
+to discuss|гл.|обсуждать|Let's discuss the plan.|о работе и планах|B1
+to encourage|гл.|поддерживать, поощрять|My teacher encouraged me.|об учёбе и людях|B1
+to ensure|гл.|обеспечивать, гарантировать|We ensure fast delivery.|о работе, формально|B1
+to expect|гл.|ожидать|I didn't expect that.|в разговоре|A2+
+to explain|гл.|объяснять|Can you explain this word?|об учёбе|A2+
+to forgive|гл.|прощать|Please forgive me.|об отношениях|B1
+to handle|гл.|справляться, управлять|I can handle it.|о задачах и проблемах|B1
+to hesitate|гл.|колебаться|Don't hesitate to ask.|вежливо, о вопросах|B1
+to ignore|гл.|игнорировать|He ignored my message.|о людях и сообщениях|A2+
+to improve|гл.|улучшать(ся)|My English is improving.|об учёбе и навыках|A2+
+to insist|гл.|настаивать|I insist on paying.|в разговоре|B1
+to involve|гл.|вовлекать, включать|The job involves travel.|о работе и событиях|B1
+to manage|гл.|справляться; управлять|I managed to finish on time.|о задачах и работе|B1
+to mention|гл.|упомянуть|He mentioned a new project.|в разговоре|A2+
+to miss|гл.|скучать; пропускать|I miss my family.|об отношениях; ещё «опоздать на рейс»|A2+
+to notice|гл.|замечать|Did you notice the sign?|в наблюдениях|A2+
+to offer|гл.|предлагать|They offered me a job.|о работе и помощи|A2+
+to organize|гл.|организовывать|She organizes events.|о работе и вечеринках|B1
+to plan|гл.|планировать|We plan to travel in June.|о поездках и делах|A2+
+to prefer|гл.|предпочитать|I prefer tea to coffee.|о выборе|A2+
+to prepare|гл.|готовить(ся)|I'm preparing for the interview.|об учёбе, работе, поездках|A2+
+to prevent|гл.|предотвращать|Vaccines prevent illness.|о здоровье и безопасности|B1
+to promise|гл.|обещать|I promise I'll call.|об отношениях|A2+
+to provide|гл.|предоставлять|The hotel provides breakfast.|об услугах, формально|B1
+to realize|гл.|осознавать|I realized I was wrong.|в рассказах|B1
+to recommend|гл.|рекомендовать|Can you recommend a restaurant?|о местах и услугах|A2+
+to refuse|гл.|отказываться|He refused to help.|о людях и просьбах|B1
+to regret|гл.|сожалеть|I regret saying that.|о поступках|B1
+to rely on|гл.|полагаться на|You can rely on her.|о людях|B1
+to remind|гл.|напоминать|Remind me to call mom.|в бытовых просьбах|A2+
+to repeat|гл.|повторять|Could you repeat that?|в разговоре и учёбе|A2+
+to require|гл.|требовать|The job requires experience.|о работе, формально|B1
+to respond|гл.|отвечать, реагировать|He didn't respond to my text.|о сообщениях и письмах|B1
+to run into|гл.|случайно встретить|I ran into an old friend.|фразовый глагол: о встречах|B1
+to suggest|гл.|предлагать (идею)|I suggest we leave early.|в планах и обсуждениях|A2+
+to support|гл.|поддерживать|My family supports me.|об отношениях|A2+
+to suppose|гл.|предполагать|I suppose you're right.|в разговоре|B1
+to survive|гл.|выжить|The plant survived the winter.|о природе, жизни и трудностях|B1
+to take part in|гл.|участвовать в|She took part in the contest.|о событиях|B1
+to tend to|гл.|иметь склонность|I tend to forget names.|о привычках|B1
+to warn|гл.|предупреждать|They warned us about the storm.|о погоде и опасности|B1
+to worry|гл.|беспокоиться|Don't worry about it.|в утешении|A2+
+to put off|гл.|откладывать|Don't put off your homework.|фразовый глагол: о делах|B1
+to turn down|гл.|отклонять; делать тише|She turned down the offer.|фразовый глагол: о предложениях и звуке|B1
+to end up|гл.|оказаться, в итоге|We ended up at a diner.|фразовый глагол: в рассказах|B1
+to look forward to|гл.|ждать с нетерпением|I'm looking forward to the weekend.|фразовый глагол: о планах|B1
+to chill|гл.|расслабляться|Let's just chill at home.|сленг: об отдыхе|A2+
+to crash|гл.|завалиться спать; переночевать|Can I crash at your place?|сленг: о ночёвке и сне|B1
+to bail|гл.|слинять, отказаться от планов|I had to bail on the party.|сленг: о планах и вечеринках|B1
+to ghost|гл.|пропасть без объяснений|He ghosted me after the date.|сленг: об общении и свиданиях|B1
+to flex|гл.|выпендриваться|He likes to flex his new car.|сленг: о людях и вещах|B1
+to vent|гл.|выговориться|I just need to vent.|сленг: об эмоциях|B1
+to nail|гл.|блестяще справиться|You nailed it!|сленг: об успехах|B1
+to ace|гл.|сдать на отлично|I aced the exam!|сленг: об экзаменах и тестах|B1
+to freak out|гл.|паниковать|Don't freak out.|сленг: об эмоциях|A2+
+to hit up|гл.|написать или позвонить|Hit me up later.|сленг: о связи|B1
+to grab|гл.|схватить; быстро перекусить|Let's grab lunch.|разговорное: о еде и покупках|A2+
+to splurge|гл.|шиковать, потратиться|I splurged on new shoes.|сленг: о деньгах|B1
+to chip in|гл.|скинуться|Let's chip in for the gift.|разговорное: о деньгах|B1
+to roast|гл.|подшучивать|They roasted him at the party.|сленг: о шутках|B1
+to slack off|гл.|лениться, отлынивать|Stop slacking off.|сленг: о работе и учёбе|B1
+to pig out|гл.|объесться|I pigged out on pizza.|сленг: о еде|B1
+to bounce|гл.|уйти, свалить|It's late. Let's bounce.|сленг: о том, что пора уходить|B1
+# A
+accurate|прил.|точный|The map is accurate.|о данных, картах, описаниях|B1
+adorable|прил.|очаровательный|Your kitten is adorable.|о детях и животных|B1
+ambitious|прил.|амбициозный|She's an ambitious young lawyer.|о людях и целях|B1
+annoying|прич.|раздражающий|That noise is so annoying.|о людях, звуках, ситуациях|A2+
+anxious|прил.|тревожный|I feel anxious before exams.|об эмоциях|B1
+aware|прил.|осведомлённый|Are you aware of the problem?|о фактах и ситуации|B1
+awkward|прил.|неловкий|It was an awkward silence.|о ситуациях и разговорах|B1
+capable|прил.|способный|She's capable of anything.|о людях и навыках|B1
+cautious|прил.|осторожный|Be cautious on icy roads.|о людях и дороге|B1
+cheerful|прил.|жизнерадостный|He's always cheerful.|о людях и настроении|B1
+complicated|прич.|сложный, запутанный|It's a complicated story.|о задачах и отношениях|B1
+confident|прил.|уверенный|She feels confident about the exam.|о людях|A2+
+convenient|прил.|удобный|The hotel is in a convenient location.|о местах и времени|B1
+cozy|прил.|уютный|We have a cozy apartment.|о доме, кафе, отелях|A2+
+decent|прил.|приличный, нормальный|It's a decent hotel for the price.|о местах, ценах, людях|B1
+determined|прич.|решительный|He's determined to win.|о людях и целях|B1
+disgusting|прил.|отвратительный|The smell is disgusting.|о еде, запахах, поступках|B1
+efficient|прил.|эффективный|The new system is efficient.|о работе и технике|B1
+embarrassing|прич.|неловкий (о ситуации)|That was embarrassing!|о ситуациях|B1
+energetic|прил.|энергичный|The kids are very energetic.|о людях и детях|B1
+essential|прил.|необходимый|Water is essential.|о нужных вещах|B1
+exhausted|прич.|измотанный|I'm exhausted after work.|о самочувствии|A2+
+fair|прил.|справедливый|That's not fair!|о решениях и ценах|A2+
+familiar|прил.|знакомый|Her face looks familiar.|о людях и местах|B1
+flexible|прил.|гибкий|The schedule is flexible.|о работе и планах|B1
+fluent|прил.|беглый, свободный|She is fluent in Spanish.|о языках|B1
+frustrated|прич.|разочарованный, раздражённый|I'm frustrated with this app.|об эмоциях и технике|B1
+gentle|прил.|нежный, мягкий|Be gentle with the kitten.|о людях и животных|B1
+gorgeous|прил.|потрясающе красивый|You look gorgeous!|о людях, видах, погоде|B1
+grumpy|прил.|ворчливый|He's grumpy in the morning.|о настроении людей|B1
+guilty|прил.|виноватый|I feel guilty about it.|об эмоциях|B1
+hilarious|прил.|уморительный|That movie was hilarious.|о шутках и фильмах|B1
+impatient|прил.|нетерпеливый|Don't be so impatient.|о людях|B1
+impressive|прил.|впечатляющий|Your English is impressive.|о достижениях|B1
+independent|прил.|независимый, самостоятельный|She is very independent.|о людях|B1
+insecure|прил.|неуверенный в себе|He felt insecure at first.|об эмоциях|B1
+mature|прил.|зрелый, взрослый|She is mature for her age.|о людях|B1
+messy|прил.|неряшливый, в беспорядке|My room is messy.|о доме и людях|A2+
+mysterious|прил.|загадочный|It's a mysterious story.|о людях и событиях|B1
+obvious|прил.|очевидный|It's obvious he's tired.|в разговоре|B1
+ordinary|прил.|обычный|It was an ordinary day.|о днях и вещах|B1
+painful|прил.|болезненный|The shot was painful.|о здоровье и ощущениях|A2+
+peaceful|прил.|спокойный, мирный|It's a peaceful village.|о местах|B1
+reliable|прил.|надёжный|He's a reliable friend.|о людях и технике|B1
+responsible|прил.|ответственный|She's a responsible driver.|о людях и работе|B1
+ridiculous|прил.|нелепый|That's ridiculous!|в споре и реакции|B1
+romantic|прил.|романтичный|It was a romantic dinner.|о свиданиях и местах|A2+
+selfish|прил.|эгоистичный|Don't be selfish.|о людях|B1
+sensitive|прил.|чувствительный|She is sensitive to noise.|о людях и коже|B1
+serious|прил.|серьёзный|Are you serious?|в разговоре; ещё о болезнях и людях|A2+
+sincere|прил.|искренний|Thank you for your sincere advice.|о людях и словах|B1
+sociable|прил.|общительный|He's a sociable guy.|о людях|B1
+spontaneous|прил.|спонтанный|It was a spontaneous trip.|о планах и поездках|B1
+stressful|прил.|стрессовый|It was a stressful week.|о работе и жизни|B1
+suitable|прил.|подходящий|Is this suitable for kids?|о вещах и местах|B1
+supportive|прил.|поддерживающий|My team is very supportive.|о людях и семье|B1
+thoughtful|прил.|заботливый, вдумчивый|That was so thoughtful of you.|о людях и подарках|B1
+tidy|прил.|аккуратный|Keep your desk tidy.|о доме и людях|A2+
+tough|прил.|трудный, жёсткий|It was a tough day.|о днях, мясе, людях|B1
+unbelievable|прил.|невероятный|The view is unbelievable.|о видах, новостях, событиях|B1
+unusual|прил.|необычный|That's an unusual name.|о вещах и людях|A2+
+valuable|прил.|ценный|Time is valuable.|о вещах и опыте|B1
+willing|прил.|готовый (согласный)|Are you willing to help?|о людях и просьбах|B1
+worthwhile|прил.|стоящий|The trip was worthwhile.|о поездках и усилиях|B1
+actually|нареч.|на самом деле|Actually, I'm busy.|в разговоре; от прил. actual|B1
+basically|нареч.|в основном, по сути|It's basically free.|в разговоре; от прил. basic|B1
+definitely|нареч.|определённо|I'll definitely call you.|в разговоре; от прил. definite|B1
+eventually|нареч.|в конце концов|Eventually, we found the key.|в рассказах; от прил. eventual|B1
+fortunately|нареч.|к счастью|Fortunately, nobody was hurt.|в рассказах; от прил. fortunate|B1
+immediately|нареч.|немедленно|Call me immediately.|в просьбах; от прил. immediate|B1
+mostly|нареч.|в основном|It's mostly sunny.|о погоде и описаниях; от прил. most|B1
+recently|нареч.|недавно|I recently moved here.|в рассказах; от прил. recent|A2+
+apparently|нареч.|судя по всему|Apparently, it's closed.|в новостях и слухах; от прил. apparent|B1
+awesome|прил.|круто, потрясающе|That concert was awesome!|сленг: оценка чего угодно|A2+
+epic|прил.|потрясающий|The trip was epic.|сленг: о поездках и событиях|B1
+dope|прил.|классный|Those sneakers are dope.|сленг: о вещах и музыке|B1
+sick|прил.|классный; больной|That trick was sick!|сленг: восторг; в нейтральной речи «больной»|B1
+lit|прил.|классный, зажигательный|The party was lit!|сленг: о вечеринках|B1
+legit|прил.|настоящий, надёжный|This place is legit.|сленг: о местах и людях|B1
+sketchy|прил.|подозрительный|That alley looks sketchy.|сленг: о местах и людях|B1
+shady|прил.|сомнительный|That guy is shady.|сленг: о людях и сделках|B1
+salty|прил.|обиженный, злой|He's salty about losing.|сленг: о настроении людей|B1
+stoked|прил.|в восторге|I'm so stoked for the trip!|сленг: о радостном ожидании|B1
+pumped|прил.|воодушевлённый|I'm pumped for the game!|сленг: о спорте и событиях|B1
+bummed|прил.|расстроенный|I'm bummed about the news.|сленг: о настроении|B1
+hangry|прил.|злой от голода|I'm hangry, let's eat.|сленг: о еде и настроении|B1
+chill|прил.|спокойный, расслабленный|He's a chill guy.|сленг: о людях и атмосфере|A2+
+cringe|прил.|вызывающий неловкость|That joke was so cringe.|сленг: о шутках и поведении|B1
+loaded|прил.|богатый|He's loaded.|сленг: о людях и деньгах|B1
+broke|прил.|без денег|I'm broke until Friday.|сленг: о деньгах|A2+
+extra|прил.|слишком эмоциональный, перебарщивающий|She's so extra!|сленг: о поведении людей|B1

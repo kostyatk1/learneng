@@ -1,4 +1,4 @@
-"""Банки слов, сленга, фраз и неправильных глаголов + проверка ответов + локальный словарь."""
+"""Лексикон (существительные / глаголы / прилагательные), неправильные глаголы, проверка ответов, локальный перевод."""
 import json
 import re
 from difflib import SequenceMatcher
@@ -7,106 +7,43 @@ from pathlib import Path
 BASE = Path(__file__).parent
 _CYR = re.compile(r"[а-яё]", re.I)
 
+GROUPS = {"N": "Существительные", "V": "Глаголы", "A": "Прилагательные"}
+GROUP_NOTE = {"N": "сущ., местоимения, предлоги, союзы", "V": "глаголы, фразовые глаголы",
+              "A": "прил., причастия, наречия от прилагательных"}
+
 
 def has_cyrillic(s: str) -> bool:
     return bool(_CYR.search(s))
 
 
-def _lines(path: Path):
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if line and not line.startswith("//"):
-            yield line
+def norm_key(en: str) -> str:
+    e = en.lower().strip()
+    return e[3:] if e.startswith("to ") else e
 
 
-def _load_bank(files, kind: str, seen: set):
-    bank: dict[str, list] = {}
-    topic = None
-    for f in files:
-        for line in _lines(f):
-            if line.startswith("#"):
-                topic = line[1:].strip()
-                bank.setdefault(topic, [])
+def _load_lexicon():
+    out, seen, g = [], set(), None
+    for f in ("lexicon_a2.txt", "lexicon_b1.txt"):
+        for line in (BASE / f).read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("//"):
+                continue
+            if line.startswith("# "):
+                g = line[2]
                 continue
             p = [x.strip() for x in line.split("|")]
-            en, ru, ex = p[0], p[1], p[2] if len(p) > 2 else ""
-            extra = p[3] if len(p) > 3 else ""
-            if en.lower() in seen:
+            en, label, ru, ex, note, level = p[:6]
+            if norm_key(en) in seen:
                 continue
-            seen.add(en.lower())
-            bank[topic].append({"en": en, "ru": ru, "ex": ex, "topic": topic, "kind": kind,
-                                "tr": extra if kind == "" else "", "note": extra if kind == "slang" else ""})
-    return {t: w for t, w in bank.items() if w}
-
-
-_seen: set = set()
-BANK = _load_bank(sorted(BASE.glob("words*.txt"), key=lambda p: (p.name != "words.txt", p.name)), "", _seen)
-SLANG_BANK = _load_bank([BASE / "slang.txt"], "slang", _seen)   # (темы в одном файле slang.txt)
-TOPICS = list(BANK)
-SLANG_TOPICS = list(SLANG_BANK)
-ALL_WORDS = [w for t in TOPICS for w in BANK[t]]
-ALL_SLANG = [w for t in SLANG_TOPICS for w in SLANG_BANK[t]]
-BY_EN = {w["en"].lower(): w for w in ALL_WORDS + ALL_SLANG}
-
-
-def _load_phrases():
-    cats, items, seen = [], [], set()
-    files = sorted(BASE.glob("phrases*.txt"), key=lambda p: (p.name != "phrases.txt", p.name))
-    for f in files:
-        cat = None
-        for line in _lines(f):
-            if line.startswith("#"):
-                cat = line[1:].strip()
-                if cat not in cats:
-                    cats.append(cat)
-                continue
-            ru, en = line.split("|", 1)
-            if ru in seen:
-                continue
-            seen.add(ru)
-            items.append({"ru": ru.strip(), "en": [v.strip() for v in en.split("/") if v.strip()],
-                          "cat": cats.index(cat)})
-    return cats, items
-
-
-PHRASE_CATS, PHRASES = _load_phrases()
-
-# ---------- бытовые предложения (разговорный американский) + русская транскрипция ----------
-_COLLOQ = [("gonna", "going to"), ("wanna", "want to"), ("gotta", "have to"), ("kinda", "kind of"),
-           ("lemme", "let me"), ("gimme", "give me"), ("dunno", "don't know"), ("y'all", "you all")]
-
-
-def expand_variants(en: str) -> list[str]:
-    """Для проверки ответов: «gonna» принимаем и как «going to» и т. д."""
-    out, full = [en], en
-    for a, b in _COLLOQ:
-        if re.search(rf"\b{a}\b", full, re.I):
-            full = re.sub(rf"\b{a}\b", b, full, flags=re.I)
-    if full != en:
-        out.append(full)
+            seen.add(norm_key(en))
+            out.append({"en": en, "label": label, "ru": ru, "ex": ex, "note": note, "level": level, "group": g})
     return out
 
 
-def _load_everyday():
-    cats, items = [], []
-    tr = json.loads((BASE / "everyday_tr.json").read_text(encoding="utf-8")) if (BASE / "everyday_tr.json").exists() else {}
-    for line in _lines(BASE / "everyday.txt"):
-        if line.startswith("#"):
-            cats.append(line[1:].strip())
-            continue
-        en, ru = (p.strip() for p in line.split("|", 1))
-        items.append({"cat": len(cats) - 1, "en": en, "ru": ru, "tr": tr.get(en, "")})
-    return cats, items
-
-
-EVERYDAY_CATS, EVERYDAY = _load_everyday()
-_ed_cat = len(PHRASE_CATS)
-PHRASE_CATS.append("🗣 Бытовые предложения")
-_seen_ru = {p["ru"] for p in PHRASES}
-for _e in EVERYDAY:
-    if _e["ru"] not in _seen_ru:
-        _seen_ru.add(_e["ru"])
-        PHRASES.append({"ru": _e["ru"], "en": expand_variants(_e["en"]), "cat": _ed_cat})
+LEX = _load_lexicon()
+BY_GROUP = {g: [w for w in LEX if w["group"] == g] for g in GROUPS}
+BY_EN = {w["en"].lower(): w for w in LEX}
+BY_KEY = {norm_key(w["en"]): w for w in LEX}
 
 _V = json.loads((BASE / "verbs.json").read_text(encoding="utf-8"))
 VERB_GROUPS: list[str] = _V["groups"]
@@ -143,25 +80,16 @@ def check_answer(user: str, variants: list[str]) -> str:
     return "close" if best >= 0.88 else "wrong"
 
 
-def best_ratio(user: str, variants: list[str]) -> float:
-    u = canon(user)
-    return max(SequenceMatcher(None, u, canon(v)).ratio() for v in variants)
-
-
 # ---------------- локальный словарь (мгновенный перевод без интернета) ----------------
 def _build_index():
     en2ru, ru2en = {}, {}
-    for w in ALL_WORDS + ALL_SLANG:
+    for w in LEX:
+        en2ru.setdefault(canon(norm_key(w["en"])), w)
         en2ru.setdefault(canon(w["en"]), w)
-        ru2en.setdefault(w["ru"].lower().strip(), w)
-        for part in re.split(r"[;,/]|\s\(", re.sub(r"\)", "", w["ru"].lower())):   # «пол; этаж» → «пол», «этаж»
+        for part in re.split(r"[;,/]", re.sub(r"\(.*?\)", "", w["ru"].lower())):
             part = part.strip()
-            if part and not part.startswith("(") and len(part) > 2:
+            if part and len(part) > 2:
                 ru2en.setdefault(part, w)
-    for p in PHRASES:
-        for v in p["en"]:
-            en2ru.setdefault(canon(v), {"en": v, "ru": p["ru"], "ex": "", "tr": "", "note": ""})
-        ru2en.setdefault(p["ru"].lower().strip(" .?!"), {"en": p["en"][0], "ru": p["ru"], "ex": "", "tr": "", "note": ""})
     return en2ru, ru2en
 
 
@@ -169,15 +97,15 @@ _EN2RU, _RU2EN = _build_index()
 
 
 def lookup(text: str):
-    """Ищет слово/фразу в наших базах. Возвращает dict(en, ru, ex, tr, note) / dict(verb=...) / None."""
+    """Ищет слово в лексиконе: dict слова / {"verb": ...} (форма неправильного глагола) / None."""
     t = text.strip()
     if has_cyrillic(t):
         return _RU2EN.get(t.lower().strip(" .?!"))
     c = canon(t)
     if not c:
         return None
-    for key in (c, "to " + c, c[3:] if c.startswith("to ") else None):
-        if key and key in _EN2RU:
+    for key in (c, "to " + c):
+        if key in _EN2RU:
             return _EN2RU[key]
     v = VERB_BY_FORM.get(c)
     return {"verb": v} if v else None

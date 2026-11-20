@@ -1,5 +1,31 @@
-// Мини-грамматика. T|строка теории (HTML)   Q|предложение с ___|верно|неверно 1|неверно 2|пояснение
-# 📐 Past Simple — прошедшее
+// Мини-грамматика: 4 времени. T|строка теории (HTML)   Q|предложение с ___|верно|неверно 1|неверно 2|пояснение
+# 📐 Present Simple — настоящее простое
+T|<b>Present Simple</b> — привычки, регулярные действия и факты: <i>I drink coffee every morning. The sun rises in the east.</i>
+T|Утверждение: <b>V1</b>, а для he/she/it — <b>V1 + s/es</b>: <i>She works. He watches TV.</i>
+T|Вопрос: <b>Do/Does + подлежащее + V1</b>: <i>Do you like tea? Does he work here?</i> Отрицание: <b>don't / doesn't + V1</b>: <i>I don't know. She doesn't smoke.</i>
+T|Подсказки: <i>every day, usually, always, often, sometimes, never, on Mondays</i>.
+Q|My brother ___ in a bank.|works|work|is working|He → works (Present Simple, добавляем -s).
+Q|We ___ coffee every morning.|drink|drinks|are drink|Привычка, we → drink без -s.
+Q|___ she speak Spanish?|Does|Do|Is|Вопрос для she начинается с Does.
+Q|He ___ like horror movies.|doesn't|don't|isn't|Отрицание для he → doesn't.
+Q|The train ___ at 8:15 every day.|leaves|leave|is leaving|Расписание и регулярность → leaves.
+Q|They never ___ late.|come|comes|are come|They → come, без -s.
+Q|What time ___ you usually get up?|do|does|are|Вопрос с you → do.
+Q|Water ___ at 100 degrees.|boils|boil|is boiling|Факт, it → boils.
+# 📐 Present Continuous — настоящее длительное
+T|<b>Present Continuous</b> — действие прямо сейчас или временная ситуация: <i>I'm cooking dinner now. We're staying at a hotel this week.</i>
+T|Форма: <b>am / is / are + V-ing</b>: <i>She is reading. They are playing.</i> Вопрос: <i>Are you working?</i> Отрицание: <i>He isn't sleeping.</i>
+T|Подсказки: <i>now, right now, at the moment, today, this week, Look! Listen!</i>
+T|Правописание: make → making (e пропадает), run → running (согласная удваивается), lie → lying.
+Q|Look! It ___ outside.|is snowing|snows|snow|«Look!» — происходит сейчас → is snowing.
+Q|I can't talk now. I ___ dinner.|am cooking|cook|cooks|Сейчас, I → am cooking.
+Q|What ___ you doing right now?|are|do|is|Вопрос с you в Continuous → are.
+Q|She ___ TV at the moment.|isn't watching|doesn't watching|not watches|Отрицание Continuous → isn't + V-ing.
+Q|They ___ in London this week.|are staying|stay|stays|Временная ситуация → are staying.
+Q|___ he sleeping?|Is|Does|Are|He → Is.
+Q|We ___ to music now.|are listening|listen|listens|now → are listening.
+Q|The kids ___ in the garden right now.|are playing|plays|play|Мн. число, сейчас → are playing.
+# 📐 Past Simple — прошедшее простое
 T|<b>Past Simple</b> — действие, которое закончилось в прошлом: <i>yesterday, last week, two days ago</i>.
 T|Правильные глаголы: <b>+ed</b> (walk → walked). Неправильные — свои формы (go → went), см. раздел «📘 Глаголы».
 T|Вопрос: <b>Did</b> + подлежащее + V1: <i>Did you see Mira?</i> Отрицание: <b>didn't</b> + V1: <i>We didn't go out.</i>
@@ -9,92 +35,19 @@ Q|I ___ eat breakfast this morning.|didn't|doesn't|not|Отрицание в п�
 Q|___ you see the movie last night?|Did|Do|Were|Вопрос в Past Simple начинается с Did.
 Q|I ___ a letter yesterday.|wrote|writed|write|write → wrote (неправильный глагол).
 Q|She ___ the dishes after dinner.|washed|washing|wash|Правильный глагол: wash + ed.
-# 📐 Present Simple и Continuous
-T|<b>Present Simple</b> — привычки и факты: <i>I drink coffee every day.</i> Для he/she/it добавляем <b>-s</b>: <i>She works</i>.
-T|<b>Present Continuous</b> — действие прямо сейчас: <b>am/is/are + V-ing</b>: <i>They are watching TV now.</i>
-T|Подсказки: every day, usually, always → Simple. now, right now, at the moment, Look! → Continuous.
-Q|My neighbor ___ to work by bus every day.|goes|is going|go|every day — привычка → Present Simple, he/she → goes.
-Q|Look! It ___ outside.|is snowing|snows|snow|Look! — прямо сейчас → Present Continuous.
-Q|I ___ coffee every morning.|drink|am drinking|drinks|Привычка, I → без -s.
-Q|We ___ a movie right now.|are watching|watch|watches|right now → Continuous.
-Q|He usually ___ at seven.|gets up|is getting up|get up|usually → Simple; he → gets.
-# 📐 Артикли a / an / the
-T|<b>a / an</b> — один из многих, первое упоминание: <i>a cat, an apple</i> (<b>an</b> — перед гласным звуком).
-T|<b>the</b> — конкретный, известный предмет: <i>The cat is on the couch.</i> (мы знаем, о какой кошке речь).
-T|Без артикля: общие понятия во мн. числе и города: <i>I love dogs. I live in Berlin.</i>
-Q|I have ___ dog.|a|an|the|Первое упоминание, согласный звук → a.
-Q|She eats ___ apple every day.|an|a|the|apple начинается с гласного звука → an.
-Q|Close ___ window, please. It's cold.|the|a|an|Окно конкретное, известное обоим → the.
-Q|I love ___ cats.|(без артикля)|the|a|«Кошки вообще» — без артикля.
-Q|He is ___ doctor.|a|an|the|Профессия: a doctor.
-# 📐 There is / There are, some / any
-T|<b>There is</b> + один предмет, <b>there are</b> + несколько: <i>There is a bowl. There are two bowls.</i>
-T|Вопрос: <i>Is there…? Are there…?</i> Отрицание: <i>There isn't… / There aren't…</i>
-T|<b>some</b> — в утверждениях, <b>any</b> — в вопросах и отрицаниях: <i>There is some milk. Is there any milk?</i>
-Q|___ a dog in the yard.|There is|There are|It are|Одна собака → there is.
-Q|___ three bags in the car.|There are|There is|They is|Три → there are.
-Q|Is there ___ milk in the fridge?|any|some|a|Вопрос → any.
-Q|There aren't ___ eggs.|any|some|an|Отрицание → any.
-Q|There is ___ bread on the table.|some|any|an|Утверждение → some.
-# 📐 Can / can't / could
-T|<b>can</b> — уметь, мочь: <i>He can swim.</i> Отрицание: <b>can't</b>. Вопрос: <i>Can you help me?</i>
-T|После can глагол без to и без -s: <i>She can run</i> (не <i>cans</i>, не <i>can to run</i>).
-T|<b>could</b> — вежливая просьба и «мог» в прошлом: <i>Could you open the window, please?</i>
-Q|My friend ___ speak three languages.|can|cans|can to|can не принимает -s.
-Q|I ___ swim. I'm afraid of water.|can't|don't can|can|«Не умею» → can't.
-Q|___ you open the window, please?|Could|Do|Are|Вежливая просьба → Could you…?
-Q|She can ___ English very well.|speak|speaks|to speak|После can — V1 без to.
-Q|___ you play the guitar?|Can|Does|Is|Вопрос: Can + подлежащее.
-# 📐 Сравнение прилагательных
-T|Короткие прилагательные: <b>+er + than</b>: <i>This bag is cheaper than that one.</i> (big → bigger, happy → happier)
-T|Длинные: <b>more + прилагательное</b>: <i>This sofa is more comfortable than that one.</i>
-T|Особые: good → <b>better</b>, bad → <b>worse</b>.
-Q|A dog is usually ___ than a cat.|bigger|more big|biger|big → bigger (удвоение g).
-Q|This hotel is ___ than that one.|more expensive|expensiver|more expensiver|Длинное слово → more + прилагательное.
-Q|Today is ___ than yesterday.|better|gooder|more good|good → better.
-Q|My brother is ___ than me.|older|more old|oldest|Короткое слово → older than.
-Q|Tea is ___ than soda.|healthier|more healthy|healthyer|healthy → healthier (y → ier).
-# 📐 Предлоги in / on / at
-T|<b>at</b> — точное время и точка: <i>at 5 o'clock, at the station, at home</i>.
-T|<b>on</b> — дни и поверхности: <i>on Monday, on the table, on the couch</i>.
-T|<b>in</b> — месяцы, годы, внутри: <i>in July, in 2026, in the kitchen, in the car</i>.
-Q|The meeting is ___ 9 a.m.|at|on|in|Точное время → at.
-Q|My birthday is ___ July.|in|on|at|Месяц → in.
-Q|The cat is sleeping ___ the couch.|on|in|at|На поверхности → on.
-Q|We have a party ___ Saturday.|on|in|at|День недели → on.
-Q|She lives ___ Chicago.|in|on|at|Город → in.
-# 📐 Will и going to
-T|<b>going to</b> — план или то, что уже видно: <i>I'm going to cook dinner. Look at the clouds! It's going to rain.</i>
-T|<b>will</b> — спонтанное решение, обещание, предположение: <i>I'll help you. I think it will be fun.</i>
-Q|We ___ visit my parents this summer. We already bought tickets.|are going to|will|are|План уже есть → going to.
-Q|The phone is ringing. I ___ answer it.|'ll|am going to|will to|Решение в момент речи → will ('ll).
-Q|Look! The cat ___ jump!|is going to|will|goes|Видно по признакам → going to.
-Q|I promise I ___ call you tomorrow.|will|am going|do|Обещание → will.
-Q|I think it ___ rain tomorrow.|will|is going|does|Предположение, I think → will.
-# 📐 Much, many, a lot of
-T|<b>many</b> — с исчисляемыми во мн. числе: <i>many cats, many people</i>. <b>much</b> — с неисчисляемыми: <i>much water, much time</i>.
-T|В вопросах и отрицаниях: <i>How many cats? How much milk? There isn't much time.</i>
-T|<b>a lot of</b> подходит почти везде в утверждениях: <i>We have a lot of friends. I drink a lot of water.</i>
-Q|How ___ cats do you have?|many|much|a lot|Cats — исчисляемое → many.
-Q|How ___ milk is in the fridge?|much|many|few|Milk — неисчисляемое → much.
-Q|We don't have ___ time.|much|many|a lot|Отрицание + неисчисляемое → much.
-Q|There are ___ people in the park.|a lot of|much|a little|Утверждение с людьми → a lot of.
-Q|She doesn't have ___ friends here.|many|much|a lot|Friends — исчисляемое → many.
-# 📐 Should / must / have to
-T|<b>should</b> — совет: <i>You should rest.</i> <b>must</b> — сильная необходимость или запрет: <i>You must wear a seat belt.</i>
-T|<b>have to</b> — обязанность по обстоятельствам: <i>I have to work on Saturday.</i> Для he/she/it: <b>has to</b>.
-T|<b>mustn't</b> — «нельзя». <b>don't have to</b> — «не обязательно».
-Q|You look tired. You ___ rest.|should|must to|have|Совет → should.
-Q|He ___ work on Sunday. It's his shift.|has to|have to|must to|he/she/it → has to.
-Q|You ___ park here. It's not allowed.|mustn't|don't have to|shouldn't to|Запрет → mustn't.
-Q|You ___ come early. The party starts late.|don't have to|mustn't|can't to|Не обязательно → don't have to.
-Q|Children ___ wear a helmet when they ride a bike.|should|shoulds|to should|После should — V1 без to.
-# 📐 Present Perfect
-T|<b>Present Perfect</b> = <b>have/has + V3</b>. Говорим о результате и опыте: <i>I have lost my keys. She has been to Paris.</i>
-T|Слова-подсказки: <i>ever, never, already, yet, just</i>. Вопрос: <i>Have you ever…?</i>
-T|С конкретным временем в прошлом (yesterday, last week) — не Present Perfect, а Past Simple.
-Q|I ___ my keys. I can't open the door.|have lost|lost|am losing|Результат важен сейчас → have lost.
-Q|She has never ___ to Japan.|been|was|be|Present Perfect: has never + V3 (been).
-Q|Have you ___ eaten sushi?|ever|yesterday|ago|ever в вопросах Present Perfect.
-Q|We ___ already finished dinner.|have|has|are|we → have.
-Q|I ___ him yesterday.|saw|have seen|have saw|Есть yesterday → Past Simple.
+Q|We ___ a great movie last week.|saw|seen|see|see → saw (V2), seen — это V3.
+Q|Where ___ you go on vacation last year?|did|do|were|Вопрос в прошедшем: did + подлежащее + V1.
+Q|He ___ come to the party yesterday.|didn't|doesn't|wasn't|Отрицание в прошедшем: didn't + V1.
+# 📐 Past Continuous — прошедшее длительное
+T|<b>Past Continuous</b> — действие, которое длилось в определённый момент в прошлом: <i>At 8 p.m. I was cooking.</i>
+T|Форма: <b>was / were + V-ing</b>: <i>I was reading. They were playing.</i> Вопрос: <i>Were you sleeping?</i> Отрицание: <i>She wasn't working.</i>
+T|Часто вместе с Past Simple: длинное действие (Continuous) прерывается коротким (Simple): <i>I was walking when it started to rain.</i>
+T|Подсказки: <i>while, when, at 5 o'clock yesterday, all evening</i>.
+Q|At 8 p.m. yesterday, I ___ dinner.|was cooking|cooked|am cooking|Конкретный момент в прошлом → was cooking.
+Q|They ___ football when it started to rain.|were playing|played|are playing|Длинное действие, которое прервали → were playing.
+Q|___ you sleeping when I called?|Were|Did|Was|You → Were.
+Q|She ___ TV while he was cooking.|was watching|watched|is watching|Два действия одновременно → was watching.
+Q|I ___ when the phone rang.|was sleeping|slept|am sleeping|Длилось, когда его прервал звонок → was sleeping.
+Q|We ___ working at that time.|weren't|wasn't|didn't|We → weren't.
+Q|What ___ he doing at 5 o'clock?|was|did|is|He → was.
+Q|I ___ along the street when I saw an old friend.|was walking|walked|were walking|I → was walking (длинное действие прервано).
